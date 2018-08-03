@@ -54,7 +54,7 @@ git checkout master
 git diff <id_commit1> <id_commit2>
 ```
 __________
-### Annulation et supression en phase HEAD :
+### Annulation et supression des commits (HEAD) :
 Supprimer tous les commits aprés le commit en question (non inclut) :
 ```
 git reset --hard <id_commit>
@@ -65,7 +65,7 @@ Inverser les changements d'un commit :
 git revert <id_commit>
 ```
 __________
-### Annulation et supression en phase INDEX :
+### Annulation et supression des changement (INDEX) :
 Annuler le changement d'un fichier en phase INDEX :
 ```
 git checkout -- <filename>
