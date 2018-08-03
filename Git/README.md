@@ -16,7 +16,7 @@ git status
 # 3) Les arbres
 Le dépôt est composé de trois "arbres". le premier est mon espace de travail qui contient réellement vos fichiers. le second est un **INDEX** qui joue un rôle d'espace de transit pour mes fichiers et enfin **HEAD** qui pointe vers la dernière validation que j'ai faite.
 
-<br /><br /><img src="img/trees.jpg" width=600>
+<br /><br /><img src="img/trees.jpg" width=400>
 
 # 4) Les commits
 
