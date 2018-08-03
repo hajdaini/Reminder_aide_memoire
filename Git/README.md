@@ -21,7 +21,7 @@ Le dépôt est composé de trois "arbres". le premier est mon espace de travail 
 # 4) Les commits
 
 __________
-### Créer un commit
+### Créer un commit :
 Ajouter à l'INDEX :
 ```
 git add <file>
@@ -37,7 +37,7 @@ Ajouter à l'INDEX puis au HEAD :
 git commit -a [-m "description du commit"]
 ```
 __________
-### Voir les différents commits 
+### Voir les différents commits :
 ```
 git log
 ```
@@ -49,12 +49,12 @@ git checkout <id_commit1>
 Retourner au commit le plus récent :
 git checkout master
 
-### Différences des commits
+### Différences des commits :
 ```
 git diff <id_commit1> <id_commit2>
 ```
 __________
-### Annulation et supression en phase HEAD
+### Annulation et supression en phase HEAD :
 Supprimer tous les commits aprés le commit en question (non inclut) :
 ```
 git reset --hard <id_commit>
@@ -65,7 +65,7 @@ Inverser les changements d'un commit :
 git revert <id_commit>
 ```
 __________
-### Annulation et supression en phase INDEX
+### Annulation et supression en phase INDEX :
 Annuler le changement d'un fichier en phase INDEX :
 ```
 git checkout -- <filename>
@@ -78,7 +78,7 @@ git checkout -- .
 # 5) Hors Local
 
 __________
-### Cloner un dépôt
+### Cloner un dépôt :
 ```
 git clone https://<lien_vers_depot> [nouveau_nom_du_dépot]
 git clone /path/to/repository [nouveau_nom_du_dépot]
@@ -86,7 +86,7 @@ git clone username@host:/path/to/repository
 ```
 
 
-### Mettre à jour un dépôt local vers les dernières validations:
+### Mettre à jour un dépôt local vers les dernières validations :
 ```
 git pull
 ```
