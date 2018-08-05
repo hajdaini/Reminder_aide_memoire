@@ -1,5 +1,7 @@
-#pour ouvrir les ficheirs sqlite3 : https://github.com/sqlitebrowser/sqlitebrowser/releases
-#Graph from database : https://www.youtube.com/watch?v=pq4nwICEB4U
+***pour ouvrir les ficheirs sqlite3 :*** https://github.com/sqlitebrowser/sqlitebrowser/releases
+***Tracer des graphes depuis database :*** https://www.youtube.com/watch?v=pq4nwICEB4U
+
+```py
 import sqlite3
 
 conn = sqlite3.connect('tutorial.db')
@@ -38,3 +40,4 @@ def delete():
     
 c.close()
 conn.close()
+```
