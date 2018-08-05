@@ -137,7 +137,7 @@ canvas.create_rectangle(center(50), fill="red", width=1, outline='black')
 canvas.pack()
 ```
 
-#Animation
+# Animation
 ```py
 ball = canvas.create_oval(center(10), fill='orange')
 speedx = 1
