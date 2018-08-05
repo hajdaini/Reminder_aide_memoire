@@ -71,7 +71,7 @@ for data in datas:
 ```
 
 ### Bonus :
-***SELENIUM :*** bot qui simulte un utilisateur utilisant un navigateur
+***SELENIUM :*** bot qui simule un utilisateur utilisant un navigateur
 
 **drivers :** https://www.seleniumhq.org/download/
 
