@@ -1,21 +1,20 @@
 ### Créer une image :
 ```py 
 Image.new(mode, size, ?color)
-
-@mode :
-    - 1 : monochrome ( 1 bit par pixel)
-    - L : Grayscale ( 8 bits par pixel)
-    - RGB : Couleur
-    - RGBA : Couleur avec transparence
-
-@size : tuple(width, height)
-
-@color :
-    - 'yellow' (caseSensitive)
-    - #fffff
-    - rgb(100, 200, 200)
-    - hsl(100, 50%, 30%)
 ```
+    @mode :
+        - 1 : monochrome ( 1 bit par pixel)
+        - L : Grayscale ( 8 bits par pixel)
+        - RGB : Couleur
+        - RGBA : Couleur avec transparence
+
+    @size : tuple(width, height)
+
+    @color :
+        - 'yellow' (caseSensitive)
+        - #fffff
+        - rgb(100, 200, 200)
+        - hsl(100, 50%, 30%)
 
 ### Ouvrir une image : 
 ```py 
@@ -34,9 +33,9 @@ Image.blend(image1, image2, alpha)
 ```py 
 image = Image.open('01.jpg')
 image.convert(mode).show()
-@mode : 
-    - vu sur "Créer une image"
 ```
+    @mode : 
+        - vu sur "Créer une image"
 
 ### Rogner une image :
 ```py 
@@ -72,29 +71,29 @@ print(image.mode)
 ```py 
 width, height = image.size
 colors = image.getcolors(width * height)
-@return (occurence, couleur)
 ```
+    @return (occurence, couleur)
 
 ### Connaitre la couleur d'un pixel (pas opti si trop de pixels) :
 ```py 
 image = Image.open('01.jpg')
 print(image.getpixel((posX, posY)))
-@return (couleur)
 ```
+    @return (couleur)
 
 ### Retourner la couleur de chaque pixel (plus opti) :
 ```py 
 image = Image.open('01.jpg')
 print(list(image.getdata()))
-@return [couleur]
 ```
+    @return [couleur]
 
 ### Changer la couleur d'un pixel (pas opti si trop de pixels) :
 ```py 
 image = Image.open('01.jpg')
 print(image.putpixel((posX, posY), (color)))
-@return (couleur)
 ```
+    @return (couleur)
 
 ### Changer les pixels d'une image (plus opti) :
 ```py 
