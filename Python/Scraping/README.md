@@ -48,7 +48,7 @@ for link url in links:
     print(url.get('href))
 ```
 
-### Récupéreer les blocks enfants selon une classe ou un id:
+### Récupéreer les blocks enfants selon une classe ou un id :
 ```py
 res = soup.find_all('div', class_='footer-copyright') #Pour rechercher un id alors remplacer class_ par id 
 for s in res:
@@ -56,7 +56,7 @@ for s in res:
 ```
 
 
-### Pour traiter les fichiers xml:
+### Pour traiter les fichiers xml :
 ```py
 import bs4 as bs
 import urllib.request
@@ -70,7 +70,7 @@ for data in datas:
     print(data.text)
 ```
 
-### Bonus
+### Bonus :
 ***SELENIUM :*** bot qui simulte un utilisateur utilisant un navigateur
 
 **drivers :** https://www.seleniumhq.org/download/
