@@ -1,5 +1,13 @@
-#tkinter doc : http://tkinter.fdex.eu/doc/uwm.html#update_idletasks
+### Documentation Tkinter :
+http://tkinter.fdex.eu/doc/uwm.html#update_idletasks
 
+### Documentation externe : 
+- Couleurs tkinter : https://www.tutorialspoint.com/python/tk_colors.htm
+- combinaison de couleurs : https://coolors.co/browser/best/1
+- tkinter text color : https://wiki.tcl.tk/37701
+    
+### Fenêtre de base :
+```py
 from tkinter import *
 
 WIDTH = 500
@@ -21,123 +29,126 @@ window.geometry(window_position(window, WIDTH, HEIGHT))
 
 window.resizable(width=False, height=False)
 window.mainloop()
+```
 
-# ---------- MULTIPLE WIDGETS  ----------
-# Some of the different Widgets : Button, Label,
-# Canvas, Menu, Text, Scale, OptionMenu, Frame,
-# CheckButton, LabelFrame, MenuButton, PanedWindow,
-# Entry, ListBox, Message, RadioButton, ScrollBar,
-# Bitmap, SpinBox, Image
+# Widgets
 
-#Documentation externe : 
-    - Couleurs tkinter : https://www.tutorialspoint.com/python/tk_colors.htm
-    - combinaison de couleurs : https://coolors.co/browser/best/1
-    - tkinter text color : https://wiki.tcl.tk/37701
+### TEXT : 
+```py
+label = Label(window, text="hello", font='Arial 16')
+label['text'] = 'change me'
+print(label['text'])
+```
 
-#TEXT : 
-    label = Label(window, text="hello", font='Arial 16')
-    label['text'] = 'change me'
-    print(label['text'])
+### INPUT :
+```py
+input = Entry(window, font='Arial 12 normal italic', fg='gray')
+input.insert(0, 'placeholder')
+```
 
-#INPUT :
-    input = Entry(window, font='Arial 12 normal italic', fg='gray')
-    input.insert(0, 'placeholder')
+### BUTTON :
+```py
+button = Button(window, text='button welcome', font='Arial 12 normal', bg='#DC4C46', fg='white')
+```
 
-#BUTTON :
-    button = Button(window, text='button welcome', font='Arial 12 normal', bg='#DC4C46', fg='white')
+### CHECKBOX :
+```py
+checkbox = Checkbutton(window, text="Mineur ?", variable='checked', onvalue="1", offvalue="0")
+```
 
-#CHECKBOX :
-    checkbox = Checkbutton(window, text="Mineur ?", variable='checked', onvalue="1", offvalue="0")
-
-#RADIOS :
+### RADIOS :
     """
     -Les radios peuvent avoir seuelement un element check
     -@value = peut être n'importe quoi tant ça reste la même chose pour 
             les elements non check et unique sur l'element check
     """
-    radio1 = Radiobutton(window, text="Grand ?", value='unique')
-    radio2 = Radiobutton(window, text="Petit ?",  value='autrevaleur')
+```py
+radio1 = Radiobutton(window, text="Grand ?", value='unique')
+radio2 = Radiobutton(window, text="Petit ?",  value='autrevaleur')
 
-#SCALE (sorte de scroll) :
-    scale = Scale(window, orient='horizontal', from_=0, to=10,
-        resolution=0.1, tickinterval=2, length=350,
-        label='Volume (db)')
+### SCALE (sorte de scroll) :
+```py
+scale = Scale(window, orient='horizontal', from_=0, to=10, resolution=0.1, tickinterval=2, length=350, label='Volume (db)')
+```
 
-#Pre-requis :
-    #from tkinter import StringVar
+### Spinbox :
+```py
+from tkinter import StringVar
+spinbox = Spinbox(window, from_=0, to=100)
+```
 
-#<input type='number'>
-    spinbox = Spinbox(window, from_=0, to=100)
+### DROPDOWN MENU
+```py
+from tkinter import StringVar
+variable = StringVar(window)
+variable.set("one") # default value
+w = OptionMenu(window, variable, "one", "two", "three")
 
-#DROPDOWN MENU
-    #Pre-requis :
-        #from tkinter import StringVar
+### AFFICHAGE DES WIDGETS : equivalent d'une div en html :
+```py
+input.pack()
+```
 
-    variable = StringVar(window)
-    variable.set("one") # default value
-    w = OptionMenu(window, variable, "one", "two", "three")
+### MESSAGE BOX :
+```py
+from tkinter import messagebox
 
-#AFFICHAGE DES WIDGETS : equivalent d'une div en html :
-    input.pack()
+def message_test():
+    #messagebox.showerror('Titre Erreur', 'Erreur')
+    #messagebox.showwarning('Titre Attention', 'Attention)
+    #messagebox.showinfo('Titre info', 'information')
+    #messagebox.askquestion('Titre', 'es tu beau ?')
+    messagebox.askyesnocancel('Sauvegarde', 'Es tu sur de vouloir quitter sans sauvegarder ?')
 
+but = Button(window, text='ERREUR', command=message_test)
+but.pack()
+```
 
+### EVENTS :
+```py
+def key(event):
+    print("pressed {}".format(event.char))
 
-#MESSAGE BOX 
-    #Pre-requis :
-            #from tkinter import messagebox
+def callback(event):
+    print("clicked at", event.x, event.y)
 
-    def message_test():
-        #messagebox.showerror('Titre Erreur', 'Erreur')
-        #messagebox.showwarning('Titre Attention', 'Attention)
-        #messagebox.showinfo('Titre info', 'information')
-        #messagebox.askquestion('Titre', 'es tu beau ?')
-        messagebox.askyesnocancel('Sauvegarde', 'Es tu sur de vouloir quitter sans sauvegarder ?')
-        
-    but = Button(window, text='ERREUR', command=message_test)
-    but.pack()
+def leftKey(event):
+    print("Left key pressed")
 
+def rightKey(event):
+    print("Right key pressed")
 
-#EVENTS
-    def key(event):
-        print("pressed {}".format(event.char))
+#http://effbot.org/tkinterbook/tkinter-events-and-bindings.htm
+window.bind('<Left>', leftKey)
+window.bind('<Right>', rightKey)
+window.bind("<Key>", key)
+window.bind("<Button-1>", callback)
+```
 
-    def callback(event):
-        print("clicked at", event.x, event.y)
+### Canvas :
+```py
+def center(LARGEUR):
+    return (WIDTH/2 -LARGEUR), (HEIGHT/2 - LARGEUR), (WIDTH/2+LARGEUR), (HEIGHT/2+LARGEUR)
 
-    def leftKey(event):
-        print("Left key pressed")
-
-    def rightKey(event):
-        print("Right key pressed")
-
-    #http://effbot.org/tkinterbook/tkinter-events-and-bindings.htm
-    window.bind('<Left>', leftKey)
-    window.bind('<Right>', rightKey)
-    window.bind("<Key>", key)
-    window.bind("<Button-1>", callback)
-
-
-#Canvas
-    def center(LARGEUR):
-        return (WIDTH/2 -LARGEUR), (HEIGHT/2 - LARGEUR), (WIDTH/2+LARGEUR), (HEIGHT/2+LARGEUR)
-
-    canvas = Canvas(window, width=WIDTH, height=HEIGHT, bg='white')
-    canvas.create_line(0, WIDTH, HEIGHT, 0, fill="red", width=1)
-    canvas.create_oval(center(100), fill="white", width=1, outline='black')
-    canvas.create_rectangle(center(50), fill="red", width=1, outline='black')
-    canvas.pack()
-
+canvas = Canvas(window, width=WIDTH, height=HEIGHT, bg='white')
+canvas.create_line(0, WIDTH, HEIGHT, 0, fill="red", width=1)
+canvas.create_oval(center(100), fill="white", width=1, outline='black')
+canvas.create_rectangle(center(50), fill="red", width=1, outline='black')
+canvas.pack()
+```
 
 #Animation
-    ball = canvas.create_oval(center(10), fill='orange')
-    speedx = 1
-    speedy = 1
-    while True:
-        time.sleep(0.005)
-        canvas.move(ball,speedx,speedy)
-        window.update()
-        playerX0, playerY0, playerX1, playerY1 = canvas.coords(ball)
-        if  playerX0 <= 0 or playerX1 >= WIDTH:
-            speedx = -speedx
-        if  playerY0 <= 0 or playerY1 >= HEIGHT:
-            speedy = -speedy
+```py
+ball = canvas.create_oval(center(10), fill='orange')
+speedx = 1
+speedy = 1
+while True:
+    time.sleep(0.005)
+    canvas.move(ball,speedx,speedy)
+    window.update()
+    playerX0, playerY0, playerX1, playerY1 = canvas.coords(ball)
+    if  playerX0 <= 0 or playerX1 >= WIDTH:
+        speedx = -speedx
+    if  playerY0 <= 0 or playerY1 >= HEIGHT:
+        speedy = -speedy
+```
