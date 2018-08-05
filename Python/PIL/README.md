@@ -1,6 +1,6 @@
 ### Créer une image :
 ```py 
-Image.new(mode, size, ?color)
+Image.new(mode, size, color)
 ```
     @mode :
         - 1 : monochrome ( 1 bit par pixel)
