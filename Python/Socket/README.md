@@ -1,5 +1,6 @@
-SERVEUR : 
+# SERVEUR : 
 
+```py
 import socket
 
 #SOCK_STREAM : protocole TCP.
@@ -15,10 +16,11 @@ while message != 'fin':
 
 client.close()
 server.close()
+```
 
--------------------------------------------
-CLIENT :
+# CLIENT :
 
+```py
 import socket
 
 client = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
@@ -30,3 +32,4 @@ while message != 'fin':
     client.send(message.encode())
     print('Serveur > ', client.recv(1024).decode())
 client.close()
+```
