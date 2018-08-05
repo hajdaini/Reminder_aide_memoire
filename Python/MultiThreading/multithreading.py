@@ -9,7 +9,7 @@ threads_nbr = 10
 
 # 20 travailleurs
 for worker in range(workers_nbr):
-    q.put(worker) # mettre un travailleur au travail
+    q.put(worker) # mettre un travailleur au travail :p
 
 
 def exampleJob(worker):
@@ -22,12 +22,12 @@ def threader():
     while not q.empty():
         worker = q.get() # 2 travailleurs pour chaque thread
         exampleJob(worker)
-        q.task_done() #thread complete pour vider la queue
+        q.task_done() #Vider la queue
 
 
 for x in range(threads_nbr):
     t = threading.Thread(target= threader)
-    t.daemon = True # Quand le main Thread est tué le thread, l'est aussi
+    t.daemon = True # Quand le main Thread est terminé alors ce thread la se termine aussi
     t.start()
 
 start_time = time.time()
