@@ -45,7 +45,17 @@ K : Kernel
 - virtuozzo
 - Jail
 
-# HyperV Type1
+# HyperV Type1 (Hyperviseur)
+
 **Avantages :**
+- De trés bonne performance par rapport à l'émulation ( ≈7% )
+
+***Exemples de logiciels :***
+- Xen
+- VmWare (ESX)
+
+# HyperV Type2 (Hyperviseur)
 
 
+***Exemples de logiciels :***
+- Kvm
