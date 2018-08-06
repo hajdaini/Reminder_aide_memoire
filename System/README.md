@@ -2,6 +2,7 @@
 ```
 HW : Hardware
 US : User Space
+K : Kernel
 ```
 
 # NATIF
