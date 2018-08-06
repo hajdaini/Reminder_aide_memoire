@@ -44,3 +44,8 @@ K : Kernel
 - VServer
 - virtuozzo
 - Jail
+
+# HyperV Type1
+**Avantages :**
+
+
