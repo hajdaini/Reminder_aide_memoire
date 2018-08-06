@@ -1,3 +1,6 @@
+HW : Hardware
+US : User Space
+
 # NATIF
 <img src="./imgs/natif.jpg">
 
@@ -6,7 +9,7 @@
 
 **Avantages :**
 - Emulation du hardward
-- Les devs ont accés au noyau (debug/coder...)
+- Plus simple aux devs d'avoir accés au noyau (debug/coder...)
 
 **Inconvénients :**
 - Perte de 50% de performances car on passe 2 fois par API+Kernel+HW
@@ -35,5 +38,5 @@
 
 ***Exemples de logiciels :***
 - VServer
-- Virtuoso
+- virtuozzo
 - Jail
