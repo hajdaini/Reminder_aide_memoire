@@ -46,6 +46,7 @@ K : Kernel
 - Jail
 
 # HyperV Type1 (Hyperviseur)
+<img src="./imgs/hyperv-type1.jpg">
 
 **Avantages :**
 - De trés bonne performance par rapport à l'émulation ( ≈7% )
@@ -55,11 +56,15 @@ K : Kernel
 - VmWare (ESX)
 
 # HyperV Type2 (Hyperviseur)
+<img src="./imgs/hyperv-type2.jpg">
 
 ***Exemples de logiciels :***
 - Kvm
 
 # Conteneur :
+<img src="./imgs/conteneur.jpg">
+**Avantages :**
+- Très peu de perte de performance ( ≈1% )
 
 ***Exemples de logiciels :***
 - Docker
