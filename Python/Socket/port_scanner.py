@@ -3,7 +3,7 @@ import socket
 from queue import Queue
 
 lock = threading.Lock()
-target = "facebook.com"
+target = "server_address"
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 list_ports_open = []
 def scanner(port):
