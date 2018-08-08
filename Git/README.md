@@ -101,4 +101,6 @@ Si jamais on a pas fait de git clone alors il faut mettre un dépot par défault
 git remote add origin <server>
 ```
 
-
+### Pycharme :
+https://www.youtube.com/watch?v=9tGb9FK6zVM
+(pour le reste je peux clique droit sur le fichier en question et je peux faire toute mes actions de git)
