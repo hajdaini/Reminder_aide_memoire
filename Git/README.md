@@ -101,6 +101,7 @@ Si jamais on a pas fait de git clone alors il faut mettre un dépot par défault
 git remote add origin <server>
 ```
 
-### Pycharme :
-https://www.youtube.com/watch?v=9tGb9FK6zVM
-(pour le reste je peux clique droit sur le fichier en question et je peux faire toute mes actions de git)
+### Annexe :
+**Pycharm** :
+- https://www.youtube.com/watch?v=9tGb9FK6zVM (pour le reste je peux clique droit sur le fichier en question et je peux faire toute mes actions de git)
+- Commande pour calculer le nombre de lignes de code un dépôt Git:  ```git ls-files | xargs wc -l```
