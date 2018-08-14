@@ -41,7 +41,18 @@ for img in imgs:
 
 ### Récupéreer les blocks enfants :
 ```py
-# Exemple récupéreer tous les liens dans un nav
+# Exemple : récupéreer tous les enfants h2 avec le tag class=s-access-title de chaque parent div avec le tag class=s-item-container
+
+res = soup.find_all('div', class_='s-item-container') #Pour rechercher un id alors remplacer class_ par id
+
+for tag in res:
+    tdTags = tag.find_all("h2", class_='s-access-title')
+    for tag in tdTags:
+        titles.append(tag.text)
+```
+
+```py
+# Exemple : récupéreer tous les liens dans un nav
 nav = soup.nav
 links = nav.find_all('a')
 for link url in links:
