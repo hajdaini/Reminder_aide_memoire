@@ -38,6 +38,9 @@ print("Finish in {0:.4f} s".format(time.time() - start_time))
 
 from urllib import request
 import bs4 as bs
+import time
+
+start_time = time.time()
 
 url = "https://www.youtube.com/feed/trending"
 html_content = request.urlopen(url).read().decode('utf-8')
@@ -57,15 +60,17 @@ for r in res:
         pass
     items.append(values)
 
-for item in items:
-    print(item)
+try:
+    with open('res.csv', 'w') as file:
+        file.write('sep =,\n')  # for excel
+        headers = 'Youtubeur,Titre,Vues\n'
+        file.write(headers)
+        for item in items:
+            try: # filtering wrong append
+                file.write(','.join(item) + "\n")
+            except:
+                print("failed")
+except:
+    print("File is already open !")
 
-with open('res.csv', 'w') as file:
-    file.write('sep =,\n')  # for excel
-    headers = 'Youtubeur,Titre,Vues\n'
-    file.write(headers)
-    for item in items:
-        try: # filtering wrong append
-            file.write(','.join(item) + "\n")
-        except:
-            print("failed")
+print("Finish in {0:.4f} s".format(time.time() - start_time))
