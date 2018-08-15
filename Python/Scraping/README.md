@@ -39,15 +39,15 @@ for img in imgs:
     print(img.get('src'))
 ```
 
-### Récupéreer les blocks enfants selon une classe ou un id ou autre :
+### Récupéreer les blocks enfants selon une class ou un id ou autre :
 ```py
 # Pour rechercher un id alors remplacer class_ par id
 res = soup.find_all('div', class_='item-container') # Parent => tous les divs avec la class "item-container"
 
 for r in res:
-    print(r.find(class_="item-title").text) # Récupère le 1er enfant avec une classe "item-title" du parent 
-    print(r.find_all(class_="price-current").strong.text) Récupère tous les enfants strong de toutes les divs avec une classe "price-curent" du parent
-    print(r.find('div', class_="item-branding").img.get('title'))
+    print(r.find(class_="item-title").text) # Récupère le 1er enfant avec une class "item-title" du parent 
+    print(r.find_all(class_="price-current").strong.text) # Récupère tous les enfants strong de toutes balises avec class "price-curent" du parent
+    print(r.find('div', class_="item-branding").img.get('title')) # Récupère le tag title depuis une image image du 1er enfant de toutes les divs avec une class "item-branding" du parent
 ```
 
 
