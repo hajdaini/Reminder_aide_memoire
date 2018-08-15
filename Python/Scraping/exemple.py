@@ -69,7 +69,7 @@ try:
             try: # filtering wrong append
                 file.write(','.join(item) + "\n")
             except:
-                print("failed")
+                pass
 except:
     print("File is already open !")
 
