@@ -5,7 +5,7 @@ import time
 start_time = time.time()
 
 url = 'https://www.newegg.com/Video-Cards-Video-Devices/Category/ID-38'
-source = urlopen(url).read().decode('latin-1')
+source = urlopen(url).read().decode('utf-8')
 soup = bs.BeautifulSoup(source, 'lxml')
 
 res = soup.find_all('div', class_='item-container')
