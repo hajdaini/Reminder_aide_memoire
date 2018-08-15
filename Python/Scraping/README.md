@@ -39,31 +39,15 @@ for img in imgs:
     print(img.get('src'))
 ```
 
-### Récupéreer les blocks enfants :
+### Récupéreer les blocks enfants selon une classe ou un id ou autre :
 ```py
-# Exemple : récupéreer tous les enfants h2 avec le tag class=s-access-title de chaque parent div avec le tag class=s-item-container
+# Pour rechercher un id alors remplacer class_ par id
+res = soup.find_all('div', class_='item-container') # Parent => tous les divs avec la class "item-container"
 
-res = soup.find_all('div', class_='s-item-container') #Pour rechercher un id alors remplacer class_ par id
-
-for tag in res:
-    tdTags = tag.find_all("h2", class_='s-access-title')
-    for tag in tdTags:
-        titles.append(tag.text)
-```
-
-```py
-# Exemple : récupéreer tous les liens dans un nav
-nav = soup.nav
-links = nav.find_all('a')
-for link url in links:
-    print(url.get('href))
-```
-
-### Récupéreer les blocks enfants selon une classe ou un id :
-```py
-res = soup.find_all('div', class_='footer-copyright') #Pour rechercher un id alors remplacer class_ par id 
-for s in res:
-    print(s.text.strip())
+for r in res:
+    print(r.find(class_="item-title").text) # Récupère le 1er enfant avec une classe "item-title" du parent 
+    print(r.find_all(class_="price-current").strong.text) Récupère tous les enfants strong de toutes les divs avec une classe "price-curent" du parent
+    print(r.find('div', class_="item-branding").img.get('title'))
 ```
 
 
