@@ -15,7 +15,7 @@ make install
 
 ### Utilisation :
 
-- Le fichier config **nanorc** à renommer en **.nanorc** et mettre dans <i>~/</i> 
+- Le fichier config **nanorc** à renommer en **.nanorc** et à mettre dans <i>~/</i> 
 - Les fichiers de coloration syntaxique **nano.zip** à dézipper et à mettre dans <i>/usr/share/nano/</i>
 
 #### Inspiration et Doc :
