@@ -3,7 +3,7 @@ set linenumbers
 set tabsize 4
 set showcursor
 
-set numbercolor brightred
+set numbercolor black,white
 
 # text in the top
 set titlecolor blue,cyan
