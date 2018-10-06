@@ -22,3 +22,6 @@ make install
 - Fichier de config : https://manpages.debian.org/unstable/nano/nanorc.5.en.html 
 - Coloration syntaxique : https://github.com/scopatz/nanorc 
  
+### Screenshot
+
+<img src="looking.jpg">
