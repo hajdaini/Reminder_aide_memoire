@@ -1,0 +1,133 @@
+set autoindent
+set linenumbers
+set tabsize 4
+set showcursor
+
+set numbercolor brightred
+
+# text in the top
+set titlecolor blue,cyan
+
+# text of the status
+set statuscolor brightgreen,black
+
+# Shortcut in the bottom
+set keycolor brightred
+
+
+# text in the bottom
+set functioncolor brightyellow
+
+# Save a file by default in Unix format.
+set unix
+
+# Use bold text instead of reverse video text.
+set boldtext
+
+# Do case sensitive searches by default.
+set casesensitive
+
+# Enable mouse support, if available for your system. When enabled, mouse clicks can be used to place the cursor, set the mark (with a double click), and execute shortcuts. The mouse will work in the X Window System, and on the console when gpm is running.
+unset mouse
+
+# Don’t wrap text at all.
+unset nowrap
+
+# Interpret the numeric keypad keys so that they all work properly. You should only need to use this option if they don’t, as mouse support won’t work properly with this option enabled.
+unset rebindkeypad
+
+# Use smooth scrolling by default.
+set smooth
+
+# Enable soft line wrapping for easier viewing of very long lones.
+set softwrap
+
+# Enable soft line wrapping for easier viewing of very long lones.
+set softwrap
+
+
+
+include "/usr/share/nano/apacheconf.nanorc"
+include "/usr/share/nano/arduino.nanorc"
+include "/usr/share/nano/asciidoc.nanorc"
+include "/usr/share/nano/asm.nanorc"
+include "/usr/share/nano/awk.nanorc"
+include "/usr/share/nano/c.nanorc"
+include "/usr/share/nano/clojure.nanorc"
+include "/usr/share/nano/cmake.nanorc"
+include "/usr/share/nano/coffeescript.nanorc"
+include "/usr/share/nano/colortest.nanorc"
+include "/usr/share/nano/conf.nanorc"
+include "/usr/share/nano/csharp.nanorc"
+include "/usr/share/nano/css.nanorc"
+include "/usr/share/nano/cython.nanorc"
+include "/usr/share/nano/dot.nanorc"
+include "/usr/share/nano/dotenv.nanorc"
+include "/usr/share/nano/email.nanorc"
+include "/usr/share/nano/Dockerfile.nanorc"
+include "/usr/share/nano/fish.nanorc"
+include "/usr/share/nano/fortran.nanorc"
+include "/usr/share/nano/gentoo.nanorc"
+include "/usr/share/nano/git.nanorc"
+include "/usr/share/nano/gitcommit.nanorc"
+include "/usr/share/nano/glsl.nanorc"
+include "/usr/share/nano/go.nanorc"
+include "/usr/share/nano/groff.nanorc"
+include "/usr/share/nano/haml.nanorc"
+include "/usr/share/nano/haskell.nanorc"
+include "/usr/share/nano/html.nanorc"
+include "/usr/share/nano/html.j2.nanorc"
+include "/usr/share/nano/ical.nanorc"
+include "/usr/share/nano/ini.nanorc"
+include "/usr/share/nano/inputrc.nanorc"
+include "/usr/share/nano/java.nanorc"
+include "/usr/share/nano/javascript.nanorc"
+include "/usr/share/nano/js.nanorc"
+include "/usr/share/nano/json.nanorc"
+include "/usr/share/nano/keymap.nanorc"
+include "/usr/share/nano/kickstart.nanorc"
+include "/usr/share/nano/ledger.nanorc"
+include "/usr/share/nano/lisp.nanorc"
+include "/usr/share/nano/lua.nanorc"
+include "/usr/share/nano/makefile.nanorc"
+include "/usr/share/nano/man.nanorc"
+include "/usr/share/nano/markdown.nanorc"
+include "/usr/share/nano/mpdconf.nanorc"
+include "/usr/share/nano/mutt.nanorc"
+include "/usr/share/nano/nanorc.nanorc"
+include "/usr/share/nano/nginx.nanorc"
+include "/usr/share/nano/ocaml.nanorc"
+include "/usr/share/nano/patch.nanorc"
+include "/usr/share/nano/peg.nanorc"
+include "/usr/share/nano/perl.nanorc"
+include "/usr/share/nano/perl6.nanorc"
+include "/usr/share/nano/php.nanorc"
+include "/usr/share/nano/pkg-config.nanorc"
+include "/usr/share/nano/pkgbuild.nanorc"
+include "/usr/share/nano/po.nanorc"
+include "/usr/share/nano/pov.nanorc"
+include "/usr/share/nano/privoxy.nanorc"
+include "/usr/share/nano/puppet.nanorc"
+include "/usr/share/nano/python.nanorc"
+include "/usr/share/nano/reST.nanorc"
+include "/usr/share/nano/rpmspec.nanorc"
+include "/usr/share/nano/ruby.nanorc"
+include "/usr/share/nano/rust.nanorc"
+include "/usr/share/nano/scala.nanorc"
+include "/usr/share/nano/sed.nanorc"
+include "/usr/share/nano/sh.nanorc"
+include "/usr/share/nano/sls.nanorc"
+include "/usr/share/nano/sql.nanorc"
+include "/usr/share/nano/svn.nanorc"
+include "/usr/share/nano/swift.nanorc"
+include "/usr/share/nano/systemd.nanorc"
+include "/usr/share/nano/tcl.nanorc"
+include "/usr/share/nano/tex.nanorc"
+include "/usr/share/nano/vala.nanorc"
+include "/usr/share/nano/verilog.nanorc"
+include "/usr/share/nano/vi.nanorc"
+include "/usr/share/nano/xml.nanorc"
+include "/usr/share/nano/xresources.nanorc"
+include "/usr/share/nano/yaml.nanorc"
+include "/usr/share/nano/yum.nanorc"
+include "/usr/share/nano/zsh.nanorc"
