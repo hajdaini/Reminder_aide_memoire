@@ -16,9 +16,10 @@ make install
 ### Utilisation :
 
 - Renommer le fichier de config **nanorc** en **.nanorc** et le mettre dans <i>~/</i> 
-- Les fichiers de coloration syntaxique **nano.zip** à dézipper et à mettre dans <i>/usr/share/nano/</i>
+- Dezipper et deplacer les fichiers de coloration syntaxique de **nano.zip** dans <i>/urs/share/nano/</i> 
 
 #### Inspiration et Doc :
+
 - Fichier de config : https://manpages.debian.org/unstable/nano/nanorc.5.en.html 
 - Coloration syntaxique : https://github.com/scopatz/nanorc 
  
