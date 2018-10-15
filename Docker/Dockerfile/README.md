@@ -1,3 +1,5 @@
+# Exemple
+
 ```Dockerfile
 FROM debian:stable-slim
 
@@ -33,6 +35,7 @@ WORKDIR  /etc/apache
 ENTRYPOINT ["/usr/sbin/apache2ctl, "-D",]
 CMD ["FOREGROUND"] # on peut mettre les arguments d'ENTRYPOINT dans CMD comme ici
 ```
+# Définitions
 
 - **FROM :** Permet de définir depuis quelle base l'image va être créée
 - **MAINTAINER :** Indique la personne qui a créé ou maintient ce Dockerfile
@@ -48,7 +51,7 @@ CMD ["FOREGROUND"] # on peut mettre les arguments d'ENTRYPOINT dans CMD comme ic
 - **VOLUMES :** Permet de créer un point de montage qui permettra de persister les données
 - **USER :** désigne quel utilisateur lancera les prochaines instructions RUN, CMD ou ENTRYPOINT 
 
-## Création d’image depuis un Dockerfile :
+# Création d’image depuis un Dockerfile :
 ```
 root@docker:~# docker build -t <IMAGE_NAME> .
 ```
