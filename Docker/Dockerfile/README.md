@@ -23,11 +23,11 @@ RUN apt-get update && \
 
 ADD index.html /var/www/html
 
-# Si le volume ne map nulle part alors utiliser la commande docker inspect <DOCKER_CONTAINER>
+# Si aucun mappage n'est spécifi alors il faut utiliser la commande docker inspect <DOCKER_CONTAINER> pour connaitre vers ou le volume pointe
 VOLUME /local/path:/container_path/data
 
 EXPOSE 80:8080 # on peut choisir de mapper un port
-EXPOSE 443 # ou de ne pas mapper un port
+EXPOSE 443 # ou de ne pas mapper un port :)
 
 # La prochaine commande utilisera ce répertoire de travail.
 WORKDIR  /etc/apache
