@@ -1,3 +1,4 @@
+# Base 
 **Constante :**
 ```js
 const PI = 3.14159265
@@ -19,7 +20,7 @@ console.log(1 == '1') // true
 console.log(1 === '1') // false
 ```
 
-#Foreach
+# Foreach
 ```js
 let names = ['Hatim', 'Alex', 'Hamza', 'Mathilde']
 
@@ -36,12 +37,12 @@ let test = function (name="Hamza") {
     console.log(name)
 }
 
-//fonction seul
+//fonction seule
 function name(){
     // qlq chose
 }
 
-// arrow fonction peut tenir sur 1 seul ligne
+// arrow fonction peut tenir sur 1 seule ligne
 let getName = (name) => "Your name is " + name
 ```
 
