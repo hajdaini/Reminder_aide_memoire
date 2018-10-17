@@ -77,9 +77,11 @@ nano /etc/apache2/sites-available
 a2ensite monsite.conf
 ```
 
-
-
-
+## Vérification de synthax :
+```
+apache2ctl configtest
+service apache2 reload
+```
 
 ## <Directory> </Directory>
 
@@ -119,12 +121,14 @@ service apache2 restart
 
 # Annexe :
 
-- **Variables**
-Le fichier des variables fichier /etc/apache2/envvars  sous la forme ${Nom_variable}
+- **Variables** : Le fichier des variables fichier /etc/apache2/envvars  sous la forme ${Nom_variable}
 
-- **Vérification de synthax**
-apache2ctl configtest
-service apache2 reload
 
-- **Suite**
-https://buzut.fr/configuration-dun-serveur-linux-apache2/#logs
+- **Rotation des logs**
+Il est important de mettre un système de rotation des logs avec une conservation de temps définie.
+```
+nano /etc/logrotate.d/apache2
+rotate 52     #ICI CHAQUE 52 SEMAINES
+```
+
+- **Suite** : https://buzut.fr/configuration-dun-serveur-linux-apache2/#logs
