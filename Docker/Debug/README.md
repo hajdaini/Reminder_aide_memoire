@@ -1,6 +1,6 @@
 # Debug
 
-- **Avoir des informations sur un conteneur ou une image : :**
+- **Avoir des informations sur un conteneur ou une image :**
 ```
 root@docker:~# docker inspect <conteneurID> /<imageID> 
 ```
