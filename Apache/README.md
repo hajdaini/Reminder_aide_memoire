@@ -24,8 +24,9 @@ ping monsite.dev
 
 ## Config
 
-Apache possède deux répertoires dans /etc/apache2/ dans lesquels on place nos VHosts : sites-available et sites-enabled. Lorsque tout est prêt, il suffit de faire un lien symbolique depuis sites-available vers sites-enabled. Apache fournit même une commande spécialement à cet effet : 
-
+```
+nano /etc/apache2/sites-available
+```
 - **a2ensite** : activer un vhost
 - **a2dissite** : désactiver un vhost
 
