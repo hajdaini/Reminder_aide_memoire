@@ -3,7 +3,7 @@
 # Les VirtualHosts
 
 ## Architecture 
-
+```
 /var/www/
 |-- logs/
 |   |-- monsite_error.log
@@ -14,7 +14,7 @@
 |   |-- index.php
 |
 |
-
+```
 ## hosts 
 
 Modification du fichier hosts
