@@ -68,6 +68,13 @@ nano /etc/apache2/sites-available
 </VirtualHost>
 ```
 
+### Vérification de synthax :
+```
+apache2ctl configtest
+service apache2 reload
+```
+
+
 ### Activer ou desactiver un vhost
 
 - **a2ensite** : activer un vhost
@@ -75,12 +82,6 @@ nano /etc/apache2/sites-available
 
 ```
 a2ensite monsite.conf
-```
-
-## Vérification de synthax :
-```
-apache2ctl configtest
-service apache2 reload
 ```
 
 ## <Directory> </Directory>
