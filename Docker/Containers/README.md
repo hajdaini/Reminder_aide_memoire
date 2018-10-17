@@ -59,7 +59,7 @@ root@docker:~# docker commit <conteneurID> <imageNAME>
 
 # Les Mappages:
 
-### Les ports
+## Les ports
 
 - **Mapper le port 80 du conteneur en port 8080 :**
 ```
@@ -67,7 +67,7 @@ root@docker:~# docker run --name apache_kinos -d -p 8080:80 httpd
 -d : Exécute le conteneur en arrière-plan et imprimer l'ID du conteneur
 ```
 
-### Les volumes
+## Les volumes
 
 Les données dans les containeurs sont éphémères, une des solutions serait de mapper un dossier(volume) d’un conteneur vers un dossier(volume) de notre machine local (voir un SAN)
 ```
