@@ -25,7 +25,8 @@ ping monsite.dev
 ## Config
 
 ```
-nano /etc/apache2/sites-available
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/monsite.conf
+nano /etc/apache2/sites-available/monsite.conf
 ```
 
 ```apache
