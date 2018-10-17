@@ -78,14 +78,15 @@ Sur mon dossier en local /data j’ai un fichier index.html et chaque changement
 
 
 ## Les links :
-Permet de lier plusieurs conteneurs entre eux, ici par exemple le linkage entre wordpress + mysql.
+
+Permet de lier plusieurs conteneurs entre eux, ici par exemple on va lier le conteneur mysql avec wordpress
 
 - **Création du conteneur mysql :**
 ```
 root@docker:~# docker run --name db -d -e MYSQL_ROOT_PASSWORD=password -d mysql
 ```
 
-- **Création du conteneur wordpress + linkage :**
+- **Création du conteneur wordpress + liaison :**
 ```
 root@docker:~# docker run --name <conteneurNAME> --link db db -p 8080:80 -d wordpress
 --link : Ajouter un lien à un autre conteneur
