@@ -27,8 +27,6 @@ ping monsite.dev
 ```
 nano /etc/apache2/sites-available
 ```
-- **a2ensite** : activer un vhost
-- **a2dissite** : désactiver un vhost
 
 ```apache
 # Apache doit écouter sur le port 80 pour le http
@@ -69,6 +67,19 @@ nano /etc/apache2/sites-available
     </Directory>
 </VirtualHost>
 ```
+
+### Activer ou desactiver un vhost
+
+- **a2ensite** : activer un vhost
+- **a2dissite** : désactiver un vhost
+
+```
+a2ensite monsite.conf
+```
+
+
+
+
 
 ## <Directory> </Directory>
 
