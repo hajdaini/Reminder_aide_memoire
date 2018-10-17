@@ -9,7 +9,7 @@ root@docker:~# docker  run -ti debian
 --rm : Supprime le conteneur après l’avoir quitter
 ```
 
-- **Visualiser des conteneurs :**
+- **Visualiser les conteneurs :**
 ```
 root@docker:~# docker ps -a
 -a : afficher tous les conteneurs
@@ -25,7 +25,7 @@ Ctrl + P + Q
 root@docker:~# docker exec <conteneurID>  /bin/bash -c 'ls /var/www/html'
 ```
 
-- **Astuce se connecter sur le terminal :**
+- **Astuce pour se connecter en permanence sur le terminal d'un conteneur:**
 ```
 root@docker:~# docker exec -ti <conteneurID>  /bin/bash 
 ```
