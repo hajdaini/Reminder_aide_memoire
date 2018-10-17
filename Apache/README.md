@@ -1,5 +1,3 @@
-# Debug
-
 # Les VirtualHosts
 
 ## Architecture 
