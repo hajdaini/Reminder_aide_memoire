@@ -48,8 +48,8 @@ nano /etc/apache2/sites-available/monsite.conf
 
     # logs d'erreur
 	ErrorLog /var/www/logs/monsite_error.log
-    # logs de connexion
-	CustomLog /var/www/logs/monsite_access.log
+    # logs de connexion (le common veut dire qu'on utilise le regex d'heure standard pour les logs)
+	CustomLog /var/www/logs/monsite_access.log common
 
     # ces règles s'appliquent à tous le dossier
     <Directory /var/www/monsite/>
