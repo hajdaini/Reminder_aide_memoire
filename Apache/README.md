@@ -15,12 +15,15 @@
 ```
 ## hosts 
 
-Modification du fichier hosts
+Il faut modifier le fichier hosts sur la machine cliente (celle qui va visiter le site web), ou sinon le faire directement sur le serveur DNS (notre box par exemple)
+
+- fichier hosts
 ```
-nano gedit /etc/hosts
 # Ajouter : <IP> monsite.dev www.monsite.dev
 ping monsite.dev
 ```
+- ou Serveur DNS
+<img src="dns.jpg" />
 
 ## Config
 
@@ -72,7 +75,6 @@ nano /etc/apache2/sites-available/monsite.conf
 ### Vérification de synthax :
 ```
 apache2ctl configtest
-service apache2 reload
 ```
 
 
@@ -83,6 +85,7 @@ service apache2 reload
 
 ```
 a2ensite monsite.conf
+service apache2 reload
 ```
 
 ## <Directory> </Directory>
