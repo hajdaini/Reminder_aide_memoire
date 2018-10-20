@@ -66,6 +66,8 @@ docker push localhost:5000/debian
 ```
 curl localhost:5000/v2/_catalog
 ```
+***Output :*** {"repositories":["debian"]}
+
 - **lister les images dans le registry :**
 ```
 curl localhost:5000/v2/debian/tags/list
