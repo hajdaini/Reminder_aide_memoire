@@ -45,7 +45,7 @@ CMD ["FOREGROUND"] # on peut mettre les arguments d'ENTRYPOINT dans CMD comme ic
 - **COPY :** Permet de copier des fichiers depuis notre machine vers le conteneur
 - **ADD :** Même chose que COPY mais on peut utiliser des liens ou des archives (si le format est reconnu sera décompressé à la volée) 
 - **EXPOSE :** Permet d'exposer un port du container vers l'extérieur
-- **CMD :** Détermine la commande qui sera exécutée lorsque le container démarrera cette clé est unique et s'il y en a plusieurs seule la dernière sera utilisée. Cette option peut être surchargé par la commande ***docker run***
+- **CMD :** Détermine la commande qui sera exécutée lorsque le container démarrera cette clé est unique et s'il y en a plusieurs seule la dernière sera utilisée. Cette option peut être surchargé à la fin de la commande ***docker run***
 - **ENTRYPOINT :** Permet d'ajouter une commande qui sera exécutée lors du démarrage du container. Contrairement à CMD ENTRYPOINT ne peut pas être surchargé par la commande ***docker run***. Par contre les arguments passés lors de la commande ***docker run*** seront utilisés en arguments à la commande spécifiée dans l’instruction ENTRYPOINT
 - **WORKDIR :** Définis le répertoire de travail qui sera utilisé pour le lancement des commandes ENTRYPOINT et/ou CMD et sera aussi le dossier courant quand le conteneur démarrera
 - **VOLUMES :** Permet de créer un point de montage qui permettra de persister les données
