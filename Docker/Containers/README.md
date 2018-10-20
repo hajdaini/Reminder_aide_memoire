@@ -58,7 +58,7 @@ root@docker:~# docker unpause <conteneurID>
 root@docker:~# docker commit <conteneurID> <imageNAME>
 ```
 
-- **Voir les STDOUT d'un conteneur (STDOUT d'un terminal de conteneur par exemple)**
+- **Voir les sorties/erreurs d'un conteneur (STDOUT d'un terminal de conteneur par exemple)**
 ```
 root@docker:~# docker logs <conteneurID>
 -f : suivre en permanence les logs de conteneurs (correspond à tail -f)
