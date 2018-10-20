@@ -3,12 +3,10 @@
 ## Definition
 
 Un registre est un système de stockage contenant des images Docker nommées, disponibles dans différentes versions étiquetées.
-
 Différents registry proposé par Docker sont disponible :
 
 - Docker hub (Par Défaut)
     - Registry officiel hebergé par Docker
-    - Possible de créer un compte ou une organisation et d'heberger ses propres images
 - Docker Registry
     - Solution Open Source
 - Docker Trsuted Registry
@@ -22,7 +20,7 @@ Il existe aussi d'autre providers hors Docker comme :
 - etc ...
 
 
-## Docker hub
+### Docker hub
 
 **Installer une image depuis le docker hub :**
 ```
@@ -38,7 +36,7 @@ docker login
 docker push <USER>/<IMAGE_NAME>:[VERSION]
 ```
 
-## Docker Registry
+### Docker Registry
 Il faut une connexion TLS pour communiqué avec notre Docker Registry (sauf si on est en localhost)
 
 Pour la partie TLS (je vais surement créer une Dockerfile) : https://www.youtube.com/watch?v=SEpR35HZ_hQ&t=498s
@@ -74,3 +72,8 @@ curl localhost:5000/v2/debian/tags/list
 Output : {"name":"debian","tags":["latest"]}
 ```
 
+### Docker Trusted Registry
+**Avantage :**
+- Support commercial
+- Intégration LDAP/AD
+- Selection du backend de stockage (S3, Azure, Google Cloud Storage, etc ...)
