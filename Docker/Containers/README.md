@@ -1,6 +1,6 @@
 # Les conteneurs
 
-# Definition
+## Definition
 
 Un conteneur est un processus isolé qui a sa propre vision du système il est construit à partir de namespaces (ce qu'il va voir) et cgroups (ce qu'il va utiliser en terme de ressources)
 
