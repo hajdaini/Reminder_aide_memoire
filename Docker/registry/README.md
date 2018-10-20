@@ -20,7 +20,7 @@ Il existe aussi d'autre providers hors Docker comme :
 - etc ...
 
 
-### Docker hub
+## Docker hub
 
 **Installer une image depuis le docker hub :**
 ```
@@ -36,7 +36,7 @@ docker login
 docker push <USER>/<IMAGE_NAME>:[VERSION]
 ```
 
-### Docker Registry
+## Docker Registry
 Il faut une connexion TLS pour communiqué avec notre Docker Registry (sauf si on est en localhost)
 
 Pour la partie TLS (je vais surement créer une Dockerfile) : https://www.youtube.com/watch?v=SEpR35HZ_hQ&t=498s
@@ -72,8 +72,10 @@ curl localhost:5000/v2/debian/tags/list
 Output : {"name":"debian","tags":["latest"]}
 ```
 
-### Docker Trusted Registry
+## Docker Trusted Registry
 **Avantage :**
 - Support commercial
 - Intégration LDAP/AD
 - Selection du backend de stockage (S3, Azure, Google Cloud Storage, etc ...)
+- Scanning d'image
+- etc ...
