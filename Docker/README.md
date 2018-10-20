@@ -11,3 +11,5 @@ Les namespaces permettent de créer des groupes de processus isolés du reste de
 - **IPC :** isole les coummunications inter processus
 - **USER :** mapping des UID/GID entre l'hôte et le conteneur (donne un accés root dans le conteneur sans qu'il soit root sur la machine hôte)
 **CGROUPS :** fonctionnalité du noyau Linux pour limiter, compter et isoler l'utilisation des ressources (processeur, mémoire, utilisation disque, etc.) d'un processus
+
+script pour les informations sur les namespaces d'un conteneur : https://github.com/Hajdaini/Docker/tree/master/Scripts/Bash/namespace
