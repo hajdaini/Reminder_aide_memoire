@@ -4,18 +4,19 @@
 ```
 root@docker:~# docker  run -ti debian
 -i : interagir avec le conteneur
--t : garder le même terminal ouvert
+-t : interagir avec le conteneur
+-d : Lancer le conteneur en background
 --name : nom du conteneur
---rm : Supprime le conteneur après l’avoir quitter
+--rm : Supprime automatiquement le conteneur après l’avoir quitté
 ```
 
 - **Visualiser les conteneurs :**
 ```
 root@docker:~# docker ps -a
--a : afficher tous les conteneurs
+-a : afficher tous les conteneurs peu importe leur état
 ```
 
-- **Raccourcis pour quitter un conteneur sans le détruire :**
+- **Raccourcis pour quitter un conteneur sans le détruire (état EXIT) :**
 ```
 Ctrl + P + Q
 ```
@@ -55,6 +56,13 @@ root@docker:~# docker unpause <conteneurID>
 - **Commiter un conteneur (passer d’un conteneur à une image docker) :**
 ```
 root@docker:~# docker commit <conteneurID> <imageNAME>
+```
+
+- **Voir les STDOUT d'un conteneur (STDOUT d'un terminal de conteneur par exemple)**
+```
+root@docker:~# docker logs <conteneurID>
+-f : suivre en permanence les logs de conteneurs (correspond à tail -f)
+-t : affiche date et l'heure de reception
 ```
 
 # Les Mappages:
