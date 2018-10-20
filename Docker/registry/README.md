@@ -70,4 +70,4 @@ curl localhost:5000/v2/_catalog
 ```
 curl localhost:5000/v2/debian/tags/list
 ```
-***Output :***{"name":"debian","tags":["latest"]}
+***Output :*** {"name":"debian","tags":["latest"]}
