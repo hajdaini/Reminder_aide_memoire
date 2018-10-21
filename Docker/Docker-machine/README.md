@@ -49,4 +49,4 @@ root@docker:~#  docker-machine scp <path> <hostNAME>:<path>
 root@docker:~#  docker-machine scp <hostNAME>:<path> <path>
 ```
 
-Une fois qu’on est connecté sur le hôte docker on peut alors manipuler des images et des conteneurs.
+Une fois qu’on est connecté sur l'hôte docker on peut alors manipuler des images et des conteneurs.
