@@ -4,7 +4,53 @@
 
 Pour orchestrer nos conteneurs nous allons utiliser un outil fournit par docker : docker compose. Cet outil permet de configurer vos conteneurs via un fichier yml. Ce qui permet d'éviter d'avoir à taper des lignes de commandes très longues, mais aussi un partage plus aisé d'une configuration basée sur plusieurs conteneurs
 
-## Example
+## Example 1
+
+Je crée un volume nginx-volume
+```
+[root@docker _data]# docker volume create nginx-volume
+```
+
+Je fais en sorte que un volume mon volume pointe vers nginx-volume avec l'utilitaire ***external***
+```yaml
+version: '3.3'
+
+services:
+  web:
+    container_name: nginx_test
+    image: nginx
+    ports:
+      - 8000:80
+    volumes: 
+      - web-site:/usr/share/nginx/html
+volumes: 
+  web-site:
+    external:
+      name: nginx-volume
+```
+
+```
+[root@docker test]# docker volume ls
+DRIVER              VOLUME NAME
+local               nginx-volume
+```
+
+```
+[root@docker test]# docker volume inspect nginx-volume
+[
+    {
+        "CreatedAt": "2018-10-21T15:44:41+02:00",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/nginx-volume/_data",
+        "Name": "nginx-volume",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+```
+
+## Example 2
 
 ```yaml
 version: '3.3'
