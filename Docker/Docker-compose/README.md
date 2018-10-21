@@ -1,9 +1,10 @@
 # Docker-compose
 
-# Definition
+## Definition
 
 Pour orchestrer nos conteneurs nous allons utiliser un outil fournit par docker : docker compose. Cet outil permet de configurer vos conteneurs via un fichier yml. Ce qui permet d'éviter d'avoir à taper des lignes de commandes très longues, mais aussi un partage plus aisé d'une configuration basée sur plusieurs conteneurs
 
+## Example
 
 ```
 version: '3.3'
