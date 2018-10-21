@@ -6,7 +6,7 @@ Pour orchestrer nos conteneurs nous allons utiliser un outil fournit par docker 
 
 ## Example
 
-```
+```yaml
 version: '3.3'
 
 services:
