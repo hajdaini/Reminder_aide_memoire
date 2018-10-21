@@ -1,15 +1,15 @@
 # Docker-machine
 
-## Definition
+## Definition :
 
 Docker Machine est un outil qui vous permet d'installer Docker Engine sur des hôtes virtuels et de gérer les hôtes à l'aide de commandes docker-machine. 
 Vous pouvez l'utiliser pour créer des hôtes avec le Docker Engine sur votre ordinateur Mac ou Windows local, sur le réseau de votre entreprise, dans votre centre de données ou sur des fournisseurs de cloud, tels qu'Azure, AWS ou Digital Ocean.
 
-## Commandes
+## Commandes :
 
 - **Condition pour créer une docker-Machine :**
     - Activer la virtualisation sur son CPU
-    - La machine sur laquelle on a installé le docker avoir au préalable VirtualBox de préinstallé (si c'est le driver est virtualbox) même chose pour Hyper-V VMWare etc. …
+    - La machine sur laquelle on a installé le docker avoir au préalable Virtualbox de préinstallé (si c'est le driver est Virtualbox) même chose pour Hyper-V VMWare etc...
 
 Un driver est la plateforme sur le quel on va créer nos machines docker (exemple VirtualBox), tous les drivers sont disponibles ici : https://docs.docker.com/machine/drivers/ 
 - **Création d’un hôte docker pour un driver de type virtualbox :**
