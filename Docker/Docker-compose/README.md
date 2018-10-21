@@ -35,6 +35,7 @@ DRIVER              VOLUME NAME
 local               nginx-volume
 ```
 
+On cherche alors l'emplacement de notre volume (Mountpoint)
 ```
 [root@docker test]# docker volume inspect nginx-volume
 [
@@ -49,6 +50,12 @@ local               nginx-volume
     }
 ]
 ```
+
+Bim ;)
+```
+[root@docker test]# cd /var/lib/docker/volumes/nginx-volume/_data
+```
+
 
 ## Example 2
 
