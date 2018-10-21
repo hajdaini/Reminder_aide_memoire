@@ -48,7 +48,7 @@ volumes:
 
 - **restart :** la variable restart a pour valeur par défaut ‘no’. Elle accepte également ‘on-failure’, ‘unless-stopped’ et ‘always’. Si vous êtes sur une installation locale je recommande de commenter cette ligne (ou la supprimer) pour éviter que les conteneurs ne démarrent au démarrage de votre PC.
 
-- **volumes :** indique où les données du dossier en question seront stockées. Ici le dossier du conteneur situé dans /var/lib/mysql sera sauvegardé dans le dossier utilisateur db_data
+- **volumes :** va créer un volume db_data (on peut faire le voir avec la commande ***docker volume ls*** et avoir plus d'information avec ***docker volume inspect <VOLUME_NAME>***
 
 - **environnement :** ces variables dépendent de l’image utilisée. Ici on utilise celle de MYSQL
 
