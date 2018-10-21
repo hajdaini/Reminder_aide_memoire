@@ -48,12 +48,18 @@ volumes:
 
 - **restart :** la variable restart a pour valeur par défaut ‘no’. Elle accepte également ‘on-failure’, ‘unless-stopped’ et ‘always’. Si vous êtes sur une installation locale je recommande de commenter cette ligne (ou la supprimer) pour éviter que les conteneurs ne démarrent au démarrage de votre PC.
 
-- **volumes :** indique où les données du dossier en question seront stockées. Ici le dossier du conteneur situé dans /var/lib/mysql sera sauvegardé dans le dossier utilisateur /home/julien/MonSite/db_data
+- **volumes :** indique où les données du dossier en question seront stockées. Ici le dossier du conteneur situé dans /var/lib/mysql sera sauvegardé dans le dossier utilisateur db_data
 
-- **environnement :** ces variables dépendent de l’image utilisée. Ici on utilise celles de MYSQL
+- **environnement :** ces variables dépendent de l’image utilisée. Ici on utilise celle de MYSQL
 
 
 ### wordpress
 - **depends_on :** cette ligne permet d’indiquer à Docker qu’il doit lier le conteneur ‘wordpress’ au conteneur ‘db’
 
 - **environnement :** notez ici surtout le WORDPRESS_DB_HOST qui sert à faire pointer le conteneur wordpress vers le bon conteneur de base de donnée, sur le bon port.
+
+
+## Run
+```
+docker-compose up -d
+```
