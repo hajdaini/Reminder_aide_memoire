@@ -16,7 +16,7 @@ make install
 ### Utilisation :
 
 - Renommer le fichier de config **nanorc** en **.nanorc** et le mettre dans <i>~/</i> 
-- Dezipper et deplacer les fichiers de coloration syntaxique de **nano.zip** dans <i>/urs/share/nano/</i> 
+- Dezipper et deplacer les fichiers de coloration syntaxique de **nano.zip** dans <i>/usr/share/nano/</i> 
 
 ### Inspiration et Doc :
 
