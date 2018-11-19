@@ -5,8 +5,8 @@ Lien de téléchargement de nano : https://www.nano-editor.org/download.php
 ``` 
 wget http://lien/ nano-x.y.z.tar.gz 
 tar -zxvf nano-x.y.z.tar.gz
-yum install gcc
-yum install ncurses-devel
+yum install gcc ou apt-get install gcc
+yum install ncurses-devel ou apt-get install libc-dev
 cd nano-x.y.z/
 ./configure --prefix=/usr
 make
