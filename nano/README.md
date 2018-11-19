@@ -28,7 +28,7 @@ make
 make install
 ``` 
 
-### Utilisation :
+### Config :
 
 - Renommer le fichier de config **nanorc** en **.nanorc** et le mettre dans <i>~/</i>
 ```
@@ -42,6 +42,17 @@ wget <lien>
 unzip nano.zip
 mv * ..
 ```
+### Problème :
+C'est possible d'avoir l'erreur suivante : 
+```
+root@vps615208:/home/debian# nano test.txt
+-bash: /bin/nano: No such file or directory
+```
+Il suffit de recopier le fichier les binaires de nano 
+```
+cp /usr/bin/nano /bin/
+```
+
 ### Inspiration et Doc :
 
 - Fichier de config : https://manpages.debian.org/unstable/nano/nanorc.5.en.html 
