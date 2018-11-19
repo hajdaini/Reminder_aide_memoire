@@ -10,7 +10,7 @@ ENV LANG="en_US.UTF-8"
 
 LABEL maintainer="NOM Prenom <test@gmail.com>" \
       version="$VERSION-debian-testing" \
-      description="ROS2 for java" \
+      description="blabla" \
       # il y'a d'autres option pour le maintainer
 
 RUN apt-get update && \
