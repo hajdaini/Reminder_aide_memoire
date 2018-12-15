@@ -1,4 +1,4 @@
-set linenumbers
+unset linenumbers
 set tabsize 4
 set showcursor
 
