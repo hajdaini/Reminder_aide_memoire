@@ -54,7 +54,7 @@ Il faut analyser la bdd et vérifier les differences (si la table existe sur la 
 ```shell
 php bin/console make:migration
 
-``
+```
 et cree donc un fichier dans  de migration ***"./src/Migration/version.php"*** ou on peut trouver le la requette qu'il va éxécuter
 
 on peut éxécuter notre code SQL généré par symfony avec à la commande suivate :
