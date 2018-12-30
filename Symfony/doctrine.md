@@ -7,54 +7,57 @@
 
 ## Configuration
 
+
+### Configuration de la database
+
 - Commencer par modifier la **varible DATABASE_URL** dans fichier ***.env***
 
 ```
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/Blog
 ```
 
-- Création de la database Blog
+- Configuration de la database Blog
 
 ```shell
 > php bin/console doctrine:database:create
 ```
 
-- Création de l'entity (table) Article
+### Configuration de la table
 
-- Création : 
-
-    ```shell
-    php bin/console make:entity
-    ```
+- Configuration de l'entity (table) Article
     
-    - Il nous demande ensuite le nom de l'entity  : 
-    ```shell
-    Class name of the entity to create or update (e.g. VitoriousGname) :
-    > Article
-    ```
+```shell
+> php bin/console make:entity
+```
 
-    - Demande ensuite le nom et le types des colonnes  : 
-    ```shell
-    New property name (press <return> to stop addigs fields) :
-    > title
+- Il nous demande ensuite le nom de l'entity  : 
+```shell
+Class name of the entity to create or update (e.g. VitoriousGname) :
+> Article
+```
 
-    Field type (enter ? to see all types) [string] :
-    > <Enter>
+- Il nous demande ensuite le nom et type des colonnes de l'entity Article : 
 
-    Field length [255]:
-    > <Enter>
+```shell
+New property name (press <return> to stop addigs fields) :
+> title
 
-    Can this field be null in the database (nullable) (yes/no) [no]
-    > <Enter>
+Field type (enter ? to see all types) [string] :
+> <Enter>
 
-    ------------------------------------
-    Add another property? Enter the property name (or press <return> to stop adding fields)
-    > createdAt
-    Field type (enter ? to see all types) [datetime] :
-    > <Enter>
-    ```
+Field length [255]:
+> <Enter>
 
-Après ça il nous crée notre class avec toutes les nom de colonnes dans ***"./src/Entity/<TABLE_NAME>.php"*** avec des getter et des setter
+Can this field be null in the database (nullable) (yes/no) [no]
+> <Enter>
+
+Add another property? Enter the property name (or press <return> to stop adding fields)
+> createdAt
+Field type (enter ? to see all types) [datetime] :
+> <Enter>
+```
+
+Après la fin la commande ``php bin/console make:entity``, il crée des getters et setters de notre table dans le fichier ***"./src/Entity/<TABLE_NAME>.php"***
 
 **la database n'est pas encore crée** pour la créer il faut :
 
