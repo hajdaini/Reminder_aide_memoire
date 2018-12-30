@@ -78,7 +78,7 @@ php bin/console doctrine:migrations:migrate
 
 ### Simuler des volumes de données
 
-**Définition : ** Les fixtures permettent de charger un "faux" jeu de données dans une base de données pouvant être utilisée pour tester nos données. 
+**Définition :** Les fixtures permettent de charger un "faux" jeu de données dans une base de données pouvant être utilisée pour tester nos données. 
 
 - Création de notre fixtures :
 
