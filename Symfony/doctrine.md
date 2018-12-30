@@ -59,33 +59,35 @@ Field type (enter ? to see all types) [datetime] :
 
 Après la fin la commande ``php bin/console make:entity``, il crée des getters et setters de notre table dans le fichier ***"./src/Entity/<TABLE_NAME>.php"***
 
-**la database n'est pas encore crée** pour la créer il faut :
+### Création de notre database et table
 
-Il faut analyser la bdd et vérifier les differences (si la table existe sur la bdd par exemple) avec la commande :
+- Analyser la bdd et vérifier les differences (si la table existe déja sur la bdd par exemple) avec la commande :
 
 ```shell
 php bin/console make:migration
 
 ```
-et cree donc un fichier dans  de migration ***"./src/Migration/version.php"*** ou on peut trouver le la requette qu'il va éxécuter
 
-on peut éxécuter notre code SQL généré par symfony avec à la commande suivate :
+Si la commande se déroule bien alors il va nous créer nos lignes SQL dans le fichier ***"./src/Migration/version.php"***
+
+- On peut ainsi éxécuter nos lignes SQL générées par symfony avec à la commande suivante :
 
 ```shell
 php bin/console doctrine:migrations:migrate
 ```
 
+### Simuler des simuler des volumes de donnees
 
-Pour simuler des volumes de donnees :
+**Définition : ** Les fixtures permettent de charger un "faux" jeu de données dans une base de données pouvant être utilisée pour tester nos données. 
+
+- Création de notre fixtures :
 
 ```shell
 php bin/console make:fixtures
 > ArticleFixtures
 ```
 
-Il crée alors un fichier dans ***"./src/DataFixtures/ArticleFixtures.php"***
-
-le fichier ArticleFixtures.php ressemble à ça :
+Il va alors nous créer un fichier dans ***"./src/DataFixtures/ArticleFixtures.php"*** qui ressemble à ça 
 
 ```php
 // src/DataFixtures/AppFixtures.php
@@ -103,11 +105,11 @@ class AppFixtures extends Fixture
     {
         // create 20 s! Bam!
         for ($i = 0; $i < 20; $i++) {
-            $article = new Article();
-            $article->setTitle('Article '.$i);
-                    ->setContent("Contenu de l'article ".$i)
-                    ->setImage("http://placehold.it/35x150")
-                    ->setCreatedAt(new \Datetime()); // le "\" permet de dire que la classe Datetime appartient au namespace global de php
+            $article = new Article(); // instanciation  de notre entity Article
+            $article->setTitle('Article '.$i); // rajouter le nom à l'entity Article
+                    ->setContent("Contenu de l'article ".$i) // rajouter le contenu à l'entity Article
+                    ->setImage("http://placehold.it/35x150") // rajouter un lien d'image à l'entity Article
+                    ->setCreatedAt(new \Datetime()); // le "\" permet de dire à symfony que la classe Datetime appartient au namespace global de php
             
             $manager->persist($article); //ici les données sont prêtes à être exportées
         }
@@ -117,13 +119,13 @@ class AppFixtures extends Fixture
 }
 ```
 
-et on tape la commande suivante pour envoyer nos données (**ATTENTION CA SUPPRIMME LES ANCIENNES DONNEES** :
+- Envoyer nos données à notre database (**ATTENTION CA SUPPRIMME LES ANCIENNES DONNEES**) :
 
 ```shell
 php bin/console doctrine:fixtures:load
 ```
 
-## Exploitation des données:
+### Exploitation des données:
 
 
 ```php
