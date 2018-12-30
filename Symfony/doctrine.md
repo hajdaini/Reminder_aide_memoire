@@ -78,7 +78,9 @@ php bin/console doctrine:migrations:migrate
 
 ### Simuler des volumes de données
 
-**Définition :** Les fixtures permettent de charger un "faux" jeu de données dans une base de données pouvant être utilisée pour tester nos données. 
+
+- **Les fixtures:** permettent de charger un "faux" jeu de données dans une base de données pouvant être utilisée pour tester nos données.
+- **Faker :** Créer des données fakes (https://github.com/fzaninotto/Faker)
 
 - Création de notre fixtures :
 
@@ -103,12 +105,15 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+        // On configure dans quelles langues nous voulons nos données
+        $faker = Faker\Factory::create('fr_FR');
+        
         // create 20 s! Bam!
         for ($i = 0; $i < 20; $i++) {
             $article = new Article(); // instanciation  de notre entity Article
-            $article->setTitle('Article '.$i); // rajouter le nom à l'entity Article
-                    ->setContent("Contenu de l'article ".$i) // rajouter le contenu à l'entity Article
-                    ->setImage("http://placehold.it/35x150") // rajouter un lien d'image à l'entity Article
+            $article->setTitle($faker->title); // rajouter le nom à l'entity Article
+                    ->setContent($faker->text($maxNbChars = 200)) // rajouter le contenu à l'entity Article
+                    ->setImage($faker->imageUrl($width = 640, $height = 480)) // rajouter un lien d'image à l'entity Article
                     ->setCreatedAt(new \Datetime()); // le "\" permet de dire à symfony que la classe Datetime appartient au namespace global de php
             
             $manager->persist($article); //ici les données sont prêtes à être exportées
