@@ -127,6 +127,7 @@ php bin/console doctrine:fixtures:load
 
 ### Exploitation des données:
 
+- Notre Controller BlogController :
 
 ```php
 // src/DataFixtures/AppFixtures.php
@@ -179,7 +180,7 @@ class BlogController extends Controller
 ```
 
 
-Dans mon twig pour récupérer les articles :
+- Notre twig pour afficher tous les articles récupérées depuis la bdd
 
 ```html
 {% for article in articles %}
