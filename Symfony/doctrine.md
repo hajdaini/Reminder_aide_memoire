@@ -76,7 +76,7 @@ Si la commande se déroule bien alors il va nous créer nos lignes SQL dans le f
 php bin/console doctrine:migrations:migrate
 ```
 
-### Simuler des simuler des volumes de donnees
+### Simuler des volumes de données
 
 **Définition : ** Les fixtures permettent de charger un "faux" jeu de données dans une base de données pouvant être utilisée pour tester nos données. 
 
