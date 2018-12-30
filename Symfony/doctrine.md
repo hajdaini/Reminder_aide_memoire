@@ -1,30 +1,39 @@
 # Doctrine :
 
-- Entity => représente des tables 
-- Manager => Insertion/Maj/Suppression d'une ligne de la bdd
-- Repository : Selection d'une ligne de la bdd
+## Mots-clés
+- **Entity :** représente des tables 
+- **Manager :** Insertion/Maj/Suppression d'une ligne de la bdd
+- **Repository :** Selection d'une ligne de la bdd
 
-Modifier le fichier ***.env***
+## Configuration
 
-#### Créer la database de notre fichier .env
+- Commencer par modifier la **varible DATABASE_URL** dans fichier ***.env***
 
-```shell
-php bin/console doctrine:database:create
+```
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/Blog
 ```
 
-##### Créer une entity (table)
+- Création de la database Blog
+
+```shell
+> php bin/console doctrine:database:create
+```
+
+- Création de l'entity (table) Article
 
 - Création : 
+
     ```shell
     php bin/console make:entity
     ```
-- Demande ensuite le nom de l'entity  : 
+    
+    - Il nous demande ensuite le nom de l'entity  : 
     ```shell
     Class name of the entity to create or update (e.g. VitoriousGname) :
     > Article
     ```
 
-- Demande ensuite le nom et le types des colonnes  : 
+    - Demande ensuite le nom et le types des colonnes  : 
     ```shell
     New property name (press <return> to stop addigs fields) :
     > title
