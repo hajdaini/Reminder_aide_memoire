@@ -186,9 +186,9 @@ class BlogController extends Controller
 {% for article in articles %}
 <article>
     <h2> {{ article.title }} </h2>
-    <i>{{ article.createdAt | date('d/m/Y') }} à {{ article.createdAt | date('H:i') }}</i> <!-- pipe l'output avec un filter -->
+    <i>{{ article.createdAt | date('d/m/Y') }} à {{ article.createdAt | date('H:i') }}</i> <!-- on pipe l'output avec un filter -->
     <p>{{ article.content }}</p>
-    <a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-primary">
+    <a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-primary"> <!-- récupération by id (voir la fonction show() -->
         Lire la suite
     </a>
 </article>
