@@ -188,8 +188,7 @@ class BlogController extends Controller
     /**
     * @Route("/article/{id}", name="blog_show")
     */
-    public function show(ArticleRepository $repo, $id){
-        $article = $repo->find($id);
+    public function show(Article $article){
         return $this->render('blog/index.html.twig',[
             'article' => $article;
         ])
