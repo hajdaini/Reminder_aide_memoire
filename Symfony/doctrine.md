@@ -186,7 +186,7 @@ class BlogController extends Controller
 
     /* AUTRE FACON DE RECUPERER L'ARTICLE (Symfony saura seul comment récupérer l'article)
     /**
-    * @Route("/article/{id}", name="blog_show")
+    * @Route("/blog/{id}", name="blog_show")
     */
     public function show(Article $article){
         return $this->render('blog/index.html.twig',[
