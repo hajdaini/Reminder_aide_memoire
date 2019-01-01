@@ -143,15 +143,19 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
 use App\Entity\Article; // A IMPORTER
+use App\Repository\ArticleRepository; // A IMPORTER
+
 
 class BlogController extends Controller
 {
     /**
     * @Route("/blog", name="blog")
     */
-    public function index()
+    public function index(ArticleRepository $repo)
     {
-        $repo = $this->getDoctrine()->getRepository(Article::class);
+        /* $repo = $this->getDoctrine()->getRepository(Article::class); 
+            c'est une autre façon d'importer le repo de l'entity Article
+        */
 
          $article = $repo->find(
              12); //trouve moi l'article avec l'id 12
@@ -173,8 +177,18 @@ class BlogController extends Controller
     /**
     * @Route("/article/{id}", name="blog_show")
     */
-    public function show($id){
-        $repo = $this->getDoctrine()->getRepository(Article::class);
+    public function show(ArticleRepository $repo, $id){
+        $article = $repo->find($id);
+        return $this->render('blog/index.html.twig',[
+            'article' => $article;
+        ])
+    }
+
+    /* AUTRE FACON DE RECUPERER L'ARTICLE (Symfony saura seul comment récupérer l'article)
+    /**
+    * @Route("/article/{id}", name="blog_show")
+    */
+    public function show(ArticleRepository $repo, $id){
         $article = $repo->find($id);
         return $this->render('blog/index.html.twig',[
             'article' => $article;
