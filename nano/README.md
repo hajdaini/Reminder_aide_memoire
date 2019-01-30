@@ -40,7 +40,7 @@ cd /usr/share/nano/
 rm -f *.nanorc
 wget <lien>
 unzip nano.zip
-mv * ..
+cd nano && mv * ..
 ```
 ### Problème :
 C'est possible d'avoir l'erreur suivante : 
