@@ -14,3 +14,15 @@ extension=pdo_mysql
 ```sh
 composer create-project symfony/website-skeleton [PROJECT-NAME]
 ```
+
+4. install php webserver plugin :
+
+```sh
+composer require server --dev
+```
+
+4. run your php server :
+
+```sh
+php bin/console server:run
+```
