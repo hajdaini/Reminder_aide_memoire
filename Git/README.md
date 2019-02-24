@@ -44,14 +44,8 @@ git log
 __________
 ### Se positionner sur un commit :
 
-- Temporairement :
 ```
 git checkout <id_commit1>
-```
-
-- defenetivement :
-```
-git reset --hard  <id_commit1>
 ```
 Retourner au commit le plus récent :
 git checkout master
