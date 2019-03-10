@@ -12,11 +12,6 @@ else
 	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]' # set window title
 	PS1="$PS1"'\n'                 
 
-	PS1="$PS1"'\[\033[01;35m\]'      # magenta
-	PS1="$PS1"'ᕙ\tᕗ '		  # time
-
-
-
 	PS1="$PS1"'\[\033[01;31m\]'       # light red
 	PS1="$PS1"'\u'             # user
 	PS1="$PS1"'\[\033[37m\]'       # white
