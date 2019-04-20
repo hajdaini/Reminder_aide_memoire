@@ -25,7 +25,7 @@ __________
 Ajouter à l'INDEX :
 ```
 git add <file>
-git add *
+git add .
 ```
 
 Ajouter au HEAD :
