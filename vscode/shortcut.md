@@ -2,4 +2,4 @@ File > Preferences > Keyboard Shortcuts
 
 Toggle terminal
 
-![shortcut](https://link)
+![shortcut](./imgs/terminaltoggle.png)
