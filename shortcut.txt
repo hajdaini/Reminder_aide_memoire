@@ -1,0 +1,1 @@
+File > Preferences > Keyboard Shortcuts
