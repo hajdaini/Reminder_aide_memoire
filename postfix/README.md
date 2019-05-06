@@ -1,4 +1,6 @@
-# Local install
+# postfix config
+
+## Local install
 
 run the script and change the ${YOUR_HOSTNAME} ${YOUR_DOMAIN} only if : 
 
