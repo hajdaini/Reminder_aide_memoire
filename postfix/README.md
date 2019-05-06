@@ -5,7 +5,6 @@
 run the script and change the ${YOUR_HOSTNAME} ${YOUR_DOMAIN} only if : 
 
 - If you send mail to only localhost, set myhostname = localhost and mydomain = localdomain.
-
 - If you send mail to your domain, set your hostname to myhostname and your domain to mydomain. 
   This hostname and domain must be known with multiple machine (common /etc/hosts or DNS server).  
   Both mail sender machine and receiver machine needs this Postfix setting.
@@ -16,7 +15,8 @@ then test your email :
 echo "ceci est un test" | mail -s "Test" ajdaini.hatim@gmail.com
 ```
 
-Open your email provider and **verify your spams** 
+- Open your email provider and **verify your spams**
+- set up your email account to stop adding the sender to your spam emails
 
 ## Send mail to internet via Gmail
 
