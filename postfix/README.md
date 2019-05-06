@@ -16,7 +16,7 @@ then test your email :
 echo "ceci est un test" | mail -s "Test" ajdaini.hatim@gmail.com
 ```
 
-Open your email provided and **verify your spams** 
+Open your email provider and **verify your spams** 
 
 ## Send mail to internet via Gmail
 
