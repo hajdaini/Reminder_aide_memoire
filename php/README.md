@@ -15,7 +15,8 @@
 * 6. [Tableau](#Tableau)
 * 7. [Gestion des erreurs](#Gestiondeserreurs)
 * 8. [Lire et écrire dans un fichier](#Lireetcriredansunfichier)
-
+* 9. [Requette POST et GET](#RequettePOSTetGET)
+* 10. [Includre des fichiers](#Includredesfichiers)
 
 # PHP Basic cheat
 
@@ -215,3 +216,104 @@ try {
 ##  8. <a name='Lireetcriredansunfichier'></a>Lire et écrire dans un fichier
 
 Non disponible pour le moment
+
+##  9. <a name='RequettePOSTetGET'></a>Requette POST et GET
+
+index.php
+
+```php
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mon formulaire</title>
+</head>
+<body>
+    <form action="validation.php" method="post">
+        <label for="username">Nom</label>
+        <input type="text" id="username" name="username">
+        <input type="submit" value="Valider" name="valid_form">
+    </form> 
+
+    <br>
+    
+    <form action="validation.php" method="get">
+        <label for="search">Rechercher</label>
+        <input type="search" id="search" name="search">
+        <input type="submit" value="Rechercher">
+    </form>
+</body>
+</html>
+```
+
+validation.php
+
+```php
+<?php
+
+function getCleanData(string $element, bool $post) : string{
+    if($post){
+        if(isset($_POST[$element]) && !empty($_POST[$element])){
+            return htmlspecialchars($_POST[$element]);
+        }
+    }else{
+        if(isset($_GET[$element]) && !empty($_GET[$element])){
+            return htmlspecialchars($_GET[$element]);
+        }    
+    }
+    return "";
+}
+
+$username = getCleanData("username", true);
+$search = getCleanData("search", false);
+
+echo $username;
+echo $search;
+```
+
+##  10. <a name='Includredesfichiers'></a>Includre des fichiers
+
+La fonction require () est identique à include (), sauf qu'elle traite les erreurs différemment. 
+
+- include() : génère un avertissement lors d'une erreur et le script continue son exécution
+- require() : génère une erreur fatale et le script s'arrête
+
+
+require_once() est identique à require () sauf que PHP vérifie si le fichier a déjà été inclus et dans le cas échéant, elle ne l'inclut pas à nouveau.
+
+header.php
+
+```php
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mon formulaire</title>
+</head>
+<body>
+```
+
+footer.php
+
+```php
+<hr>
+<footer>
+    <p>&copy; Copyright monsite.com tout droit reservé</p>
+</footer>
+
+</body>
+</html>
+```
+
+index.php
+
+```php
+<?php require("header.php") ?>
+<h1>Mon article</h1>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+<?php require("footer.php") ?>
+```
