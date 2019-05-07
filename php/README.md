@@ -1,29 +1,23 @@
-<!-- vscode-markdown-toc -->
 * 1. [Affichage](#Affichage)
 * 2. [Variables](#Variables)
 	* 2.1. [Les types](#Lestypes)
 	* 2.2. [Déclarer une variable](#Dclarerunevariable)
 	* 2.3. [constante](#constante)
 * 3. [Condition](#Condition)
-	* 3.1. [La Base](#LaBase)
-	* 3.2. [Condition ternaire](#Conditionternaire)
-	* 3.3. [switch](#switch)
+	* 3.1. [Condition ternaire](#Conditionternaire)
+	* 3.2. [switch](#switch)
 * 4. [Boucles](#Boucles)
-	* 4.1. [while](#while)
-	* 4.2. [for](#for)
-	* 4.3. [mots-clés](#mots-cls)
-	* 4.4. [Fonction](#Fonction)
-	* 4.5. [Déclarer une fonction](#Dclarerunefonction)
-	* 4.6. [Retour type stricte](#Retourtypestricte)
-	* 4.7. [Paramètres infinie](#Paramtresinfinie)
-	* 4.8. [Fonction anonyme](#Fonctionanonyme)
-	* 4.9. [Passage par référence](#Passageparrfrence)
-* 5. [Tableau](#Tableau)
-* 6. [Gestion des erreurs](#Gestiondeserreurs)
-* 7. [Lire et écrire dans un fichier](#Lireetcriredansunfichier)
+* 5. [Fonction](#Fonction)
+	* 5.1. [Retour type stricte](#Retourtypestricte)
+	* 5.2. [Paramètres infinie](#Paramtresinfinie)
+	* 5.3. [Fonction anonyme](#Fonctionanonyme)
+	* 5.4. [Passage par référence](#Passageparrfrence)
+* 6. [Tableau](#Tableau)
+* 7. [Gestion des erreurs](#Gestiondeserreurs)
+* 8. [Lire et écrire dans un fichier](#Lireetcriredansunfichier)
 
 
-# PHP cheat
+# PHP Basic cheat
 
 ##  1. <a name='Affichage'></a>Affichage
 
@@ -39,7 +33,7 @@ echo "hello " . "world 2<br>";
 
 ###  2.1. <a name='Lestypes'></a>Les types
 
-Les variables les plus connues :
+Les types de variables les plus connues :
 
 - int
 - string
@@ -74,20 +68,18 @@ echo WIDTH;
 
 ##  3. <a name='Condition'></a>Condition
 
-###  3.1. <a name='LaBase'></a>La Base
-
 - != différent de
 - !== différent de valeur et de type
 
 **mots-clés :** `if` `elseif` `else`
 
-###  3.2. <a name='Conditionternaire'></a>Condition ternaire
+###  3.1. <a name='Conditionternaire'></a>Condition ternaire
 
 ```php
 $retVal = (condition) ? a : b ;
 ```
 
-###  3.3. <a name='switch'></a>switch 
+###  3.2. <a name='switch'></a>switch 
 
 ```php
 <?php
@@ -106,7 +98,10 @@ switch ($menu) {
 
 ##  4. <a name='Boucles'></a>Boucles
 
-###  4.1. <a name='while'></a>while
+Possibilité d'utiliser les mots clés :
+
+- **continue** 
+- **break**
 
 ```php
 while (condition){
@@ -114,21 +109,13 @@ while (condition){
 }
 ```
 
-###  4.2. <a name='for'></a>for
-
 ```php
 for ($i=0; $i < 10; $i++) { 
     // code...
 }
 ```
 
-###  4.3. <a name='mots-cls'></a>mots-clés
-
-**mots-clés :** `continue` `break`
-
-###  4.4. <a name='Fonction'></a>Fonction
-
-###  4.5. <a name='Dclarerunefonction'></a>Déclarer une fonction
+##  5. <a name='Fonction'></a>Fonction
 
 ```php
 <?php
@@ -138,7 +125,7 @@ function maFonction($test, int $age, bool $mort = true){
 }
 ```
 
-###  4.6. <a name='Retourtypestricte'></a>Retour type stricte
+###  5.1. <a name='Retourtypestricte'></a>Retour type stricte
 
 ```php
 <?php
@@ -148,7 +135,7 @@ function maFonction($test){ : bool
 }
 ```
 
-###  4.7. <a name='Paramtresinfinie'></a>Paramètres infinie
+###  5.2. <a name='Paramtresinfinie'></a>Paramètres infinie
 
 ```php
 <?php
@@ -161,7 +148,7 @@ infinie(1, 2, 3);
 infinie(1, 2, 3, 4);
 ```
 
-###  4.8. <a name='Fonctionanonyme'></a>Fonction anonyme
+###  5.3. <a name='Fonctionanonyme'></a>Fonction anonyme
 
 ```php
 <?php
@@ -170,7 +157,7 @@ $test = function (){echo "test";};
 $test();
 ```
 
-###  4.9. <a name='Passageparrfrence'></a>Passage par référence
+###  5.4. <a name='Passageparrfrence'></a>Passage par référence
 
 ```php
 <?php
@@ -184,7 +171,7 @@ noref($a); echo $a, "<br>"; // 5
 ref($a); echo $a; // 6
 ```
 
-##  5. <a name='Tableau'></a>Tableau
+##  6. <a name='Tableau'></a>Tableau
 
 
 ```php
@@ -214,7 +201,7 @@ $pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
 $pieces = explode(" ", $pizza); // string to array
 ```
 
-##  6. <a name='Gestiondeserreurs'></a>Gestion des erreurs
+##  7. <a name='Gestiondeserreurs'></a>Gestion des erreurs
 
 ```php
 <?php 
@@ -225,6 +212,6 @@ try {
 }
 ```
 
-##  7. <a name='Lireetcriredansunfichier'></a>Lire et écrire dans un fichier
+##  8. <a name='Lireetcriredansunfichier'></a>Lire et écrire dans un fichier
 
 Non disponible pour le moment
