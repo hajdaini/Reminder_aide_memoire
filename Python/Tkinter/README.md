@@ -1,12 +1,17 @@
-### Documentation Tkinter :
+# Tkinter
+
+## Documentation Tkinter :
+
 http://tkinter.fdex.eu/doc/uwm.html#update_idletasks
 
-### Documentation externe : 
+## Documentation externe :
+
 - Couleurs tkinter : https://www.tutorialspoint.com/python/tk_colors.htm
 - combinaison de couleurs : https://coolors.co/browser/best/1
 - tkinter text color : https://wiki.tcl.tk/37701
     
-### Fenêtre de base :
+## Fenêtre de base :
+
 ```py
 from tkinter import *
 
@@ -31,9 +36,10 @@ window.resizable(width=False, height=False)
 window.mainloop()
 ```
 
-# Widgets
+## Widgets
 
 ### TEXT : 
+
 ```py
 label = Label(window, text="hello", font='Arial 16')
 label['text'] = 'change me'
@@ -41,43 +47,47 @@ print(label['text'])
 ```
 
 ### INPUT :
+
 ```py
 input = Entry(window, font='Arial 12 normal italic', fg='gray')
 input.insert(0, 'placeholder')
 ```
 
 ### BUTTON :
+
 ```py
 button = Button(window, text='button welcome', font='Arial 12 normal', bg='#DC4C46', fg='white')
 ```
 
 ### CHECKBOX :
+
 ```py
 checkbox = Checkbutton(window, text="Mineur ?", variable='checked', onvalue="1", offvalue="0")
 ```
 
 ### RADIOS :
-    """
-    -Les radios peuvent avoir seuelement un element check
-    -@value = peut être n'importe quoi tant ça reste la même chose pour 
-            les elements non check et unique sur l'element check
-    """
+
+
+- Les radios peuvent avoir seulement un élément check
+- @value = peut être n'importe quoi tant ça reste la même chose pour les éléments non check et unique sur l'élément check
+
 ```py
 radio1 = Radiobutton(window, text="Grand ?", value='unique')
 radio2 = Radiobutton(window, text="Petit ?",  value='autrevaleur')
 
 ### SCALE (sorte de scroll) :
-```py
 scale = Scale(window, orient='horizontal', from_=0, to=10, resolution=0.1, tickinterval=2, length=350, label='Volume (db)')
 ```
 
 ### Spinbox :
+
 ```py
 from tkinter import StringVar
 spinbox = Spinbox(window, from_=0, to=100)
 ```
 
 ### DROPDOWN MENU
+
 ```py
 from tkinter import StringVar
 variable = StringVar(window)
@@ -85,11 +95,11 @@ variable.set("one") # default value
 w = OptionMenu(window, variable, "one", "two", "three")
 
 ### AFFICHAGE DES WIDGETS : equivalent d'une div en html :
-```py
 input.pack()
 ```
 
 ### MESSAGE BOX :
+
 ```py
 from tkinter import messagebox
 
@@ -105,6 +115,7 @@ but.pack()
 ```
 
 ### EVENTS :
+
 ```py
 def key(event):
     print("pressed {}".format(event.char))
@@ -126,6 +137,7 @@ window.bind("<Button-1>", callback)
 ```
 
 ### Canvas :
+
 ```py
 def center(LARGEUR):
     return (WIDTH/2 -LARGEUR), (HEIGHT/2 - LARGEUR), (WIDTH/2+LARGEUR), (HEIGHT/2+LARGEUR)
@@ -137,7 +149,8 @@ canvas.create_rectangle(center(50), fill="red", width=1, outline='black')
 canvas.pack()
 ```
 
-# Animation
+## Animation
+
 ```py
 ball = canvas.create_oval(center(10), fill='orange')
 speedx = 1

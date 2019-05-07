@@ -1,6 +1,6 @@
-***pour ouvrir les fichiers sqlite3 :*** https://github.com/sqlitebrowser/sqlitebrowser/releases
+**pour ouvrir les fichiers sqlite3 :** https://github.com/sqlitebrowser/sqlitebrowser/releases
 
-***Tracer des graphes depuis database :*** https://www.youtube.com/watch?v=pq4nwICEB4U
+**Tracer des graphes depuis database :** https://www.youtube.com/watch?v=pq4nwICEB4U
 
 ```py
 import sqlite3

@@ -1,26 +1,38 @@
-# Base 
-**Constante :**
-```js
-const PI = 3.14159265
-```
-**Variable :**
-```js
-let name = "Hatim"
-```
+# Base
 
-**else if et non elif**
+- **Constante :**
 
-concaténation:
-```js
-console.log(`My variable : ${ma_var} | maths` + " ou  cette variable : " + autre_var)
-```
-**== vs ===**
-```js
-console.log(1 == '1') // true
-console.log(1 === '1') // false
-```
+  ```js
+  const PI = 3.14159265
+  ```
+
+- **Variable :**
+
+  ```js
+  let name = "Hatim"
+  ```
+
+- **Condition :**
+
+  ```js
+  else if et non elif
+  ```
+
+- **concaténation:**
+
+  ```js
+  console.log(`My variable : ${ma_var} | maths` + " ou  cette   variable : " + autre_var)
+  ```
+
+- **== vs ===**
+
+  ```js
+  console.log(1 == '1') // true
+  console.log(1 === '1') // false
+  ```
 
 # Foreach
+
 ```js
 let names = ['Hatim', 'Alex', 'Hamza', 'Mathilde']
 
@@ -31,6 +43,7 @@ names.forEach(function(value, index)
 ```
 
 # Fonction
+
 ```js
 // fonction dans une variable
 let test = function (name="Hamza") {
@@ -47,7 +60,9 @@ let getName = (name) => "Your name is " + name
 ```
 
 # Les objets
+
 On peut mettre toutes sortes de variables dans un objet
+
 ```js
 let Player = {
     name: 'Kore',
@@ -63,6 +78,7 @@ Player.being_attacked(50)
 ```
 
 # Les Maps
+
 ```
 let john = {
     name: "John",
@@ -86,7 +102,8 @@ users.set("david", david)
 console.log(users.get("john") + "\n")
 ```
 
-# Les classes et héritages : 
+# Les classes et héritages :
+
 ```js
 class Player{
 

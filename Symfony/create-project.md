@@ -21,7 +21,7 @@ composer create-project symfony/website-skeleton [PROJECT-NAME]
 composer require server --dev
 ```
 
-4. run your php server :
+5. run your php server :
 
 ```sh
 php bin/console server:run

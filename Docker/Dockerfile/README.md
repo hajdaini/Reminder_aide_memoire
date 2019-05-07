@@ -51,7 +51,8 @@ CMD ["FOREGROUND"] # on peut mettre les arguments d'ENTRYPOINT dans CMD comme ic
 - **VOLUMES :** Permet de créer un point de montage qui permettra de persister les données
 - **USER :** désigne quel utilisateur lancera les prochaines instructions RUN, CMD ou ENTRYPOINT 
 
-# Création d’image depuis un Dockerfile :
-```
-root@docker:~# docker build -t <IMAGE_NAME> .
+**Création d’image depuis un Dockerfile :**
+
+```shell
+docker build -t <IMAGE_NAME> .
 ```

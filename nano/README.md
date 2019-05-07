@@ -1,3 +1,5 @@
+# Compilation nano
+
 ## Pré-requis
 
 **Supprimer la version actuelle de nano !**
@@ -6,50 +8,60 @@
 
 Lien de téléchargement de nano : https://www.nano-editor.org/download.php
 
-``` 
+```shell 
 wget http://lien/ nano-x.y.z.tar.gz 
 tar -zxvf nano-x.y.z.tar.gz
 ``` 
 
-**centos :**
-``` 
-yum install gcc ncurses-devel
-``` 
+- **centos :**
 
-**debian :**
-``` 
-apt-get install gcc libncurses5-dev
-``` 
+  ```shell 
+  yum install gcc ncurses-devel
+  ``` 
 
-``` 
-cd nano-x.y.z/
-./configure --prefix=/usr
-make
-make install
-``` 
+- **debian :**
+
+  ``` shell
+  apt-get install gcc libncurses5-dev
+  ``` 
+
+  ```shell
+  cd nano-x.y.z/
+  ./configure --prefix=/usr
+  make
+  make install
+  ``` 
 
 ### Config :
 
-- Renommer le fichier de config **nanorc** en **.nanorc** et le mettre dans <i>~/</i>
-```
-mv nanorc ~/.nanorc
-```
-- Dezipper et deplacer les fichiers de coloration syntaxique de **nano.zip** dans <i>/usr/share/nano/</i> 
-```
-cd /usr/share/nano/
-rm -f *.nanorc
-wget <lien>
-unzip nano.zip
-cd nano && mv * ..
-```
+- Renommer le fichier de config **nanorc** en **.nanorc** et le mettre dans *~/*
+
+  ```shell
+  mv nanorc ~/.nanorc
+  ```
+
+- Dezipper et deplacer les fichiers de coloration syntaxique de **nano.zip** dans */usr/share/nano/*
+
+  ```shell
+  cd /usr/share/nano/
+  rm -f *.nanorc
+  wget <lien>
+  unzip nano.zip
+  cd nano && mv * ..
+  ```
+
 ### Problème :
+
 C'est possible d'avoir l'erreur suivante : 
-```
-root@vps615208:/home/debian# nano test.txt
+
+```shell
+nano test.txt
 -bash: /bin/nano: No such file or directory
 ```
-Il suffit de recopier le fichier les binaires de nano 
-```
+
+Il suffit de recopier le fichier les binaires de nano :
+
+```shell
 cp /usr/bin/nano /bin/
 ```
 
@@ -60,4 +72,4 @@ cp /usr/bin/nano /bin/
  
 ### Screenshot
 
-<img src="looking.jpg">
+![nano screenshot](looking.jpg)

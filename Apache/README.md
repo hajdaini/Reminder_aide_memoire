@@ -1,6 +1,7 @@
 # Les VirtualHosts
 
 ## Architecture 
+
 ```
 /var/www/
 |-- logs/
@@ -13,21 +14,25 @@
 |
 |
 ```
+
 ## hosts 
 
-Il faut modifier le fichier hosts sur la machine cliente (celle qui va visiter le site web), ou sinon le faire directement sur le serveur DNS (notre box par exemple)
+Il faut modifier le fichier hosts sur la machine cliente (celle qui va visiter le site web), ou sinon le faire directement sur le serveur DNS (ici ma Box par exemple)
 
-- fichier hosts
-```
-# Ajouter : <IP> monsite.dev www.monsite.dev
-ping monsite.dev
-```
-- ou Serveur DNS
-<img src="dns.jpg" />
+- fichier hosts : 
+
+  ```textile
+  # Ajouter : <IP> monsite.dev www.monsite.dev
+  ping monsite.dev
+  ```
+
+- Serveur DNS de ma box
+
+  ![configuration DNS](dns.jpg)
 
 ## Config
 
-```
+```shell
 cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/monsite.conf
 nano /etc/apache2/sites-available/monsite.conf
 ```
@@ -72,13 +77,14 @@ nano /etc/apache2/sites-available/monsite.conf
 </VirtualHost>
 ```
 
-### Vérification de synthax :
+### Vérification de la syntaxe :
+
 ```
 apache2ctl configtest
 ```
 
 
-### Activer ou desactiver un vhost
+### Activer ou désactiver un vhost
 
 - **a2ensite** : activer un vhost
 - **a2dissite** : désactiver un vhost
@@ -105,15 +111,13 @@ Require ip 10.0.0.0/8      # autorise 10.0.0.1 - 10.255.255.254
 
 la commande **a2enmod** permet d'activer un module et pour le désactiveri il suffit d'utiliser la commande **a2dismod**
 
-Activer le module rewrite 
-```
+Activer le module rewrite :
+
+```shell
 a2enmod rewrite
-Enabling module rewrite.
-To activate the new configuration, you need to run:
-  service apache2 restart
 ```
 
-```
+```shell
 service apache2 restart
 ```
 

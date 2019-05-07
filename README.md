@@ -1,1 +1,1 @@
-<img src="reminder.gif">
+![reminder](reminder.gif)

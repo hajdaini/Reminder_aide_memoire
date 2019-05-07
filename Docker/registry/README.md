@@ -14,6 +14,7 @@ Différents registry proposé par Docker sont disponible :
     - Disponible avec Docker-EE standard / avancé
 
 Il existe aussi d'autre providers hors Docker comme :
+
 - Amazon EC2 container registry
 - Google Container Registry
 - GitLab Container registry
@@ -23,23 +24,28 @@ Il existe aussi d'autre providers hors Docker comme :
 ## Docker hub
 
 **Installer une image depuis le docker hub :**
-```
+
+```shell
 docker pull <IMAGE_NAME>
 ```
 
 **Pusher son image sur son propre repository**
+
 Il faut d'abord se logger 
-```
+
+```shell
 docker login
 ```
-```
+
+```shell
 docker push <USER>/<IMAGE_NAME>:[VERSION]
 ```
 
 ## Docker Registry
+
 Il faut une connexion TLS pour communiqué avec notre Docker Registry (sauf si on est en localhost)
 
-Pour la partie TLS (je vais surement créer une Dockerfile) : https://www.youtube.com/watch?v=SEpR35HZ_hQ&t=498s
+Pour la partie TLS (je vais sûrement créer une Dockerfile) : https://www.youtube.com/watch?v=SEpR35HZ_hQ&t=498s
 
 Je vais poursuivre l'exemple en localhost
 
@@ -61,19 +67,23 @@ docker push localhost:5000/debian
 ```
 
 - **lister les images dans le registry :**
-```
-curl localhost:5000/v2/_catalog
-Output : {"repositories":["debian"]}
-```
+
+  ```
+  curl localhost:5000/v2/_catalog
+  Output : {"repositories":["debian"]}
+  ```
 
 - **lister les images dans le registry :**
-```
-curl localhost:5000/v2/debian/tags/list
-Output : {"name":"debian","tags":["latest"]}
-```
+
+  ```
+  curl localhost:5000/v2/debian/tags/list
+  Output : {"name":"debian","tags":["latest"]}
+  ```
 
 ## Docker Trusted Registry
-**Avantage :**
+
+**Avantages :**
+
 - Support commercial
 - Intégration LDAP/AD
 - Selection du backend de stockage (S3, Azure, Google Cloud Storage, etc ...)
