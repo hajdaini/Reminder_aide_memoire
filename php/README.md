@@ -1,22 +1,4 @@
-* 1. [Affichage](#Affichage)
-* 2. [Variables](#Variables)
-	* 2.1. [Les types](#Lestypes)
-	* 2.2. [Déclarer une variable](#Dclarerunevariable)
-	* 2.3. [constante](#constante)
-* 3. [Condition](#Condition)
-	* 3.1. [Condition ternaire](#Conditionternaire)
-	* 3.2. [switch](#switch)
-* 4. [Boucles](#Boucles)
-* 5. [Fonction](#Fonction)
-	* 5.1. [Retour type stricte](#Retourtypestricte)
-	* 5.2. [Paramètres infinie](#Paramtresinfinie)
-	* 5.3. [Fonction anonyme](#Fonctionanonyme)
-	* 5.4. [Passage par référence](#Passageparrfrence)
-* 6. [Tableau](#Tableau)
-* 7. [Gestion des erreurs](#Gestiondeserreurs)
-* 8. [Lire et écrire dans un fichier](#Lireetcriredansunfichier)
-* 9. [Requette POST et GET](#RequettePOSTetGET)
-* 10. [Includre des fichiers](#Includredesfichiers)
+
 
 # PHP Basic cheat
 
@@ -52,7 +34,7 @@ nom de la variable = de préférence Camel case
 ```php
 <?php
 $name = "Hatim";
-echo "Hello ", $name;
+echo "Hello " .$name;
 
 ```
 
@@ -66,6 +48,11 @@ echo PI, "<br>";
 const WIDTH = 200; // méthode 2
 echo WIDTH;
 ```
+
+###  2.4. <a name='Casterunevariable'></a>Caster une variable 
+
+Cast (chang­ement de type)
+$var = (string) $var;
 
 ##  3. <a name='Condition'></a>Condition
 
@@ -149,6 +136,18 @@ infinie(1, 2, 3);
 infinie(1, 2, 3, 4);
 ```
 
+### Fonction utilis­ateur
+
+```php
+function multip­­li­er(­­$arg1, $arg2)
+{
+return $arg1 * $arg2;
+}
+
+$resultat = multip­­li­er(­­1, 2);
+echo $resultat
+```
+
 ###  5.3. <a name='Fonctionanonyme'></a>Fonction anonyme
 
 ```php
@@ -168,7 +167,7 @@ function noref($var){ $var++; }
 
 $a = 5;
 
-noref($a); echo $a, "<br>"; // 5
+noref($a); echo $a. "<br>"; // 5
 ref($a); echo $a; // 6
 ```
 
@@ -209,7 +208,7 @@ $pieces = explode(" ", $pizza); // string to array
 try {
     // code ...
 } catch (Exception $e) {
-    echo 'Exception reçue : ',  $e->getMessage(), "<br>";
+    echo 'Exception reçue : ' .$e->getMessage(). "<br>";
 }
 ```
 
@@ -217,7 +216,7 @@ try {
 
 Non disponible pour le moment
 
-##  9. <a name='RequettePOSTetGET'></a>Requette POST et GET
+##  9. <a name='RequtePOSTetGET'></a>Requête POST et GET
 
 index.php
 
@@ -269,19 +268,18 @@ function getCleanData(string $element, bool $post) : string{
 $username = getCleanData("username", true);
 $search = getCleanData("search", false);
 
-echo $username;
-echo $search;
+echo $username; echo $search;
 ```
 
-##  10. <a name='Includredesfichiers'></a>Includre des fichiers
+##  10. <a name='Incluredesfichiers'></a>Inclure des fichiers
 
-La fonction require () est identique à include (), sauf qu'elle traite les erreurs différemment. 
+La fonction **require()** est identique à **include()**, sauf qu'elle traite les erreurs différemment. 
 
-- include() : génère un avertissement lors d'une erreur et le script continue son exécution
-- require() : génère une erreur fatale et le script s'arrête
+- **include()** : génère un avertissement lors d'une erreur et le script continue son exécution
+- **require()** : génère une erreur fatale et le script s'arrête
 
 
-require_once() est identique à require () sauf que PHP vérifie si le fichier a déjà été inclus et dans le cas échéant, elle ne l'inclut pas à nouveau.
+**require_once()** est identique à **require ()** sauf que PHP vérifie si le fichier a déjà été inclus et dans le cas échéant, elle ne l'inclut pas à nouveau (**include_once()** existe aussi).
 
 header.php
 
@@ -312,8 +310,275 @@ footer.php
 index.php
 
 ```php
-<?php require("header.php") ?>
+<?php require("header.php"); ?>
 <h1>Mon article</h1>
 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-<?php require("footer.php") ?>
+<?php require("footer.php"); ?>
+```
+
+##  11. <a name='LesCookies'></a>Les Cookies
+
+Un cookie n'est pas fait pour stocker des données sensibles style mdp, il peut être utilisé pour stocker par exemple les préférences utilisateurs
+
+```php
+<?php 
+if(!isset($_COOKIE["lang"]) && empty($_COOKIE["lang"])){
+    setcookie( // TOUJOURS CETTE INSTRUCTION AU DEBUT (avant tout code html) !
+        "lang", // nom du cookie
+        "fr", // valeur par défaut
+        time() + 3600 * 24 * 365, // expiration du cookie (ici 1 année)
+        null,
+        "localhost", // mettre son nom de domaine
+        false, // envoyer le cookie que depuis un HTTPS (le faire si votre site est en https) 
+        true // l'accès au cookie ne se fera que par HTML et non Javascript
+    );
+
+    $_COOKIE["lang"] = "fr"; // prendre immediattement les changements
+}
+?>
+
+<?php require("header.php"); ?>
+<p><?= htmlspecialchars($_COOKIE["lang"]) ?></p>
+<?php require("footer.php"); ?>
+```
+
+**Détruitre un cookie**
+
+Pour détruire un cookie il faut le unset et lui attribuer ensuite une expiration négatif 
+
+```php
+<?php
+unset($_COOKIE["lang"]);
+setcookie("lang", "", time() - 10);
+```
+
+##  12. <a name='Lessessions'></a>Les sessions
+
+profile.php
+
+```php
+<?php 
+    session_start(); // TOUJOURS CETTE INSTRUCTION AU DEBUT (avant tout code html) ! 
+    $_SESSION["username"] = "Hatim"; // création d'une session username
+?>
+
+<?php require("header.php"); ?>
+<p><?php echo "Bonjour " .htmlspecialchars($_SESSION["username"]) ?></p>
+<input type="button" onclick="window.location='deconnexion.php'"  value="Deconnexion"/>
+<?php require("footer.php"); ?>
+```
+
+deconnexion.php
+
+```php
+<?php
+session_destroy(); // destruction de la session
+header("Location: index.php");
+```
+
+index.php
+
+```php
+<?php require("header.php"); ?>
+<h1>Page d accueil</h1>
+<?php require("footer.php"); ?>
+```
+
+##  13. <a name='Lesclasses'></a>Les classes
+
+```php
+<?php 
+
+class Utilisateur {
+
+    private $username = 0;
+
+    // constructeur
+    public function __construct(int $username)
+    {
+        $this->username = $username;
+    }
+
+    // getter
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    // setter
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+}
+
+$user = new Utilisateur(10);
+$user->setUsername("Hatim");
+echo $user->getUsername();
+```
+
+###  13.1. <a name='static'></a>static
+
+```php
+<?php 
+
+class Database {
+
+    public static $databaseName = "madatabase";
+
+    public static function connect(){
+        echo "Je suis connectés à la db<br>";
+    }
+}
+
+Database::connect();
+echo "Nom database : " .Database::$databaseName;
+```
+
+###  13.2. <a name='Hritage'></a>Héritage
+
+```php
+<?php 
+
+class Personnage {
+
+    private $vie, $name;
+
+    public function __construct($vie, $name)
+    {
+        $this->vie = $vie;
+        $this->name = $name;
+    }
+
+    public function presentation(){
+        echo "vie : " .$this->vie. " | name : " .$this->name;
+    }
+}
+
+class Mage extends Personnage{
+
+    private $soin = 0; // imaginons que seul le mage a le droit de soin
+
+    public function __construct($vie, $name, $soin)
+    {
+        parent::__construct($vie, $name); // équivalant au super sur Java
+        $this->soin = $soin;
+    }
+
+    public function presentation(){
+        parent::presentation();
+        echo " | soin : " .$this->soin;
+    }
+}
+
+$mage = new Mage(10, "zozo", 30);
+$mage->presentation();
+```
+
+###  13.3. <a name='classeabstraite'></a>classe abstraite 
+
+Une classe abstraite est avant tout une classe. Rien ne l’oblige à posséder des méthodes abstraites ! Les méthodes abstraites 
+sont des signatures de méthodes qui permettent de définir la structure d'une classe fille.
+
+- Seules les fonctions membres de votre classe abstraite peuvent être abstraites, jamais les propriétés
+- Une classe abstraite ne s’instancie pas
+
+```php
+<?php 
+
+abstract class Mere {
+    abstract protected function presentation();
+    abstract protected function parler($message);
+}
+
+class Fille extends Mere{
+
+    public function presentation(){
+        echo "Hello je m'appelle Barbara<br>";
+    }
+
+    public function parler($message){
+        echo "Barbara : " .$message;
+    }
+}
+
+$fille = new Fille();
+$fille->presentation();
+$fille->parler("salut !");
+```
+
+##  14. <a name='Lesinterfaces'></a>Les interfaces
+
+Contrairement aux classes abstraites les interfaces autorisent l'héritage multiple.
+
+```php
+<?php 
+
+interface Mere {
+    const MAJEUR = 12; // possibilité d'implémenter des constantes
+    public function presentation();
+    public function parler($message);
+}
+
+interface Education {
+    public function nePasInsulter();
+    public function nePasFrapper();
+}
+
+class Fille implements Mere, Education{
+
+    public function presentation(){
+        echo "Hello je m’appelle Barbara<br>";
+    }
+
+    public function parler($message){
+        echo "Barbara : " .$message. "<br>";
+    }
+
+    public function nePasFrapper()
+    {
+        echo "Je ne frappe pas les autres.<br>";
+    }
+    
+    public function nePasInsulter()
+    {
+        echo "Je n'insulte pas les autres.";
+    }
+}
+
+$fille = new Fille();
+$fille->presentation();
+$fille->parler("salut !");
+$fille->nePasFrapper();
+$fille->nePasInsulter();
+echo Fille::MAJEUR; // Appel de la constante
+```
+
+# Les exceptions
+
+
+```php
+<?php 
+
+class DivisionZero extends Exception{
+    
+}
+
+$divider = 5;
+
+function checkDivider(int $divider){
+    if($divider == 0){
+        throw new DivisionZero("Impossible de diviser par 0", 1);
+        
+    }elseif ($divider < 0) {
+        throw new DivisionZero("Impossible de diviser par un nombre négative");
+    }
+}
+
+try {
+    checkDivider($divider);
+    echo "10/" .$divider. " = " .(10/$divider);
+} catch (DivisionZero $e) {
+    echo $e->getMessage();
+}
 ```
