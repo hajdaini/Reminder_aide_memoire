@@ -1,12 +1,6 @@
 * 1. [Affichage](#Affichage)
 * 2. [Variables](#Variables)
-	* 2.1. [Les types](#Lestypes)
-	* 2.2. [Déclarer une variable](#Dclarerunevariable)
-	* 2.3. [constante](#constante)
-	* 2.4. [Caster une variable](#Casterunevariable)
 * 3. [Condition](#Condition)
-	* 3.1. [Condition ternaire](#Conditionternaire)
-	* 3.2. [switch](#switch)
 * 4. [Boucles](#Boucles)
 * 5. [Fonction](#Fonction)
 	* 5.1. [Retour type stricte](#Retourtypestricte)
@@ -15,17 +9,16 @@
 	* 5.4. [Fonction anonyme](#Fonctionanonyme)
 	* 5.5. [Passage par référence](#Passageparrfrence)
 * 6. [Tableau](#Tableau)
-* 7. [Gestion des erreurs](#Gestiondeserreurs)
-* 8. [Lire et écrire dans un fichier](#Lireetcriredansunfichier)
-* 9. [Requête POST et GET](#RequtePOSTetGET)
-* 10. [Inclure des fichiers](#Incluredesfichiers)
-* 11. [Les Cookies](#LesCookies)
-* 12. [Les sessions](#Lessessions)
-* 13. [Les classes](#Lesclasses)
-	* 13.1. [static](#static)
-	* 13.2. [Héritage](#Hritage)
-	* 13.3. [classe abstraite](#classeabstraite)
-* 14. [Les interfaces](#Lesinterfaces)
+* 7. [Lire et écrire dans un fichier](#Lireetcriredansunfichier)
+* 8. [Requête POST et GET](#RequtePOSTetGET)
+* 9. [Inclure des fichiers](#Incluredesfichiers)
+* 10. [Les Cookies](#LesCookies)
+* 11. [Les sessions](#Lessessions)
+* 12. [Les classes](#Lesclasses)
+	* 12.1. [static](#static)
+	* 12.2. [Héritage](#Hritage)
+	* 12.3. [classe abstraite](#classeabstraite)
+* 13. [Les interfaces](#Lesinterfaces)
 
 
 # PHP Basic cheat
@@ -42,60 +35,25 @@ echo "hello " . "world 2<br>";
 
 ##  2. <a name='Variables'></a>Variables
 
-###  2.1. <a name='Lestypes'></a>Les types
-
-Les types de variables les plus connues :
-
-- int
-- string
-- bool
-- double
-- array
-- NULL
-- object
-- iterable (variable utilisée dans le foreach)
-
-###  2.2. <a name='Dclarerunevariable'></a>Déclarer une variable
-
-nom de la variable = de préférence Camel case
-
-```php
-<?php
-$name = "Hatim";
-echo "Hello " .$name;
-
-```
-
-###  2.3. <a name='constante'></a>constante
-
-```php
-<?php
-
-define("PI",    3.14); // méthode 1
-echo PI, "<br>";
-const WIDTH = 200; // méthode 2
-echo WIDTH;
-```
-
-###  2.4. <a name='Casterunevariable'></a>Caster une variable 
-
-Cast (chang­ement de type)
-$var = (string) $var;
+|       Action           |     Code                     |
+|------------------------|-------------------------------|
+| Déclarer une variable  | `$nomVa­riable = 5;`|
+| Afficher une variable  | `echo "var : " .$nomVa­riable;`|
+| Déclarer une constante | <li>Méthode 1 : `define("PI", 3.14);`</li><li>Méthode 1 : `const WIDTH = 200;`</li>|
+| Afficher une constante | `echo WIDTH;`|
+| Caster une variable    | `$var = (string) $var;`|
 
 ##  3. <a name='Condition'></a>Condition
 
-- != différent de
-- !== différent de valeur et de type
+|       Action                    |     Code                          |
+|---------------------------------|-----------------------------------|
+| différent de                    | `!=`|
+| différent de valeur et de type  | `!==`|
+| mots-clés                       | `if` `elseif` `else` |
+| condition ternaire              | `$retVal = (condition) ? a : b ;` |
 
-**mots-clés :** `if` `elseif` `else`
 
-###  3.1. <a name='Conditionternaire'></a>Condition ternaire
-
-```php
-$retVal = (condition) ? a : b ;
-```
-
-###  3.2. <a name='switch'></a>switch 
+**switch :**
 
 ```php
 <?php
@@ -116,20 +74,12 @@ switch ($menu) {
 
 Possibilité d'utiliser les mots clés :
 
-- **continue** 
-- **break**
+|       Action                    |     Code                          |
+|---------------------------------|-----------------------------------|
+| for                    | `for ($i=0; $i < 10; $i++) {/* code ... */}`|
+| while  | `while (condition){ /* code ...*/ }`|
+| mots-clés possible                   | `continue` `break` `else` |
 
-```php
-while (condition){
-    // code...
-}
-```
-
-```php
-for ($i=0; $i < 10; $i++) { 
-    // code...
-}
-```
 
 ##  5. <a name='Fonction'></a>Fonction
 
@@ -229,22 +179,11 @@ $pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
 $pieces = explode(" ", $pizza); // string to array
 ```
 
-##  7. <a name='Gestiondeserreurs'></a>Gestion des erreurs
-
-```php
-<?php 
-try {
-    // code ...
-} catch (Exception $e) {
-    echo 'Exception reçue : ' .$e->getMessage(). "<br>";
-}
-```
-
-##  8. <a name='Lireetcriredansunfichier'></a>Lire et écrire dans un fichier
+##  7. <a name='Lireetcriredansunfichier'></a>Lire et écrire dans un fichier
 
 Non disponible pour le moment
 
-##  9. <a name='RequtePOSTetGET'></a>Requête POST et GET
+##  8. <a name='RequtePOSTetGET'></a>Requête POST et GET
 
 index.php
 
@@ -299,7 +238,7 @@ $search = getCleanData("search", false);
 echo $username; echo $search;
 ```
 
-##  10. <a name='Incluredesfichiers'></a>Inclure des fichiers
+##  9. <a name='Incluredesfichiers'></a>Inclure des fichiers
 
 La fonction **require()** est identique à **include()**, sauf qu'elle traite les erreurs différemment. 
 
@@ -344,7 +283,7 @@ index.php
 <?php require("footer.php"); ?>
 ```
 
-##  11. <a name='LesCookies'></a>Les Cookies
+##  10. <a name='LesCookies'></a>Les Cookies
 
 Un cookie n'est pas fait pour stocker des données sensibles style mdp, il peut être utilisé pour stocker par exemple les préférences utilisateurs
 
@@ -380,7 +319,7 @@ unset($_COOKIE["lang"]);
 setcookie("lang", "", time() - 10);
 ```
 
-##  12. <a name='Lessessions'></a>Les sessions
+##  11. <a name='Lessessions'></a>Les sessions
 
 profile.php
 
@@ -412,7 +351,7 @@ index.php
 <?php require("footer.php"); ?>
 ```
 
-##  13. <a name='Lesclasses'></a>Les classes
+##  12. <a name='Lesclasses'></a>Les classes
 
 ```php
 <?php 
@@ -445,7 +384,7 @@ $user->setUsername("Hatim");
 echo $user->getUsername();
 ```
 
-###  13.1. <a name='static'></a>static
+###  12.1. <a name='static'></a>static
 
 ```php
 <?php 
@@ -463,7 +402,7 @@ Database::connect();
 echo "Nom database : " .Database::$databaseName;
 ```
 
-###  13.2. <a name='Hritage'></a>Héritage
+###  12.2. <a name='Hritage'></a>Héritage
 
 ```php
 <?php 
@@ -503,7 +442,7 @@ $mage = new Mage(10, "zozo", 30);
 $mage->presentation();
 ```
 
-###  13.3. <a name='classeabstraite'></a>classe abstraite 
+###  12.3. <a name='classeabstraite'></a>classe abstraite 
 
 Une classe abstraite est avant tout une classe. Rien ne l’oblige à posséder des méthodes abstraites ! Les méthodes abstraites 
 sont des signatures de méthodes qui permettent de définir la structure d'une classe fille.
@@ -535,7 +474,7 @@ $fille->presentation();
 $fille->parler("salut !");
 ```
 
-##  14. <a name='Lesinterfaces'></a>Les interfaces
+##  13. <a name='Lesinterfaces'></a>Les interfaces
 
 Contrairement aux classes abstraites les interfaces autorisent l'héritage multiple.
 
@@ -583,6 +522,7 @@ echo Fille::MAJEUR; // Appel de la constante
 ```
 
 # Les exceptions
+
 
 ```php
 <?php 
