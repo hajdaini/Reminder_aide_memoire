@@ -1,39 +1,29 @@
-* 1. [Affichage](#Affichage)
-* 2. [Variables](#Variables)
-* 3. [Condition](#Condition)
-* 4. [Boucles](#Boucles)
-* 5. [Fonction](#Fonction)
-	* 5.1. [Retour type stricte](#Retourtypestricte)
-	* 5.2. [Paramètres infinie](#Paramtresinfinie)
-	* 5.3. [Fonction utilis­ateur](#Fonctionutilisateur)
-	* 5.4. [Fonction anonyme](#Fonctionanonyme)
-	* 5.5. [Passage par référence](#Passageparrfrence)
-* 6. [Tableau](#Tableau)
-* 7. [Lire et écrire dans un fichier](#Lireetcriredansunfichier)
-* 8. [Requête POST et GET](#RequtePOSTetGET)
-* 9. [Inclure des fichiers](#Incluredesfichiers)
-* 10. [Les Cookies](#LesCookies)
-* 11. [Les sessions](#Lessessions)
-* 12. [Les classes](#Lesclasses)
-	* 12.1. [static](#static)
-	* 12.2. [Héritage](#Hritage)
-	* 12.3. [classe abstraite](#classeabstraite)
-* 13. [Les interfaces](#Lesinterfaces)
+* 1. [Variables](#Variables)
+* 2. [Condition](#Condition)
+* 3. [Boucles](#Boucles)
+* 4. [Fonction](#Fonction)
+	* 4.1. [Retour type stricte](#Retourtypestricte)
+	* 4.2. [Paramètres infinie](#Paramtresinfinie)
+	* 4.3. [Fonction utilis­ateur](#Fonctionutilisateur)
+	* 4.4. [Fonction anonyme](#Fonctionanonyme)
+	* 4.5. [Passage par référence](#Passageparrfrence)
+* 5. [Tableau](#Tableau)
+* 6. [Lire et écrire dans un fichier](#Lireetcriredansunfichier)
+* 7. [Requête POST et GET](#RequtePOSTetGET)
+* 8. [Inclure des fichiers](#Incluredesfichiers)
+* 9. [Les Cookies](#LesCookies)
+* 10. [Les sessions](#Lessessions)
+* 11. [Les classes](#Lesclasses)
+	* 11.1. [Static](#Static)
+	* 11.2. [Héritage](#Hritage)
+	* 11.3. [classe abstraite](#classeabstraite)
+* 12. [Les interfaces](#Lesinterfaces)
+* 13. [Les exceptions](#Lesexceptions)
 
 
 # PHP Basic cheat
 
-##  1. <a name='Affichage'></a>Affichage
-
-```php
-<?php
-echo "hello " , "world<br>";
-echo "hello " . "world 2<br>";
-?>
-<?= "hello " , "world 3" ?>
-```
-
-##  2. <a name='Variables'></a>Variables
+##  1. <a name='Variables'></a>Variables
 
 |       Action           |     Code                     |
 |------------------------|-------------------------------|
@@ -43,7 +33,7 @@ echo "hello " . "world 2<br>";
 | Afficher une constante | `echo WIDTH;`|
 | Caster une variable    | `$var = (string) $var;`|
 
-##  3. <a name='Condition'></a>Condition
+##  2. <a name='Condition'></a>Condition
 
 |       Action                    |     Code                          |
 |---------------------------------|-----------------------------------|
@@ -70,7 +60,7 @@ switch ($menu) {
 }
 ```
 
-##  4. <a name='Boucles'></a>Boucles
+##  3. <a name='Boucles'></a>Boucles
 
 Possibilité d'utiliser les mots clés :
 
@@ -81,7 +71,7 @@ Possibilité d'utiliser les mots clés :
 | mots-clés possible                   | `continue` `break` `else` |
 
 
-##  5. <a name='Fonction'></a>Fonction
+##  4. <a name='Fonction'></a>Fonction
 
 ```php
 <?php
@@ -91,7 +81,7 @@ function maFonction($test, int $age, bool $mort = true){
 }
 ```
 
-###  5.1. <a name='Retourtypestricte'></a>Retour type stricte
+###  4.1. <a name='Retourtypestricte'></a>Retour type stricte
 
 ```php
 <?php
@@ -101,7 +91,7 @@ function maFonction($test){ : bool
 }
 ```
 
-###  5.2. <a name='Paramtresinfinie'></a>Paramètres infinie
+###  4.2. <a name='Paramtresinfinie'></a>Paramètres infinie
 
 ```php
 <?php
@@ -114,7 +104,7 @@ infinie(1, 2, 3);
 infinie(1, 2, 3, 4);
 ```
 
-###  5.3. <a name='Fonctionutilisateur'></a>Fonction utilis­ateur
+###  4.3. <a name='Fonctionutilisateur'></a>Fonction utilis­ateur
 
 ```php
 function multip­­li­er(­­$arg1, $arg2)
@@ -126,7 +116,7 @@ $resultat = multip­­li­er(­­1, 2);
 echo $resultat
 ```
 
-###  5.4. <a name='Fonctionanonyme'></a>Fonction anonyme
+###  4.4. <a name='Fonctionanonyme'></a>Fonction anonyme
 
 ```php
 <?php
@@ -135,7 +125,7 @@ $test = function (){echo "test";};
 $test();
 ```
 
-###  5.5. <a name='Passageparrfrence'></a>Passage par référence
+###  4.5. <a name='Passageparrfrence'></a>Passage par référence
 
 ```php
 <?php
@@ -149,7 +139,7 @@ noref($a); echo $a. "<br>"; // 5
 ref($a); echo $a; // 6
 ```
 
-##  6. <a name='Tableau'></a>Tableau
+##  5. <a name='Tableau'></a>Tableau
 
 
 ```php
@@ -170,8 +160,8 @@ $notes["Hatim"] = 20; //ajouter une valeur avec clé
 array_push($animaux, "lion"); //ajouter une valeur sans clé
 
 
-array_pop($animaux); // supprime le dernier élement
-array_shift($animaux); // supprime le 1er element
+array_pop($animaux); // supprimer le dernier élement
+array_shift($animaux); // supprimer le 1er element
 
 unset($notes["Robert"]); // supprimer par clé
 
@@ -179,11 +169,11 @@ $pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
 $pieces = explode(" ", $pizza); // string to array
 ```
 
-##  7. <a name='Lireetcriredansunfichier'></a>Lire et écrire dans un fichier
+##  6. <a name='Lireetcriredansunfichier'></a>Lire et écrire dans un fichier
 
 Non disponible pour le moment
 
-##  8. <a name='RequtePOSTetGET'></a>Requête POST et GET
+##  7. <a name='RequtePOSTetGET'></a>Requête POST et GET
 
 - index.php
 
@@ -238,7 +228,7 @@ Non disponible pour le moment
   echo $username; echo $search;
   ```
 
-##  9. <a name='Incluredesfichiers'></a>Inclure des fichiers
+##  8. <a name='Incluredesfichiers'></a>Inclure des fichiers
 
 La fonction **require()** est identique à **include()**, sauf qu'elle traite les erreurs différemment. 
 
@@ -283,7 +273,7 @@ La fonction **require()** est identique à **include()**, sauf qu'elle traite le
   <?php require("footer.php"); ?>
   ```
 
-##  10. <a name='LesCookies'></a>Les Cookies
+##  9. <a name='LesCookies'></a>Les Cookies
 
 Un cookie n'est pas fait pour stocker des données sensibles style mdp, il peut être utilisé pour stocker par exemple les préférences utilisateurs
 
@@ -319,7 +309,7 @@ unset($_COOKIE["lang"]);
 setcookie("lang", "", time() - 10);
 ```
 
-##  11. <a name='Lessessions'></a>Les sessions
+##  10. <a name='Lessessions'></a>Les sessions
 
 - profile.php
 
@@ -351,7 +341,7 @@ setcookie("lang", "", time() - 10);
   <?php require("footer.php"); ?>
   ```
 
-##  12. <a name='Lesclasses'></a>Les classes
+##  11. <a name='Lesclasses'></a>Les classes
 
 ```php
 <?php 
@@ -384,7 +374,7 @@ $user->setUsername("Hatim");
 echo $user->getUsername();
 ```
 
-###  12.1. <a name='static'></a>static
+###  11.1. <a name='Static'></a>Static
 
 ```php
 <?php 
@@ -402,7 +392,7 @@ Database::connect();
 echo "Nom database : " .Database::$databaseName;
 ```
 
-###  12.2. <a name='Hritage'></a>Héritage
+###  11.2. <a name='Hritage'></a>Héritage
 
 ```php
 <?php 
@@ -442,7 +432,7 @@ $mage = new Mage(10, "zozo", 30);
 $mage->presentation();
 ```
 
-###  12.3. <a name='classeabstraite'></a>classe abstraite 
+###  11.3. <a name='classeabstraite'></a>classe abstraite 
 
 Une classe abstraite est avant tout une classe. Rien ne l’oblige à posséder des méthodes abstraites ! Les méthodes abstraites 
 sont des signatures de méthodes qui permettent de définir la structure d'une classe fille.
@@ -474,7 +464,7 @@ $fille->presentation();
 $fille->parler("salut !");
 ```
 
-##  13. <a name='Lesinterfaces'></a>Les interfaces
+##  12. <a name='Lesinterfaces'></a>Les interfaces
 
 Contrairement aux classes abstraites les interfaces autorisent l'héritage multiple.
 
@@ -521,7 +511,7 @@ $fille->nePasInsulter();
 echo Fille::MAJEUR; // Appel de la constante
 ```
 
-# Les exceptions
+##  13. <a name='Lesexceptions'></a>Les exceptions
 
 
 ```php
