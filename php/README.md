@@ -185,58 +185,58 @@ Non disponible pour le moment
 
 ##  8. <a name='RequtePOSTetGET'></a>Requête POST et GET
 
-index.php
+- index.php
 
-```php
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon formulaire</title>
-</head>
-<body>
-    <form action="validation.php" method="post">
-        <label for="username">Nom</label>
-        <input type="text" id="username" name="username">
-        <input type="submit" value="Valider" name="valid_form">
-    </form> 
+  ```php
+  <!DOCTYPE html>
+  <html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Mon formulaire</title>
+  </head>
+  <body>
+      <form action="validation.php" method="post">
+          <label for="username">Nom</label>
+          <input type="text" id="username" name="username">
+          <input type="submit" value="Valider" name="valid_form">
+      </form> 
+  
+      <br>
+      
+      <form action="validation.php" method="get">
+          <label for="search">Rechercher</label>
+          <input type="search" id="search" name="search">
+          <input type="submit" value="Rechercher">
+      </form>
+  </body>
+  </html>
+  ```
 
-    <br>
-    
-    <form action="validation.php" method="get">
-        <label for="search">Rechercher</label>
-        <input type="search" id="search" name="search">
-        <input type="submit" value="Rechercher">
-    </form>
-</body>
-</html>
-```
+- validation.php
 
-validation.php
-
-```php
-<?php
-
-function getCleanData(string $element, bool $post) : string{
-    if($post){
-        if(isset($_POST[$element]) && !empty($_POST[$element])){
-            return htmlspecialchars($_POST[$element]);
-        }
-    }else{
-        if(isset($_GET[$element]) && !empty($_GET[$element])){
-            return htmlspecialchars($_GET[$element]);
-        }    
-    }
-    return "";
-}
-
-$username = getCleanData("username", true);
-$search = getCleanData("search", false);
-
-echo $username; echo $search;
-```
+  ```php
+  <?php
+  
+  function getCleanData(string $element, bool $post) : string{
+      if($post){
+          if(isset($_POST[$element]) && !empty($_POST[$element])){
+              return htmlspecialchars($_POST[$element]);
+          }
+      }else{
+          if(isset($_GET[$element]) && !empty($_GET[$element])){
+              return htmlspecialchars($_GET[$element]);
+          }    
+      }
+      return "";
+  }
+  
+  $username = getCleanData("username", true);
+  $search = getCleanData("search", false);
+  
+  echo $username; echo $search;
+  ```
 
 ##  9. <a name='Incluredesfichiers'></a>Inclure des fichiers
 
@@ -248,40 +248,40 @@ La fonction **require()** est identique à **include()**, sauf qu'elle traite le
 
 **require_once()** est identique à **require ()** sauf que PHP vérifie si le fichier a déjà été inclus et dans le cas échéant, elle ne l'inclut pas à nouveau (**include_once()** existe aussi).
 
-header.php
+- header.php
 
-```php
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon formulaire</title>
-</head>
-<body>
-```
+  ```php
+  <!DOCTYPE html>
+  <html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Mon formulaire</title>
+  </head>
+  <body>
+  ```
+  
+  footer.php
+  
+  ```php
+  <hr>
+  <footer>
+      <p>&copy; Copyright monsite.com tout droit reservé</p>
+  </footer>
+  
+  </body>
+  </html>
+  ```
 
-footer.php
+- index.php
 
-```php
-<hr>
-<footer>
-    <p>&copy; Copyright monsite.com tout droit reservé</p>
-</footer>
-
-</body>
-</html>
-```
-
-index.php
-
-```php
-<?php require("header.php"); ?>
-<h1>Mon article</h1>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-<?php require("footer.php"); ?>
-```
+  ```php
+  <?php require("header.php"); ?>
+  <h1>Mon article</h1>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+  <?php require("footer.php"); ?>
+  ```
 
 ##  10. <a name='LesCookies'></a>Les Cookies
 
@@ -321,35 +321,35 @@ setcookie("lang", "", time() - 10);
 
 ##  11. <a name='Lessessions'></a>Les sessions
 
-profile.php
+- profile.php
 
-```php
-<?php 
-    session_start(); // TOUJOURS CETTE INSTRUCTION AU DEBUT (avant tout code html) ! 
-    $_SESSION["username"] = "Hatim"; // création d'une session username
-?>
+  ```php
+  <?php 
+      session_start(); // TOUJOURS CETTE INSTRUCTION AU DEBUT (avant tout code html) ! 
+      $_SESSION["username"] = "Hatim"; // création d'une session username
+  ?>
+  
+  <?php require("header.php"); ?>
+  <p><?php echo "Bonjour " .htmlspecialchars($_SESSION["username"]) ?></p>
+  <input type="button" onclick="window.location='deconnexion.php'"  value="Deconnexion"/>
+  <?php require("footer.php"); ?>
+  ```
 
-<?php require("header.php"); ?>
-<p><?php echo "Bonjour " .htmlspecialchars($_SESSION["username"]) ?></p>
-<input type="button" onclick="window.location='deconnexion.php'"  value="Deconnexion"/>
-<?php require("footer.php"); ?>
-```
+- deconnexion.php
 
-deconnexion.php
-
-```php
-<?php
-session_destroy(); // destruction de la session
-header("Location: index.php");
-```
-
-index.php
-
-```php
-<?php require("header.php"); ?>
-<h1>Page d accueil</h1>
-<?php require("footer.php"); ?>
-```
+  ```php
+  <?php
+  session_destroy(); // destruction de la session
+  header("Location: index.php");
+  ```
+  
+  index.php
+  
+  ```php
+  <?php require("header.php"); ?>
+  <h1>Page d accueil</h1>
+  <?php require("footer.php"); ?>
+  ```
 
 ##  12. <a name='Lesclasses'></a>Les classes
 
