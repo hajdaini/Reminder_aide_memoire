@@ -1,3 +1,31 @@
+* 1. [Affichage](#Affichage)
+* 2. [Variables](#Variables)
+	* 2.1. [Les types](#Lestypes)
+	* 2.2. [Déclarer une variable](#Dclarerunevariable)
+	* 2.3. [constante](#constante)
+	* 2.4. [Caster une variable](#Casterunevariable)
+* 3. [Condition](#Condition)
+	* 3.1. [Condition ternaire](#Conditionternaire)
+	* 3.2. [switch](#switch)
+* 4. [Boucles](#Boucles)
+* 5. [Fonction](#Fonction)
+	* 5.1. [Retour type stricte](#Retourtypestricte)
+	* 5.2. [Paramètres infinie](#Paramtresinfinie)
+	* 5.3. [Fonction utilis­ateur](#Fonctionutilisateur)
+	* 5.4. [Fonction anonyme](#Fonctionanonyme)
+	* 5.5. [Passage par référence](#Passageparrfrence)
+* 6. [Tableau](#Tableau)
+* 7. [Gestion des erreurs](#Gestiondeserreurs)
+* 8. [Lire et écrire dans un fichier](#Lireetcriredansunfichier)
+* 9. [Requête POST et GET](#RequtePOSTetGET)
+* 10. [Inclure des fichiers](#Incluredesfichiers)
+* 11. [Les Cookies](#LesCookies)
+* 12. [Les sessions](#Lessessions)
+* 13. [Les classes](#Lesclasses)
+	* 13.1. [static](#static)
+	* 13.2. [Héritage](#Hritage)
+	* 13.3. [classe abstraite](#classeabstraite)
+* 14. [Les interfaces](#Lesinterfaces)
 
 
 # PHP Basic cheat
@@ -136,7 +164,7 @@ infinie(1, 2, 3);
 infinie(1, 2, 3, 4);
 ```
 
-### Fonction utilis­ateur
+###  5.3. <a name='Fonctionutilisateur'></a>Fonction utilis­ateur
 
 ```php
 function multip­­li­er(­­$arg1, $arg2)
@@ -148,7 +176,7 @@ $resultat = multip­­li­er(­­1, 2);
 echo $resultat
 ```
 
-###  5.3. <a name='Fonctionanonyme'></a>Fonction anonyme
+###  5.4. <a name='Fonctionanonyme'></a>Fonction anonyme
 
 ```php
 <?php
@@ -157,7 +185,7 @@ $test = function (){echo "test";};
 $test();
 ```
 
-###  5.4. <a name='Passageparrfrence'></a>Passage par référence
+###  5.5. <a name='Passageparrfrence'></a>Passage par référence
 
 ```php
 <?php
@@ -555,7 +583,6 @@ echo Fille::MAJEUR; // Appel de la constante
 ```
 
 # Les exceptions
-
 
 ```php
 <?php 
