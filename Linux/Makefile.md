@@ -17,13 +17,13 @@ Si cible est plus récent prérequis alors la tâche ne se lance pas
 > **Attention !** les commandes doivent être précédée d'une tabulation et non des espaces !
 
 ```Makefile
-.PHONY: install update # crée une "fausse" cible
+.PHONY: install update ## crée une "fausse" cible
 
-.DEFAULT_GOAL= help # cible lancer par défaut si on spécifie rien
+.DEFAULT_GOAL= help ## cible lancer par défaut si on spécifie rien
 
 PORT=8000
 
-CURRENT_DIR=$(shell pwd) # possibilité d'utiliser le shell dans une variable
+CURRENT_DIR=$(shell pwd) ## possibilité d'utiliser le shell dans une variable
 
 composer.lock: composer.json
     composer update
@@ -54,7 +54,7 @@ Explication :
   make server PORT=9000
   ```
 
-- Astuce : Possible d'afficher une sorte de documentation avec 
+- Astuce : Possible d'afficher une sorte de documentation (à condition de mettre un double #) avec 
 
   ```Makefile
   # code ...
