@@ -14,7 +14,7 @@ Si cible est plus récent prérequis alors la tâche ne se lance pas
 
 ## Commandes
 
-> **Attention !** les commandes doivent être précédée d'une tabulation et non d'espaces !
+> **Attention !** les commandes doivent être précédée d'une tabulation et non des espaces !
 
 ```Makefile
 .PHONY: install update # crée une "fausse" cible
