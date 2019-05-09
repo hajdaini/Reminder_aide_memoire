@@ -46,33 +46,32 @@ Explication :
 
 - Si le fichier composer.lock est plus récent que le dossier vendor alors on installe les dépendances.
 
-
 - Si on lance la commande `make install` sans avoir préinstallé les dépendances, make le détectera et commencera par exécuter les cibles nécessaires
 
-Surcharger la variable PORT
+- Surcharger la variable PORT
 
-```sh
-make server PORT=9000
-```
+  ```sh
+  make server PORT=9000
+  ```
 
-Astuce : Possible d'afficher une sorte de documentation avec 
+- Astuce : Possible d'afficher une sorte de documentation avec 
 
-```Makefile
-# code ...
-
-help: 
+  ```Makefile
+  # code ...
+  
+  help: 
     @grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-10s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
 
-#  code ...
-```
-
-```sh
-> make help ou make
-
-install          Installe les dépendances
-...
-server           Lance le serveur interne de PHP
-```
+  #  code ...
+  ```
+  
+  ```sh
+  > make help ou make
+  
+  install          Installe les dépendances
+  ...
+  server           Lance le serveur interne de PHP
+  ```
 
 | types<br>d'affectation | Description|
 |:------------------:|---|
@@ -132,7 +131,7 @@ else
 endif
 ```
 
-Il y' possibilité d'inclure un fichier
+Il ya' possibilité d'inclure un fichier
 
 - .env
 
