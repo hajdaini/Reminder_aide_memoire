@@ -64,6 +64,8 @@ Explication :
 
   #  code ...
   ```
+  > Le **@** signifie qu'on ne souhaite pas afficher la commande sur le terminal (le résultat s'affichera quand même)
+  
   
   ```sh
   > make help ou make
