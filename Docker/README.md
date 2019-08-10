@@ -39,7 +39,7 @@
 
   ```docker
   docker image ls
-  - ou
+  # ou
   docker images
   ```
 
