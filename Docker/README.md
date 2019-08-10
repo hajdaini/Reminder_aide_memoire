@@ -4,13 +4,15 @@
 - 2 [Images](#Images)
 - 3 [Dockerfile](#Dockerfile)
 - 4 [Conteneurs](#Conteneurs)
-  - 4.1. [Communs](#Communs)
-  - 4.2. [Debug](#Debug)
+  - 4.1 [Communs](#Communs)
+  - 4.2 [Debug](#Debug)
 - 5 [Docker Compose](#DockerCompose)
 - 6 [Volumes](#Volumes)
 - 7 [Réseau Docker](#RseauDocker)
 - 8 [Docker Machine](#DockerMachine)
-
+  - 8.1 [Les nœuds](#nodes)
+  - 8.2 [Les services](#services)
+  - 8.3 [Les stacks](#stacks)
 
 ##  1. <a name='Aideetinformations'></a>Aide et informations
 
@@ -428,7 +430,6 @@ docker volume create <VOLUME NAME>
   docker stack
   ```
 
----
 
 - Gestion des nœuds
 
@@ -448,9 +449,7 @@ docker volume create <VOLUME NAME>
   docker swarm join --token <token> <myvm ip>:<port>
   ```
 
-
----
-
+###  8.1. <a name='nodes'></a>Les nœuds
 
 - Lister les différents nœuds de votre Swarm 
 
@@ -472,8 +471,7 @@ docker volume create <VOLUME NAME>
       -f ou --force : forcer la suppression
     ```
 
----
-
+###  8.2. <a name='services'></a>Les services
 
 - Créer un service
 
@@ -517,8 +515,7 @@ docker volume create <VOLUME NAME>
   docker service rm flaskc
   ```
 
-
----
+###  8.3. <a name='stacks'></a>Les stacks
 
 
 - Déployer une nouvelle pile ou met à jour une pile existante
