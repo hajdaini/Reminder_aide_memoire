@@ -1,10 +1,10 @@
 # Docker Shortcuts
 
 - 1 [Aide et informations](#Aideetinformations)
-- 2 [Images Docker](#ImagesDocker)
+- 2 [Images](#Images)
 - 3 [Dockerfile](#Dockerfile)
 - 4 [Conteneurs](#Conteneurs)
-  - 4.1. [Commun](#Commun)
+  - 4.1. [Communs](#Communs)
   - 4.2. [Debug](#Debug)
 - 5 [Docker Compose](#DockerCompose)
 - 6 [Volumes](#Volumes)
@@ -28,8 +28,10 @@
   docker version
   docker info
   ```
-  
-##  2. <a name='ImagesDocker'></a>Images Docker
+
+---
+
+##  2. <a name='Images'></a>Images
 
 - Lister des images Docker
 
@@ -65,13 +67,17 @@
   docker pull <IMAGE_NAME>  - prendra par défaut le tag latest
   ```
 
+---
+
 ##  3. <a name='Dockerfile'></a>Dockerfile
 
 [https://devopssec.fr/article/creer-ses-propres-images-docker-dockerfile](https://devopssec.fr/article/creer-ses-propres-images-docker-dockerfile)
 
+---
+
 ##  4. <a name='Conteneurs'></a>Conteneurs
 
-###  4.1. <a name='Commun'></a>Commun
+###  4.1. <a name='Communs'></a>Communs
 
 - Exécuter une image Docker
 
@@ -160,6 +166,8 @@
     --tail <NOMBRE DE LIGNE> = nombre de lignes à afficher à partir de la fin (par défaut "all")
   ```
 
+---
+
 ##  5. <a name='DockerCompose'></a>Docker Compose
 
 - Exécuter les services du docker-compose.yml
@@ -224,6 +232,7 @@
   docker-compose images
   ```
 
+---
 
 ##  6. <a name='Volumes'></a>Volumes
 
@@ -264,6 +273,7 @@ docker volume create <VOLUME NAME>
     -v ou --volume : supprime les volumes associés au conteneur
   ```
 
+---
 
 ##  7. <a name='RseauDocker'></a>Réseau Docker
 
@@ -318,6 +328,8 @@ docker volume create <VOLUME NAME>
   ```docker
   docker run --network <NETWORK NAME> <IMAGE NAME>
   ```
+
+---
 
 ##  8. <a name='DockerMachine'></a>Docker Machine
 
@@ -394,6 +406,7 @@ docker volume create <VOLUME NAME>
   docker-machine upgrade <MACHINE NAME>  
   ```
 
+---
 
 ## Docker Swarm
 
