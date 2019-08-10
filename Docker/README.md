@@ -99,6 +99,69 @@
 
 - **USER** : Désigne quel est l'utilisateur qui lancera les prochaines instructions **RUN** ,  **CMD** ou **ENTRYPOINT** (par défaut c'est l'utilisateur root).
 
+***Exemple :***
+
+
+```Dockerfile
+# --------------- DÉBUT COUCHE OS -------------------
+FROM debian:stable-slim
+# --------------- FIN COUCHE OS ---------------------
+
+
+# MÉTADONNÉES DE L'IMAGE
+LABEL version="1.0" maintainer="AJDAINI Hatim <ajdaini.hatim@gmail.com>"
+
+
+# VARIABLES TEMPORAIRES
+ARG APT_FLAGS="-q -y"
+ARG DOCUMENTROOT="/var/www/html"
+
+
+
+# --------------- DÉBUT COUCHE APACHE ---------------
+RUN apt-get update -y && \
+    apt-get install ${APT_FLAGS} apache2
+# --------------- FIN COUCHE APACHE -----------------
+
+
+
+# --------------- DÉBUT COUCHE MYSQL ----------------
+RUN apt-get install ${APT_FLAGS} mysql-server
+
+COPY db/articles.sql /
+# --------------- FIN COUCHE MYSQL ------------------
+
+
+
+# --------------- DÉBUT COUCHE PHP ------------------
+RUN apt-get install ${APT_FLAGS} \
+    php-mysql \
+    php && \
+    rm -f ${DOCUMENTROOT}/index.html && \
+    apt-get autoclean -y
+
+COPY app ${DOCUMENTROOT}
+# --------------- FIN COUCHE PHP --------------------
+
+
+# OUVERTURE DU PORT HTTP
+EXPOSE 443
+EXPOSE 80: 8080
+
+# RAJOUT DES SOURCES DANS LE CONTENEUR
+VOLUME /local/path:${DOCUMENTROOT}
+
+
+# RÉPERTOIRE DE TRAVAIL
+WORKDIR  ${DOCUMENTROOT}
+
+
+# DÉMARRAGE DES SERVICES LORS DE L'EXÉCUTION DE L'IMAGE
+ENTRYPOINT service mysql start && mysql < /articles.sql && apache2ctl -D FOREGROUND
+```
+
+
+
 ---
 
 ##  4. <a name='Conteneurs'></a>Conteneurs
