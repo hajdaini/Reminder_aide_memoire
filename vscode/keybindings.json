@@ -18,19 +18,25 @@
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus"
     },
+
     {
-        "key": "ctrl+shift+5",
-        "command": "-workbench.action.terminal.split",
-        "when": "terminalFocus"
+        "key": "ctrl+shift+[Quote]",
+        "command": "workbench.action.splitEditorRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.navigateEditorGroups" ,
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.navigateEditorGroups" ,
+        "when": "editorTextFocus"
     },
     {
         "key": "ctrl+x",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
-    {
-        "key": "ctrl+tab",
-        "command": "workbench.action.quickOpenTerm",
-        "when": "terminalFocus"
-    }
 ]
