@@ -1,0 +1,12 @@
+{
+    "emmet.includeLanguages": {
+        "twig": "html"
+    },
+    "window.zoomLevel": 0,
+    "git.enableSmartCommit": true,
+    "cSpell.language": "fr,en",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "explorer.confirmDelete": false,
+    "editor.minimap.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+}
