@@ -35,3 +35,21 @@ Exemple pour supprimer tous les attributs des titres de type &lt;h2> :
 - **Search** : <span>&lt;h2.&#42;&gt;[\n\s]&#42;(.+)[\n\s]*&lt;/h2&gt;</span><br>
 - **Replace** : <span>&lt;h2&gt;$1&lt;/h2&gt;</span><br>
 
+Before
+
+```html
+<h2 class="my-custom-class" style="color-red">
+    Article 1
+</h2>
+
+<h2 class="my-custom-class2 oh-really">test</h2>
+```
+
+After
+
+```html
+<h2>Article 1</h2>
+
+<h2>test</h2>
+```
+
