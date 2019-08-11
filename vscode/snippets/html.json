@@ -1,19 +1,87 @@
 {
+	// Place your snippets for html here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
 	"Macro Alert": {
 		"prefix": [
+			"ma",
 			"malert",
 		],
-		"body":
-			"<div class=\"macro-alert\" data-alert=\"${1:info}\">\n\t<div class=\"row\">\n\t\t<div class=\"col\">\n\t\t\t<p class=\"fwb\">${2:Information}</p>\n\t\t\t<p>\n\t\t\t\t$3\n\t\t\t</p>\n\t\t</div>\n\t</div>\n</div>",
+		"body": "<div class=\"macro-alert\" data-alert=\"${1:info}\">\n\t<div class=\"row\">\n\t\t<div class=\"col\">\n\t\t\t<p class=\"fwb\">${2:Information}</p>\n\t\t\t<p>\n\t\t\t\t$3\n\t\t\t</p>\n\t\t</div>\n\t</div>\n</div>",
 		"description": "Display alert div for my articles"
 	},
-
 	"Article Image": {
 		"prefix": [
+			"mi",
 			"mimage",
 		],
-		"body":
-			"<div class=\"text-center mb-5 mt-4\">\n\t<img class=\"img-thumbnail\" src=\"/images/articles/$1\"\n\t\talt=\"$2\">\n</div>",
+		"body": "<div class=\"text-center mb-5 mt-4\">\n\t<img class=\"img-thumbnail\" src=\"/images/articles/$1\"\n\t\talt=\"$2\">\n</div>",
 		"description": "Display an image for my articles"
+	},
+	"span code-color": {
+		"prefix": [
+			"sc",
+			"scode",
+		],
+		"body": "<span class=\"code-color\">$1</span>$2",
+		"description": "span code-color"
+	},
+	"span keyword-color": {
+		"prefix": [
+			"sk",
+			"skeyword",
+		],
+		"body": "<span class=\"keyword-color\">$1</span>$2",
+		"description": "span keyword-color"
+	},
+	"span cmd-color": {
+		"prefix": [
+			"scm",
+			"scmd",
+		],
+		"body": "<span class=\"cmd-color\">$1</span>$2",
+		"description": "span cmd-color"
+	},
+	"span file-color": {
+		"prefix": [
+			"sf",
+			"sfile",
+		],
+		"body": "<span class=\"file-color\">$1</span>$2",
+		"description": "span file-color"
+	},
+	"span path-color": {
+		"prefix": [
+			"sp",
+			"spath",
+		],
+		"body": "<span class=\"path-color\">$1</span>$2",
+		"description": "span path-color"
+	},
+	"language area with result": {
+		"prefix": [
+			"lg",
+			"language",
+		],
+		"body": "<pre><code class=\"language-${1:kubernetes}\">$2</code></pre>\n\n<p class=\"fwb green-color\">Résultat:</p>\n\n<pre><code class=\"language-textile\">$3</code></pre>",
+		"description": "pre>code.language-lg res pre>code.language-textile"
+	},
+	"language area single": {
+		"prefix": [
+			"lgs",
+			"languages",
+		],
+		"body": "<pre><code class=\"language-${1:shell}\">$2</code>",
+		"description": "pre>code.language-lg"
 	},
 }
