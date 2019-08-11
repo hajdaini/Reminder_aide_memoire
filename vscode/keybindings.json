@@ -18,7 +18,6 @@
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus"
     },
-
     {
         "key": "ctrl+shift+[Quote]",
         "command": "workbench.action.splitEditorRight",
@@ -26,12 +25,12 @@
     },
     {
         "key": "alt+right",
-        "command": "workbench.action.navigateEditorGroups" ,
+        "command": "workbench.action.navigateEditorGroups",
         "when": "editorTextFocus"
     },
     {
         "key": "alt+left",
-        "command": "workbench.action.navigateEditorGroups" ,
+        "command": "workbench.action.navigateEditorGroups",
         "when": "editorTextFocus"
     },
     {
@@ -39,4 +38,34 @@
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
+
+    // ------------------SELECTIONS------------------ 
+    {
+        "key": "ctrl+shift+a",
+        "command": "editor.emmet.action.balanceOut"
+    },
+    {
+        "key": "ctrl+shift+=",
+        "command": "extension.selectCurlyBrackets",
+    },
+    {
+        "key": "ctrl+shift+4",
+        "command": "extension.selectSingleQuote",
+    },
+    {
+        "key": "ctrl+shift+3",
+        "command": "extension.selectDoubleQuote",
+    },
+    {
+        "key": "ctrl+shift+7",
+        "command": "extension.selectEitherQuote",
+    },
+    {
+        "key": "ctrl+shift+[Minus]",
+        "command": "extension.selectParenthesis",
+    },
+    {
+        "key": "ctrl+shift+[Minus]",
+        "command": "extension.selectSquareBrackets",
+    }
 ]
