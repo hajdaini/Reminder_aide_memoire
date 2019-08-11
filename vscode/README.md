@@ -30,7 +30,7 @@ File > Preferences > Keyboard Shortcuts
 
 - Rappel : https://github.com/hajdaini/Reminder_aide_memoire/blob/master/regex/README.md
 
-Exemple pour supprimer tous les attributs des titres de type <h2>  :
+Exemple pour supprimer tous les attributs des titres de type &lt;h2> :
 
 - **Search** : <span>&lt;h2.&#42;&gt;[\n\s]&#42;(.+)[\n\s]*&lt;/h2&gt;</span><br>
 - **Replace** : <span>&lt;h2&gt;$1&lt;/h2&gt;</span><br>
