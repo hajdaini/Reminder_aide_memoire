@@ -33,3 +33,5 @@
 | `?`    | 0 ou 1 répétition |
 | `[a-zA-Z]{6}`| 6 lettres consécutives |
 | `[0-9]{2,4}` | 2 et 4 chiffres consécutifs |
+
+Les parenthèses permettent de créer un groupe de regex et de les stocker en mémoire afin de les réutiliser avec les références `$1`, `$2` etc ...
