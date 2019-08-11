@@ -1,0 +1,19 @@
+{
+	"Macro Alert": {
+		"prefix": [
+			"malert",
+		],
+		"body":
+			"<div class=\"macro-alert\" data-alert=\"${1:info}\">\n\t<div class=\"row\">\n\t\t<div class=\"col\">\n\t\t\t<p class=\"fwb\">${2:Information}</p>\n\t\t\t<p>\n\t\t\t\t$3\n\t\t\t</p>\n\t\t</div>\n\t</div>\n</div>",
+		"description": "Display alert div for my articles"
+	},
+
+	"Article Image": {
+		"prefix": [
+			"mimage",
+		],
+		"body":
+			"<div class=\"text-center mb-5 mt-4\">\n\t<img class=\"img-thumbnail\" src=\"/images/articles/$1\"\n\t\talt=\"$2\">\n</div>",
+		"description": "Display an image for my articles"
+	},
+}
