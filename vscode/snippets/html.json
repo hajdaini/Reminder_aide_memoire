@@ -91,7 +91,7 @@
 			"lgs",
 			"languages",
 		],
-		"body": "<pre><code class=\"language-${1:shell}\">$2</code>",
+		"body": "<pre><code class=\"language-${1:shell}\">$2</code></pre>",
 		"description": "pre>code.language-lg"
 	},
 }
