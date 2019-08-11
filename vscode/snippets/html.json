@@ -12,6 +12,8 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+
+
 	"Macro Alert": {
 		"prefix": [
 			"ma",
@@ -67,6 +69,14 @@
 		],
 		"body": "<span class=\"path-color\">$1</span>$2",
 		"description": "span path-color"
+	},
+	"span info-color": {
+		"prefix": [
+			"si",
+			"sinfo",
+		],
+		"body": "<span class=\"info-color\">$1</span>$2",
+		"description": "span info-color"
 	},
 	"language area with result": {
 		"prefix": [
