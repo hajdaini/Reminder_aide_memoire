@@ -6,8 +6,8 @@
 |:----------:|---------------|
 | `^Bonjour` | Texte commençant par "Bonjour" |
 | `revoir$`  | Texte finissant par revoir |
-| `Bonjour&#124;revoir` | toutes les occurrences de "Bonjour" ou "revoir" |
-| `^Bonjour&#124;revoir$` | "Bonjour" au début ou "revoir" en fin de texte |
+| <code>Bonjour&#124;</code>revoir | toutes les occurrences de "Bonjour" ou "revoir" |
+| <code>^Bonjour&#124;</code>revoir$ | "Bonjour" au début ou "revoir" en fin de texte |
 
 ## Les ensembles de caractères
 
