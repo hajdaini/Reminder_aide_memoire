@@ -16,9 +16,11 @@ File > Preferences > Keyboard Shortcuts
 
 **You must install the `Quick and Simple Text Selection` extension to use those shortcuts**
 
+if cl
+
 | Shortcuts   | Command |
 |:--------:|---------------|
-| `ctrl+shift+a` |  Select between html tag |
+| `ctrl+shift+a` |  Select between html tag (if used again, then it will select the parent element) |
 | `ctrl+shift+7` |  Select between `` |
 | `ctrl+shift+3` |  Select between "" |
 | `ctrl+shift+4` |  Select between '' |
