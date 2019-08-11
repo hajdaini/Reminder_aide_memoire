@@ -39,7 +39,8 @@
         "when": "terminalFocus"
     },
 
-    // ------------------SELECTIONS------------------ 
+    // ------------------SELECTIONS------------------
+    // PLEASE INSTALL THE "Quick and Simple Text Selection" BEFORE
     {
         "key": "ctrl+shift+a",
         "command": "editor.emmet.action.balanceOut"
@@ -61,11 +62,12 @@
         "command": "extension.selectEitherQuote",
     },
     {
-        "key": "ctrl+shift+[Minus]",
+        "key": "ctrl+shift+0",
         "command": "extension.selectParenthesis",
     },
     {
         "key": "ctrl+shift+[Minus]",
         "command": "extension.selectSquareBrackets",
     }
+   
 ]
