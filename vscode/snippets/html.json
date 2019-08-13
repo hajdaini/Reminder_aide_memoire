@@ -83,7 +83,7 @@
 			"lg",
 			"language",
 		],
-		"body": "<pre><code class=\"language-${1:kubernetes}\">$2</code></pre>\n\n<p class=\"fwb green-color\">Résultat:</p>\n\n<pre><code class=\"language-textile\">$3</code></pre>",
+		"body": "<pre><code class=\"language-${1:kubernetes}\">$2</code></pre>\n\n<p class=\"fwb green-color\">Résultat :</p>\n\n<pre><code class=\"language-textile\">$3</code></pre>",
 		"description": "pre>code.language-lg res pre>code.language-textile"
 	},
 	"language area single": {
