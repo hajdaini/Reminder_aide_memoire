@@ -4,7 +4,7 @@ Get top 20 most visited url :
 cat <apache_log_path> | cut -d " " -f 7 | sort | uniq -c | sort -nr | head -n 20
 ```
 
-Get top 20 most visited url :
+Get top 10 IP :
 
 ```shell
 cat <apache_log_path>  | cut -d " " -f 1 | sort | uniq -c | sort -nr | head -n 10
