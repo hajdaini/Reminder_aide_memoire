@@ -16,15 +16,17 @@
 	"shell": {
 		"prefix": [
 			"shell",
+			"sh"
 		],
-		"body": "```$1```$2",
+		"body": "```shell\n$1\n```\n\n$2",
 		"description": "Code area for shell"
 	},
 	"python": {
 		"prefix": [
 			"python",
+			"py"
 		],
-		"body": "```$1```$2",
+		"body": "```python\n$1\n```\n\n$2",
 		"description": "Code area for python"
 	},
 }
