@@ -1,7 +1,16 @@
 {
+    "markdown-pdf.headerTemplate": "<div><span></span></div>",
+    "markdown-pdf.footerTemplate": "<div style=\"font-size: 9px; margin: 0 auto;\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
+    "markdown-pdf.margin.bottom": "2cm",
+    "markdown-pdf.scale": 0.9,
+    "markdown-pdf.breaks": true,
+    "markdown-pdf.highlightStyle": "darcula.css",
+    
     "emmet.includeLanguages": {
         "twig": "html"
     },
+    
+    "terminal.integrated.fontSize": 14,
     "window.zoomLevel": 0,
     "git.enableSmartCommit": true,
     "cSpell.language": "fr,en",
