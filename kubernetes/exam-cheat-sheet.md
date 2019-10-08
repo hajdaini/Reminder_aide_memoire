@@ -33,7 +33,9 @@
 - [Réseau](#réseau)
     - [Fichiers de conf](#fichiers-de-conf)
     - [Ingress](#ingress)
-- [Préparation](#préparation)
+- [Conseils](#conseils)
+- [Preparation](#preparation)
+- [CODE PROMO](#code-promo)
 
 <!-- /TOC -->
 
@@ -789,9 +791,19 @@ curl -kL http://localhost/notfound
 default backend - 404
 ```
 
-# Préparation
+# Conseils
+
+- TOUJOURS vérifier sur quel cluster vous êtes car l'exam se déroule sur plusieurs clusters
+- Hiérarchiser les questions car les questions sont indépendantes et n’ont pas non plus le même coefficient donc ne pas hésiter à privilégier les questions faciles qui rapportent
+
+# Preparation
 
 Exercice/Doc : 
 
 - [https://github.com/dgkanatsios/CKAD-exercises](https://github.com/dgkanatsios/CKAD-exercises)
 - [https://github.com/walidshaari/Kubernetes-Certified-Administrator](https://github.com/walidshaari/Kubernetes-Certified-Administrator)
+
+
+# CODE PROMO
+
+Coupoun : DCUBEOFFER
