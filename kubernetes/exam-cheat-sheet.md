@@ -40,7 +40,7 @@
 
 <!-- /TOC -->
 
-# 1. Commandes utiles et prerequis de preparation
+# Commandes utiles et prerequis de preparation
 
 - possibilité de rajouter des favoris dans votre navigateur chrome
 
@@ -88,7 +88,7 @@
   journalctl -u kubelet -f
   ```
 
-# 2. Etat/Fichiers des composants Kubernetes
+# Etat/Fichiers des composants Kubernetes
 
 - etcd
 
@@ -131,7 +131,7 @@
   kubectl get daemonset -n kube-system
   ```
 
-# 3. Création rapide d'objets Kubernetes
+# Création rapide d'objets Kubernetes
 
 lien : [https://kubernetes.io/fr/docs/reference/kubectl/conventions/](https://kubernetes.io/fr/docs/reference/kubectl/conventions/)
 
@@ -162,11 +162,11 @@ lien : [https://kubernetes.io/fr/docs/reference/kubectl/conventions/](https://ku
   --dry-run -o yaml
   ```
 
-# 4. Scheduler
+# Scheduler
 
 [https://kubernetes.io/docs/concepts/configuration/assign-pod-node/](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/)
 
-## 4.1. Nodename
+## Nodename
 
 ```yaml
 apiVersion: v1
@@ -180,7 +180,7 @@ spec:
   nodeName: worker-1
 ```
 
-## 4.2. nodeSelector
+## nodeSelector
 
 1. Créer un label d'un pod 
 
@@ -211,7 +211,7 @@ spec:
    ```
 
 
-## 4.3. Node Affinity et 
+## Node Affinity et 
 
 limiter le placement de pods sur des nœuds spécifiques.
 
@@ -235,7 +235,7 @@ spec:
             - malware
 ```
 
-## 4.4. Taints/Tolerances
+## Taints/Tolerances
 
 Définir des restrictions sur les pods pouvant être planifiés sur un nœud
 
@@ -264,7 +264,7 @@ Définir des restrictions sur les pods pouvant être planifiés sur un nœud
    ```
 
 
-## 4.5. DaemonSet
+## DaemonSet
 
 ```yaml
 apiVersion: apps/v1
@@ -286,7 +286,7 @@ spec:
         image: nginx
 ```
 
-# 5. Supervision
+# Supervision
 
 - Vérifiez l'état/logs du pod de metrics 
 
@@ -303,7 +303,7 @@ spec:
   ```
 
 
-# 6. Rolling Updates et Rollbacks
+# Rolling Updates et Rollbacks
 
 - Update
 
@@ -321,13 +321,13 @@ spec:
   kubectl rollout undo deployment/myapp-deployment
   ```
 
-# 7. Cluster Maintenance
+# Cluster Maintenance
 
 D'abord un upgrade du master puis un upgrade des workers un par un
 
 ***Exemple*** : Upgrade version 1.11 => 1.13, on doit faire un upgrade incrémental par version mineur donc 1.11 => 1.12 => 1.13 
 
-## 7.1. Upgrade master
+## Upgrade master
 
 1. Vérifier la version possible à upgrade :
 
@@ -350,7 +350,7 @@ D'abord un upgrade du master puis un upgrade des workers un par un
   kubectl get nodes
   ```
 
-## 7.2. Upgrade workers
+## Upgrade workers
 
 
 1. Rendre le worker unschedulable et déplacez les pods dans un autre worker 
@@ -373,12 +373,12 @@ D'abord un upgrade du master puis un upgrade des workers un par un
   kubectl uncordon node1
   ```
 
-# 8. MEttre le save snapshot
+# MEttre le save snapshot
 
 
-# 9. Security
+# Security
 
-## 9.1. Auth Mechanisms - Basic
+## Auth Mechanisms - Basic
 
 `/tmp/users/user-details.csv` :
 
@@ -406,7 +406,7 @@ spec:
     name: usr-details
 ```
 
-## 9.2. Les différents certificats
+## Les différents certificats
 
 ![certificats.jpg](certificats.jpg)
 
@@ -419,7 +419,7 @@ spec:
 | /etc/kubernetes/pki/apiserver-etcd-client.(crt/key) | kube-apiserver-etcd-client | system:masters |
 
 
-## 9.3. Autoriser un utilisateur à se connecter au cluster
+## Autoriser un utilisateur à se connecter au cluster
 
 1. Récupérer ou créer le certificat du user à envoyer au serveur api :
 
@@ -453,7 +453,7 @@ spec:
 
 4. Donner à l'utilisateur le fichier ca.crt
 
-## 9.4. KubeConfig
+## KubeConfig
 
 
 > Ici on prétend que l'utilisateur possède déjà les droits nécessaires dans le cluster
@@ -509,12 +509,12 @@ kubectl config view
 kubectl config set-context dev-frontend admin@my-kube-playground
 ```
 
-## 9.5. RBAC
+## RBAC
 
 
 L'objet rôle est utilisé au niveau du namespace alors qu'un ClusterRole concerne l'ensemble du cluster.
 
-### 9.5.1. Role and RoleBinding
+### Role and RoleBinding
 
 **Pas d'options pour --namespace pour les roles**
 
@@ -526,7 +526,7 @@ kubectl create role pod-reader --verb=get,list,watch --resource=pods
 kubectl create rolebinding user-read-binding --role=pod-reader --user=user-read --namespace=tata
 ```
 
-### 9.5.2. ClusterRole 
+### ClusterRole 
 
 ```shell
 kubectl create clusterrole pod-reader --verb=get,list,watch --resource=pods 
@@ -536,7 +536,7 @@ kubectl create clusterrole pod-reader --verb=get,list,watch --resource=pods
 kubectl create rolebinding user-read-binding --clusterrole=pod-reader --user=user-read --namespace=tata
 ```
 
-### 9.5.3. Tester les droits
+### Tester les droits
 
 ```shell
 kubectl get pod --as dev-user -n tata
@@ -545,7 +545,7 @@ kubectl auth can-i create deployments --as dev-user -n tata
 no
 ```
 
-## 9.6. Registry Docker privé
+## Registry Docker privé
 
 ```shell
 kubectl create secret docker-registry regcred --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
@@ -564,7 +564,7 @@ spec:
   - name: regcred
 ```
 
-## 9.7. Security Context (Utilisateur et autorisation dans un conteneur/pod)
+## Security Context (Utilisateur et autorisation dans un conteneur/pod)
 
 ```yaml
 spec:
@@ -578,7 +578,7 @@ spec:
         add: ["SYS_TIME"]
 ```
 
-## 9.8. Network Policy (Ingress & Egress)
+## Network Policy (Ingress & Egress)
 
 - Ingress : Connexion entrante
 - Egress : Connexion sortante
@@ -610,9 +610,9 @@ spec:
 
 CNI => flannel ne supporte pas les NetworkPolicies
 
-# 10. Stockage
+# Stockage
 
-## 10.1. hostPath
+## hostPath
 
 ```yaml
 spec:
@@ -630,7 +630,7 @@ spec:
       type: DirectoryOrCreate
 ```
 
-## 10.2. Volume persistant et revendication de volume persistant
+## Volume persistant et revendication de volume persistant
 
 
 ```yaml
@@ -678,9 +678,9 @@ spec:
 ```
 
 
-# 11. Réseau
+# Réseau
 
-## 11.1. Fichiers de conf
+## Fichiers de conf
 
 - cni
 
@@ -726,7 +726,7 @@ spec:
 
 > le fichier `/etc/hosts` prend le dessus sur le fichier `/etc/resolv.conf`
 
-## 11.2. Ingress
+## Ingress
 
 ![loadbalancer.png](loadbalancer.png)
 
@@ -803,7 +803,7 @@ curl -kL http://localhost/notfound
 default backend - 404
 ```
 
-# 12. Json
+# Json
 
 [https://kubernetes.io/fr/docs/reference/kubectl/cheatsheet/](https://kubernetes.io/fr/docs/reference/kubectl/cheatsheet/)
 
@@ -858,12 +858,12 @@ default backend - 404
   ```
 
 
-# 13. Conseils
+# Conseils
 
 - TOUJOURS vérifier sur quel cluster vous êtes car l'exam se déroule sur plusieurs clusters
 - Hiérarchiser les questions car les questions sont indépendantes et n’ont pas non plus le même coefficient donc ne pas hésiter à privilégier les questions faciles qui rapportent
 
-# 14. Preparation
+# Preparation
 
 Exercice/Doc : 
 
@@ -872,6 +872,6 @@ Exercice/Doc :
 - [https://github.com/walidshaari/Kubernetes-Certified-Administrator](https://github.com/walidshaari/Kubernetes-Certified-Administrator)
 
 
-# 15. CODE PROMO
+# CODE PROMO
 
 Coupoun : DCUBEOFFER
