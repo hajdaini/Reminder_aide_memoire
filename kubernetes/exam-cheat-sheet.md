@@ -42,7 +42,7 @@
 
 # Commandes utiles et prerequis de preparation
 
-- possibilité de rajouter des favoris dans votre navigateur chrome
+- possibilité pendant l'examen de rajouter des favoris dans votre navigateur chrome
 
 - copier le dossier des pods statics afin de faciliter le troubleshooting
 
