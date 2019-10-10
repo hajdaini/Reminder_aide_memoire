@@ -408,7 +408,7 @@ spec:
 
 ## Les différents certificats
 
-![certificats.jpg](certificats.jpg)
+![certificats.jpg](./images/certificats.jpg)
 
 
 |      Certificate Path               | CN Name | Organization |
@@ -583,7 +583,7 @@ spec:
 - Ingress : Connexion entrante
 - Egress : Connexion sortante
 
-![network-policies.jpg](network-policies.jpg)
+![network-policies.jpg](./images/network-policies.jpg)
 
 
 ```yaml
@@ -728,9 +728,9 @@ spec:
 
 ## Ingress
 
-![loadbalancer.png](loadbalancer.png)
+![loadbalancer.png](./images/loadbalancer.png)
 
-![ingress.png](ingress.png)
+![ingress.png](./images/ingress.png)
 
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
