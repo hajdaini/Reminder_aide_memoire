@@ -1,6 +1,6 @@
 <!-- TOC -->
 
-- [Commandes utiles](#commandes-utiles)
+- [Commandes utiles et prérequis de preparation](#commandes-utiles-et-prérequis-de-preparation)
 - [Etat/Fichiers des composants Kubernetes](#etatfichiers-des-composants-kubernetes)
 - [Création rapide d'objets Kubernetes](#création-rapide-dobjets-kubernetes)
 - [Scheduler](#scheduler)
@@ -33,13 +33,23 @@
 - [Réseau](#réseau)
     - [Fichiers de conf](#fichiers-de-conf)
     - [Ingress](#ingress)
+- [Json](#json)
 - [Conseils](#conseils)
 - [Preparation](#preparation)
 - [CODE PROMO](#code-promo)
 
 <!-- /TOC -->
 
-# Commandes utiles
+# Commandes utiles et prérequis de preparation
+
+- copier le dossier des pods statics afin de faciliter le troubleshooting
+
+  ```shell
+  mkdir /mine/master
+  mkdir /mine/worker
+  cp -r /etc/kubernetes/manifests /mine/master/
+  scp -r /etc/kubernetes/manifests /mine/worker/
+  ```
 
 - Recherche multiple :
 
@@ -134,7 +144,7 @@ lien : [https://kubernetes.io/fr/docs/reference/kubectl/conventions/](https://ku
 
   ```shell
   kubectl run --generator=deployment/v1beta1 nginx --image=nginx --dry-run --replicas=4 -o yaml
-  ```
+  ``` 
 
 - Service
 
@@ -791,6 +801,61 @@ curl -kL http://localhost/notfound
 default backend - 404
 ```
 
+# Json
+
+[https://kubernetes.io/fr/docs/reference/kubectl/cheatsheet/](https://kubernetes.io/fr/docs/reference/kubectl/cheatsheet/)
+
+- Récupérer l'image du premier conteneur de toutes les images
+
+  ```shell
+  kubectl get pods -o jsonpath='{.items[*].spec.containers[0].image}'
+  ```
+
+- Récupérer le nom du node et la capacité cpu avec un saut à la ligne
+
+  ```shell
+  kubectl get nodes -o jsonpath='{.items[*].metadata.name}{"\n"}{.items[*].status.capacity.cpu}'
+  ```
+  Résultat :
+  
+  ```textile
+  master node01
+  4      4
+  ```
+
+- Les boucles
+
+  ```shell
+  kubectl get nodes -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.capcity.cpu}{\"n"}{end}'
+  ```
+  Résultat :
+  
+  ```textile
+  master  4
+  node01  4
+  ```
+  
+- Trier les PVs en ordre croissant seulon leur capacité de stockage et n'afficher que le nom et la capacité de stockage sous forme de colonnes 
+
+  ```shell
+  kubectl get pv --sort-by=.spec.capacity.storage  -o=custom-columns=NAME:.metadata.name,CAPACITY:.spec.capacity.storage
+  ```
+
+  ```textile
+  NAME       CAPACITY
+  pv-log-4   40Mi
+  pv-log-1   100Mi
+  pv-log-2   200Mi
+  pv-log-3   300Mi
+  ```
+
+- Obtenir le nom context du user "aws-user"
+
+  ```shell
+  kubectl config view --kubeconfig=my-kube-config -o jsonpath="{.contexts[?(@.context.user=='aws-user')].name}"
+  ```
+
+
 # Conseils
 
 - TOUJOURS vérifier sur quel cluster vous êtes car l'exam se déroule sur plusieurs clusters
@@ -801,6 +866,7 @@ default backend - 404
 Exercice/Doc : 
 
 - [https://github.com/dgkanatsios/CKAD-exercises](https://github.com/dgkanatsios/CKAD-exercises)
+- [https://github.com/arush-sal/cka-practice-environment](https://github.com/arush-sal/cka-practice-environment)
 - [https://github.com/walidshaari/Kubernetes-Certified-Administrator](https://github.com/walidshaari/Kubernetes-Certified-Administrator)
 
 
