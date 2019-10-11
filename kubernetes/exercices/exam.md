@@ -16,3 +16,71 @@ kubectl run --generator=run-pod/v1 pod1 --image=hajdaini/alpine:curl -ti --rm --
 kubectl create namespace test1
 kubectl run --generator=run-pod/v1 pod2 --namespace=test1 --image=hajdaini/alpine:curl -ti --rm --  http://nginx-service:4444
 ```
+
+### Test 2
+
+1. Create a static PersistentVolume of 50MB with the path *tmp/test2*.
+2. Create a PersistentVolumeClaim for this volume for 40MB.
+3. Create a CronJob which runs two instances every minute of: a pod mounting the PersistentStorageClaim into /tmp/vol and executing the command `echo "`date +'%H-%S.txt'`" >> /tmp/vol/storage`. (We only need to keep the last 4 successful executed jobs in the cronjob history.)
+4. Check your local filesystem for the hostnames of these pods with tail -f /tmp/k8s-challenge-3/storage.
+
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: test2-pv
+spec:
+  capacity:
+    storage: 50Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /tmp/test2
+    type: DirectoryOrCreate
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: test2-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 40Mi
+
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "*/1 * * * *"
+  successfulJobsHistoryLimit: 4
+  jobTemplate:
+    spec:
+      parallelism: 2
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: bash
+            args:
+            - bash
+            - -c
+            - echo "`date +'%H-%S.txt'`" >> /tmp/vol/storage
+          restartPolicy: OnFailure
+            volumeMounts:
+            - mountPath: "/tmp/vol"
+              name: test2-pvc
+          volumes:
+            - name: test2-pvc
+              persistentVolumeClaim:
+                claimName: test2-pvc
+```
+
+```shell
+ssh root@node01 cat /tmp/test2/storage
+```
