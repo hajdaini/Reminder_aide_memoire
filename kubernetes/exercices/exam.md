@@ -84,3 +84,25 @@ spec:
 ```shell
 ssh root@node01 cat /tmp/test2/storage
 ```
+
+### Test 3
+
+1. Create a deployment of 3 pods with image nginx:1.14.2.
+2. Confirm that all pods are running that image.
+3. Edit the deployment to change the image of all pods to nginx:1.15.10.
+4. Confirm that all pods are running image nginx:1.15.10.
+5. Edit the deployment to change image of all pods to nginx:1.15.666.
+6. Confirm that all pod are running image nginx:1.15.666 and have no errors. Show error if there is one.
+7. Woops! Something went crazy wrong here! Rollback the change, so all pods should run nginx:1.15.10 again.
+8. Confirm that all pods are running image nginx:1.15.10.
+
+
+```shell
+kubectl run nginx --image=nginx:1.14.2 --replicas=3
+kubectl get pods -o=custom-columns=NAME:.metadata.name,IMAGE:.spec.containers[0].image
+kubectl set image deployment.v1.apps/nginx nginx=nginx:1.15.10 --record=true
+kubectl set image deployment.v1.apps/nginx nginx=nginx:1.15.666 --record=true
+kubectl rollout history deployment.v1.apps/nginx
+kubectl rollout undo deployment.v1.apps/nginx --to-revision=1
+kubectl get pods -o=custom-columns=NAME:.metadata.name,IMAGE:.spec.containers[0].image
+```
