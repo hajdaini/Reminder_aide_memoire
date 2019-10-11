@@ -166,3 +166,94 @@ spec:
 kubectl exec pod-configmap -ti  -- env
 kubectl exec pod-secret -ti  -- cat /tmp/secret1/password && echo ""
 ```
+
+### Test 5
+
+
+**Before** :
+
+Launch command bellow : 
+
+```shell
+kubectl create -f https://raw.githubusercontent.com/wuestkamp/k8s-challenges/master/6/scenario.yaml
+```
+
+**The objects**
+
+- deployment `nginx-deployment` with 5 replicas, nginx on port 80
+- deployment `api-deployment` with 2 replicas, simple service running port 3333
+- NodePort service `nginx-service` which exposes port 31111 on each node and forwards to port 80 on the nginx pods
+- ClusterIP service `api-service` to handle simple internal load balancing from nginx instances to api instances on port 3333
+
+![test5-recap.png](../images/test5-recap.png)
+
+
+**Questions**
+
+- implement a NetworkPolicy for nginx pods to only allow egress to the internal api pods on port 3333. No access to the outer world (but DNS).
+- implement a NetworkPolicy for api pods to only allow ingress on port 3333 from the internal nginx pods. To test negative: check from api to api.
+- implement a NetworkPolicy for api pods to only allow egress to (IP of google.com) port 443.
+
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: np-nginx
+spec:
+  podSelector:
+    matchLabels:
+      app: nginx
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: api
+    ports:
+    - protocol: TCP
+      port: 3333
+
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: np-api
+spec:
+  podSelector:
+    matchLabels:
+      app: api
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: nginx 
+    ports:
+    - protocol: TCP
+      port: 3333
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 216.58.208.35/32
+    ports:
+      - port: 443
+        protocol: TCP
+```
+
+
+### Test 6
+
+
+1. Create a deployment called compute of three replicas of image byrnedo/alpine-curl which keep running for a while. Make sure they can reach our external service: curl www.google.com:80
+2. Create an ExternalName service called webapi which points to www.google.com. Make sure our pods can reach the service with nslookup.
+
+```shell
+kubectl run compute --image=byrnedo/alpine-curl --replicas=3 --dry-run -o yaml -- sleep 3000
+kubectl exec compute-777f85d55-8crfc -- curl  www.google.com
+kubectl create service externalname webapi --external-name www.google.com
+kubectl exec compute-777f85d55-8crfc -- nslookup webapi
+```
