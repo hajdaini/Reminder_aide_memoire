@@ -87,6 +87,7 @@ ssh root@node01 cat /tmp/test2/storage
 
 ### Test 3
 
+
 1. Create a deployment of 3 pods with image nginx:1.14.2.
 2. Confirm that all pods are running that image.
 3. Edit the deployment to change the image of all pods to nginx:1.15.10.
@@ -105,4 +106,63 @@ kubectl set image deployment.v1.apps/nginx nginx=nginx:1.15.666 --record=true
 kubectl rollout history deployment.v1.apps/nginx
 kubectl rollout undo deployment.v1.apps/nginx --to-revision=1
 kubectl get pods -o=custom-columns=NAME:.metadata.name,IMAGE:.spec.containers[0].image
+```
+
+
+### Test 4
+
+1. Create secret1 and store password:12345678.
+2. Create a pod-secret-secret.yaml which creates a single pod of image bash . This pod should mount the secret1 to /tmp/secret1. This pod should stay idle after boot.
+3. Confirm pod1 has access to our password via file system.
+4. On your local machine (master node) create a folder drinks and its content: `mkdir drinks; echo ipa > drinks/beer; echo red > drinks/wine; echo sparkling > drinks/water`
+5. Create a ConfigMap containing all files of folder drinks and their content.
+6. Make these ConfigMaps available in a pod-configmap using environment variables.
+7. Check on pod-configmap if those environment variables are available.
+
+
+```shell
+kubectl create secret generic secret1 --from-literal=password=12345678
+mkdir drinks; echo ipa > drinks/beer; echo red > drinks/wine; echo sparkling > drinks/water
+kubectl create configmap drinks --from-file=drinks/
+```
+
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-secret
+spec:
+  volumes:
+  - name: secret1
+    secret:
+      secretName: secret1
+  containers:
+  - name: pod-secret
+    image: bash
+    command:
+    args: ["sleep", "3000"]
+    volumeMounts:
+    - name: secret1
+      mountPath: "/tmp/secret1"
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-configmap
+spec:
+  containers:
+  - name: pod-secret
+    image: bash
+    command:
+    args: ["sleep", "3000"]
+    envFrom:
+    - configMapRef:
+        name: drinks
+```
+
+```shell
+kubectl exec pod-configmap -ti  -- env
+kubectl exec pod-secret -ti  -- cat /tmp/secret1/password && echo ""
 ```
