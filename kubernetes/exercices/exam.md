@@ -257,3 +257,31 @@ kubectl exec compute-777f85d55-8crfc -- curl  www.google.com
 kubectl create service externalname webapi --external-name www.google.com
 kubectl exec compute-777f85d55-8crfc -- nslookup webapi
 ```
+
+### test 7
+
+
+The user *hatim* does not have the permission manage pods :  
+
+```shell
+kubectl auth can-i get pods
+kubectl auth can-i get pods --as=hatim # no
+```
+
+What you should do :
+
+1. Create a ClusterRole and ClusterRoleBinding so that user *hatim* can manage pods. Then test it.
+2. Create an additional ClusterRole and ClusterRoleBinding for *hatim* to add read permission to secrets named "secret-password". Test it.
+
+
+```shell
+kubectl create clusterrole cl-pod --verb="*" --resource=pods
+kubectl create rolebinding hatim-pod-binding --clusterrole=cl-pod --user=hatim
+kubectl auth can-i get pods --as=hatim # yes
+
+kubectl auth can-i get secret/secret-password  --as=hatim # no
+kubectl create clusterrole cl-secret-password --verb="get" --resource=secret --resource-name=secret-password
+kubectl create rolebinding hatim-pod-binding --clusterrole=cl-secret-password --user=hatim
+kubectl auth can-i get secret/secret-password  --as=hatim # yes
+kubectl auth can-i get secret/secret-test  --as=hatim # no
+```
