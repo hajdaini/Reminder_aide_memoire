@@ -122,6 +122,7 @@
 - Kubelet
 
   ```shell
+  cat /var/lib/kubelet/config.yaml
   ps -aux | grep kubelet
   ```
 
