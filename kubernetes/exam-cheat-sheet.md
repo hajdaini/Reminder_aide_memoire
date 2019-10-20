@@ -63,7 +63,7 @@
 - vim :
 
   ```shell
-  echo -e "set number\nset tabstop=8" > ~/.vimrc
+  echo -e "set number\nset tabstop=2" > ~/.vimrc
   u : undo
   ctrl + r : redo
   gg : curseur début de fichier
