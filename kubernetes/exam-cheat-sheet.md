@@ -60,6 +60,12 @@
   grep 'word1\|word2\|word3' /path/to/file
   ```
 
+- Récupérer les 3 derniers logs d'un Event :
+
+  ```shell
+  kubectl describe pod frontend | grep -A 3 Events
+  ```
+
 - vim :
 
   ```shell
