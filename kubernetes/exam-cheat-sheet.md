@@ -1,5 +1,7 @@
 <!-- TOC -->
 
+*Kubernetes exam version 1.15*
+
 - [Commandes utiles et prerequis de preparation](#commandes-utiles-et-prerequis-de-preparation)
 - [Etat/Fichiers des composants Kubernetes](#etatfichiers-des-composants-kubernetes)
 - [Création rapide d'objets Kubernetes](#création-rapide-dobjets-kubernetes)
@@ -61,6 +63,7 @@
   alias kd='kubectl describe'
   alias kc='kubectl create'
   alias kdd='kubectl delete'
+  alias kgen='kubectl run --generator=run-pod/v1'
   alias kcc='kubectl config current-context’
   alias kcu='kubectl config use-context’
   alias kcg='kubectl config get-context'
