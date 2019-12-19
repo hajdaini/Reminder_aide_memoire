@@ -970,7 +970,7 @@ default backend - 404
 - Les boucles
 
   ```shell
-  kubectl get nodes -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.capcity.cpu}{"\n"}{end}'
+  kubectl get nodes -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.capacity.cpu}{"\n"}{end}'
   ```
   Résultat :
   
