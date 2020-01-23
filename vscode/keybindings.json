@@ -62,7 +62,7 @@
         "command": "extension.selectEitherQuote",
     },
     {
-        "key": "ctrl+shift+0",
+        "key": "ctrl+shift+0", // use 9 instead of 0 if it doesnt work
         "command": "extension.selectParenthesis",
     },
     {
