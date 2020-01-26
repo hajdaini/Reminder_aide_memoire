@@ -13,3 +13,4 @@
 - [Quick and Simple Text Selection](https://marketplace.visualstudio.com/items?itemName=dbankier.vscode-quick-select)
 - [Twig Language 2](https://marketplace.visualstudio.com/items?itemName=mblode.twig-language-2)
 - [Increment Selection](https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection)
+- [One monokai theme](https://marketplace.visualstudio.com/items?itemName=azemoh.one-monokai)
