@@ -5,6 +5,10 @@
         "command": "workbench.action.terminal.toggleTerminal"
     },
     {
+        "key": "ctrl+[Backquote]",
+        "command": "workbench.action.togglePanelPosition"
+    },
+    {
         "key": "ctrl+[Backslash]",
         "command": "workbench.action.terminal.focus"
     },
@@ -25,19 +29,48 @@
     },
     {
         "key": "alt+right",
-        "command": "workbench.action.navigateEditorGroups",
-        "when": "editorTextFocus"
+        "command": "workbench.action.nextEditor"
     },
     {
         "key": "alt+left",
-        "command": "workbench.action.navigateEditorGroups",
-        "when": "editorTextFocus"
+        "command": "workbench.action.previousEditor"
     },
     {
         "key": "ctrl+x",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
+    {
+        "key": "ctrl+shift+left",
+        "command": "workbench.action.terminal.resizePaneLeft",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "workbench.action.terminal.resizePaneRight",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+Up",
+        "command": "workbench.action.terminal.resizePaneUp"
+    },
+    {
+        "key": "ctrl+shift+Down",
+        "command": "workbench.action.terminal.resizePaneDown"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+
+
+    
 
     // ------------------SELECTIONS------------------
     // PLEASE INSTALL THE "Quick and Simple Text Selection" BEFORE
@@ -62,12 +95,11 @@
         "command": "extension.selectEitherQuote",
     },
     {
-        "key": "ctrl+shift+0", // use 9 instead of 0 if it doesnt work
+        "key": "ctrl+shift+0",
         "command": "extension.selectParenthesis",
     },
     {
         "key": "ctrl+shift+[Minus]",
         "command": "extension.selectSquareBrackets",
     }
-   
 ]
