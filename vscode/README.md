@@ -10,6 +10,8 @@ File > Preferences > Keyboard Shortcuts
 | `ctrl+%` | Split Terminal/Editor (depend on the focus) |
 | `ctrl+x` | Kill active terminal |
 | `alt+[arrow keys]` | Switch terminal/Edtior Splot (depend on the focus) |
+| `ctrl+shift+[arrow keys]` | Resize terminal (depend on the focus) |
+| `ctrl+²` | Move terminal pannel to right and bottom |
 
 
 ## SELECTIONS
