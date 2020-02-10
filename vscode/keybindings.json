@@ -52,11 +52,13 @@
     },
     {
         "key": "ctrl+shift+Up",
-        "command": "workbench.action.terminal.resizePaneUp"
+        "command": "workbench.action.terminal.resizePaneUp",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+Down",
-        "command": "workbench.action.terminal.resizePaneDown"
+        "command": "workbench.action.terminal.resizePaneDown",
+        "when": "terminalFocus"
     },
     {
         "key": "alt+left",
