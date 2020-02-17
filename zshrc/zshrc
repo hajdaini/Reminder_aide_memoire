@@ -2,13 +2,44 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/hatim/.oh-my-zsh"
+export ZSH="/root/.oh-my-zsh"
 export GOPATH="/home/hatim/Documents/projects/go"
 
 # enable colors for PS1 (ex: red)
 autoload colors; colors
 
+
+
+function git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+
+  # Checks if working tree is dirty
+  local STATUS=''
+  local FLAGS
+  FLAGS=('--porcelain')
+  if [[ "$(command git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then
+    if [[ $POST_1_7_2_GIT -gt 0 ]]; then
+      FLAGS+='--ignore-submodules=dirty'
+    fi
+    if [[ "$DISABLE_UNTRACKED_FILES_DIRTY" == "true" ]]; then
+      FLAGS+='--untracked-files=no'
+    fi
+    STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
+  fi
+
+  if [[ -n $STATUS ]]; then
+    GIT_PROMPT_COLOR="$ZSH_THEME_GIT_PROMPT_DIRTY"
+    GIT_DIRTY_STAR="*"
+  else
+    GIT_PROMPT_COLOR="$ZSH_THEME_GIT_PROMPT_CLEAN"
+    unset GIT_DIRTY_STAR
+  fi
+
+  echo "$GIT_PROMPT_COLOR$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$GIT_DIRTY_STAR$ZSH_THEME_GIT_PROMPT_SUFFIX"
+}
+
 NEWLINE=$'\n'
+
 
 export PS1="%B%F{214}%n%f%b@%B%F{41}%m%f%b%B:%b%B%F{39}%d%f%b %F{13}$(git_prompt_info)%f ${NEWLINE}%(?.$fg[green].$fg[red])%? $reset_color%}→ " 
 
