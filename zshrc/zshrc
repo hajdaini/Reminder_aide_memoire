@@ -2,12 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/root/.oh-my-zsh"
+export ZSH="/home/hatim/.oh-my-zsh"
 export GOPATH="/home/hatim/Documents/projects/go"
+
+# uncomment only if zsh-autosuggestions is installed
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # enable colors for PS1 (ex: red)
 autoload colors; colors
-
 
 
 function git_prompt_info() {
