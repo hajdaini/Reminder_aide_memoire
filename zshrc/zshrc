@@ -2,17 +2,23 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
-export GOPATH="~/Documents/projects/go"
-# export 
-PS1="%B[%{$fg[red]%}%n%{$reset_color%}%b@%B%{$fg[cyan]%}%m%b%{$reset_color%}:%~%B]%b"
+export ZSH="/home/hatim/.oh-my-zsh"
+export GOPATH="/home/hatim/Documents/projects/go"
+
+# enable colors for PS1 (ex: red)
+autoload colors; colors
+
+NEWLINE=$'\n'
+
+export PS1="%B%F{214}%n%f%b@%B%F{41}%m%f%b%B:%b%B%F{39}%d%f%b %F{13}$(git_prompt_info)%f ${NEWLINE}%(?.$fg[green].$fg[red])%? $reset_color%}→ " 
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="agnoster"
-ZSH_THEME="lukerandall"
+# ZSH_THEME="lukerandall"
 
 #key binds :
 bindkey \^U backward-kill-line
@@ -24,7 +30,6 @@ setopt extendedglob
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) 
 #([0-9]#)*=36=31"
 
-autoload colors; colors
 # Les alias marchent comme sous bash
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lh'
@@ -123,9 +128,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='nano'
+	export EDITOR='vi'
 else
-	export EDITOR='nano'
+	export EDITOR='vi'
 fi
 
 # Compilation flags
@@ -139,4 +144,3 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
