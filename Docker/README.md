@@ -366,6 +366,11 @@ docker volume create <VOLUME NAME>
 
 ##  7. <a name='RseauDocker'></a>Réseau Docker
 
+Les types de drivers :
+- **`driver none`** : interdire toute communication interne et externe
+- **`driver host`** : utiliser la même interface que l'hôte
+- **`driver overlay`** : réseau distribué entre plusieurs hôtes possédant le moteur Docker
+- **`driver macvlan`** : attribuer une adresse MAC à un conteneur (apparaît comme un périphérique physique)
 
 - Créer un réseau docker
 
