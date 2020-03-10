@@ -506,8 +506,8 @@ Centralise le Provisioning des hôtes Docker (hôte exécutant le moteur Docker)
 
 ## Docker Swarm
 
-- service : état souhaité pour vos conteneurs (ex: replicas)
-- task : tâche attribuée à un nœud afin d'effectuer le travail demandé par le service.
+- **service** : état souhaité pour vos conteneurs (ex: replicas)
+- **task** : tâche attribuée à un nœud afin d'effectuer le travail demandé par le service.
 
 ![swarm-diagram](images/swarm-diagram.png)
 
