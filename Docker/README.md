@@ -427,6 +427,8 @@ Les types de drivers :
 
 ##  8. <a name='DockerMachine'></a>Docker Machine
 
+Centralise le Provisioning des hôtes Docker (hôte exécutant le moteur Docker)
+
 - Créer une machine Docker
 
   ```docker
@@ -503,6 +505,8 @@ Les types de drivers :
 ---
 
 ## Docker Swarm
+
+(swarm-diagram)[images/swarm-diagram.png]
 
 - Gestion du cluster Swarm
 
