@@ -4,9 +4,16 @@
         "key": "ctrl+[Quote]",
         "command": "workbench.action.terminal.toggleTerminal"
     },
+
     {
         "key": "ctrl+[Backquote]",
-        "command": "workbench.action.togglePanelPosition"
+        "command": "workbench.action.positionPanelRight",
+        "when": "panelPosition == 'bottom'"
+    },
+    {
+        "key": "ctrl+[Backquote]",
+        "command": "workbench.action.positionPanelBottom",
+        "when": "panelPosition == 'right'"
     },
     {
         "key": "ctrl+[Backslash]",
