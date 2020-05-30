@@ -1,4 +1,5 @@
 {
+    "workbench.colorTheme": "One Monokai",
     "markdown-pdf.headerTemplate": "<div><span></span></div>",
     "markdown-pdf.footerTemplate": "<div style=\"font-size: 9px; margin: 0 auto;\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
     "markdown-pdf.margin.bottom": "2cm",
@@ -18,4 +19,16 @@
     "explorer.confirmDelete": false,
     "editor.minimap.enabled": false,
     "explorer.confirmDragAndDrop": false,
+    "logFileHighlighter.customPatterns": [],
+    "logFileHighlighter.customPatterns": [
+       
+        {
+            "pattern": "\\w+\\.(ERROR|CRITICAL)",
+            "foreground": "#ee4242",
+        },
+       
+    ],
+    "vim.startInInsertMode": true,
+    "vim.useCtrlKeys": false, 
+    "vim.overrideCopy" :false,
 }
