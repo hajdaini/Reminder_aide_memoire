@@ -31,7 +31,7 @@
 | `/` |	Rechercher |
 
 
-## Mode normal
+## Mode normal
 
 > **Astuces** : remplacer le `d` par `c` pour effectuer la même action et se retrouver directement en mode insertion
 
