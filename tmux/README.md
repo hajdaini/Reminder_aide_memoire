@@ -2,6 +2,8 @@
 
 Préfix utilisé pour chaque commande 
 
+| Touches  | Action  |
+|----------|---------|
 | `c` | Créer une nouvelle fenêtre |
 | `&` | Supprimer la fenêtre courante |
 | `n` | Aller vers la prochaine fenêtre |
@@ -14,6 +16,8 @@ Préfix utilisé pour chaque commande
 
 ## Raccourcis dans un Split
 
+| Touches  | Action  |
+|----------|---------|
 | `"` | Split horizontal du terminal courant |
 | `%` | Split vertical du terminal courant |
 | `x` | Killer le terminal courant |
