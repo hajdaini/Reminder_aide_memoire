@@ -110,5 +110,28 @@
     {
         "key": "ctrl+shift+[Minus]",
         "command": "extension.selectSquareBrackets",
-    }
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.reloadWindow",
+        "when": "isDevelopment"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.reloadWindow",
+        "when": "isDevelopment"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "extension.vim_ctrl+r",
+        "when": "textInputFocus && vim.mode != 'Insert'"
+    },
 ]
