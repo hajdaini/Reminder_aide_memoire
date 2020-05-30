@@ -3,6 +3,7 @@ set hlsearch
 set nocompatible
 set number relativenumber
 filetype plugin on
+set whichwrap+=<,>,h,l,[,]
 set tabstop=4
 set shiftwidth=4
 set expandtab
