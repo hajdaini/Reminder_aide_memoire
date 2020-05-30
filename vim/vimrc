@@ -1,0 +1,8 @@
+set autoindent
+set hlsearch
+set nocompatible
+set number relativenumber
+filetype plugin on
+set tabstop=4
+set shiftwidth=4
+set expandtab
