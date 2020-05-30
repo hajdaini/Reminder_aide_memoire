@@ -1,6 +1,6 @@
-## Raccourcis de base
+> Préfix par défaut utilisé pour chaque commande : `Ctrl + b`
 
-Préfix utilisé pour chaque commande 
+## Raccourcis de base
 
 | Touches  | Action  |
 |----------|---------|
