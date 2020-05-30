@@ -15,4 +15,5 @@
 - [Increment Selection](https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection)
 - [One monokai theme](https://marketplace.visualstudio.com/items?itemName=azemoh.one-monokai)
 - [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)
-- [Local History](https://marketplace.visualstudio.com/items?itemName=xyz.local-history)
+- [vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
+- [relative number for vim](https://marketplace.visualstudio.com/items?itemName=extr0py.vscode-relative-line-numbers)
