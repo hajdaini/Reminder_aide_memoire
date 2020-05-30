@@ -37,4 +37,4 @@ Préfix utilisé pour chaque commande
 Fermer une session spécifique : 
 
 - Utilisez `list-sessions` pour lister les différentes sessions afin d'identifier la session que vous souhaitez tuer
-- Puis utilisez `tmux kill-session -t targetSession` pour tuer la session spécifique.
+- Puis utilisez `tmux kill-session -t <targetSession>` pour tuer la session spécifique.
