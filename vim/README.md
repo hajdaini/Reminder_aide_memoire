@@ -103,6 +103,9 @@ ou
 :w | ! clear; python3 test.py
 ```
 
+
+Pour répéter la commande précente : `:!!`
+
 Rechercher et remplacer un mot 
 
 ```shell
