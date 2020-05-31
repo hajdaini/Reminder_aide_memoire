@@ -13,7 +13,6 @@
 | `w` | Affiche la liste de toutes les fenêtres disponibles |
 | `d` | Se détacher de la fenêtre (`tmux a` pour s'y rattacher) |
 
-
 ## Raccourcis dans un Split
 
 | Touches  | Action  |
@@ -21,13 +20,15 @@
 | `"` | Split horizontal du terminal courant |
 | `%` | Split vertical du terminal courant |
 | `x` | Killer le terminal courant |
-| `o` | Switcher de terminal |
-| `(flèches directionnelles)` | Se déplacer de terminal en terminal |
-| `Alt` + (flèches directionnelles) | Réduire, agrandir le terminal courant |
+| `o` | Terminal suivant |
+| `flèches directionnelles` | Se déplacer de terminal en terminal |
+| `Alt + flèches directionnelles` ou (`Ctrl + b` + maintenir `flèches directionnelles`)  | Réduire, agrandir le terminal courant |
 | `{` | Déplacer le terminal courant vers la gauche |
 | `}` | Déplacer le terminal courant vers la droite |
 | `!` | Convertir le terminal courant en 1 seul terminal sur une nouvelle fenêtre |
 | `z` | Activer/désactiver le zoom sur le terminal courant|
+| `espace` | Changer le type de split des terminaux |
+| (`Ctrl + b` + maintenir `o`) | Modifier l'ordre des terminaux |
 
 ## Commandes tmux
 
