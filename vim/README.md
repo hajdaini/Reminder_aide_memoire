@@ -5,6 +5,7 @@
 |`left` ou `h`| Gauche|
 |`$` | fin de la ligne|
 |`0`|  début de la ligne|
+|`^^`| début de la phrase |
 |`gg`|	Aller la la première ligne du document|
 |`G`| Aller la la dernière ligne du document|
 |`w`| Aller au mot suivant|
