@@ -44,6 +44,8 @@
 | `dit` | Supprime les mots entre le un tag html |
 | `dt [char]` | Supprime les mots qui se trouve après le curseur jusqu'à rencontrer [char] |
 | `dT [char]` | Supprime les mots qui se trouve avant le curseur jusqu'à rencontrer [char] |
+| `df [char]` | même chose que `dt` avec [char] inclus |
+| `dF [char]` | même chose que `dT` avec [char] inclus |
 | `x` |	Couper (supprimer) le caractère qui se trouve sous le curseur |
 | `X` |	Couper (supprimer) le caractère qui se trouve avant le curseur |
 | `y` |	Copie le caractère sous le curseur |
