@@ -41,6 +41,7 @@
 | `dd` | Supprime la ligne entière |
 | `D` |	Supprime jusqu’à la fin de la ligne |
 | `di [char]` | Supprime les mots entre le [char] |
+| `dit` | Supprime les mots entre le un tag html |
 | `dt [char]` | Supprime les mots qui se trouve après le curseur jusqu'à rencontrer [char] |
 | `dT [char]` | Supprime les mots qui se trouve avant le curseur jusqu'à rencontrer [char] |
 | `x` |	Couper (supprimer) le caractère qui se trouve sous le curseur |
