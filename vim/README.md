@@ -40,6 +40,7 @@
 |----------|---------|
 | `dd` | Supprime la ligne entière |
 | `D` |	Supprime jusqu’à la fin de la ligne |
+| `d/[pattern]` |	Supprime jusqu’au pattern |
 | `di [char]` | Supprime les mots entre le [char] |
 | `dit` | Supprime les mots entre le un tag html |
 | `dt [char]` | Supprime les mots qui se trouve après le curseur jusqu'à rencontrer [char] |
