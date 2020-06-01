@@ -59,9 +59,9 @@
 | `Ctrl+r ou U` | Refaire (annuler l’annulation) |
 | `Ctrl+g` | Afficher des informations sur son positionnement |
 | `>>` |	Indenter la ligne| 
-| `> [up|down]` | Indenter la ligne du dessus/dessous |
+| `> [up ou down]` | Indenter la ligne du dessus/dessous |
 | `<<` |	Désindenter la ligne| 
-| `< [up|down]` | Désindenter la ligne du dessus/dessous |
+| `< [up ou down]` | Désindenter la ligne du dessus/dessous |
 | `.` |	Répéter le dernier changement| 
 | `gg + =G` | Indenter tout le fichier |
 | `==` | Aligne la ligne courante par rapport à la précédente|  
