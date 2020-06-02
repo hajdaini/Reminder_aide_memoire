@@ -117,3 +117,9 @@ Rechercher et remplacer un mot
 ```shell
 :%s/mot1/mot2/g
 ```
+
+Rechercher et remplacer un mot sur la ligne courante
+
+```shell
+:s/mot1/mot2/g
+```
