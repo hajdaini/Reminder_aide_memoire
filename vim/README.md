@@ -28,6 +28,7 @@
 | `I` | Basculer en mode Insertion en début de ligne|
 | `v` | Basculer en mode visuel (sélection)|
 | `V` | Basculer en mode visuel (sélection par ligne)|
+| `Ctrl + v` | Basculer en mode visuel (sélection par bloc)|
 | `:` | Basculer en mode commande |
 | `/` |	Rechercher |
 
