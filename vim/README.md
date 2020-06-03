@@ -31,6 +31,7 @@
 | `Ctrl + v` | Basculer en mode visuel (sélection par bloc)|
 | `:` | Basculer en mode commande |
 | `/` |	Rechercher |
+| `?` |	Recherche inverse |
 
 
 ## Mode normal
