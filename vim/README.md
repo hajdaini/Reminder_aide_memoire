@@ -14,6 +14,8 @@
 |`B`| Aller au mot sans espace précédent|
 |`e`| Aller à la fin du mot|
 |`E`| Aller à la fin du MOT (un mot ici est un ensemble de caractère sans espace)|
+|`}`| Aller au paragraphe suivant |
+|`{`| Aller au paragraphe précédent |
 |`pagedown`| Scroll down par page|
 |`pageup` | Scroll up par page|
 |`Ctrl+u` |Scroll up à moitié de page|
