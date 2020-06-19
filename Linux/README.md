@@ -36,16 +36,16 @@
 |**`mkdir <rep>`**|Créer des répertoires|
 |**`more <file>`**|Se déplacer depuis le début d'un texte, écran par écran|
 |**`less <file>`**|Comme la commande **`more`** mais plus flexible avec raccourcis vim|
-|**`uniq <file>` <br> => `-d` :** Afficher uniquement les lignes dupliquées|Afficher les lignes d'un fichier sans lignes dupliquées|
+|**`uniq <file>`** <br> => **`-d` :** Afficher uniquement les lignes dupliquées|Afficher les lignes d'un fichier sans lignes dupliquées|
 |**`head -n <num> <file>`** |Afficher uniquement les 'num' premières lignes d'un fichier|
 |**`tail <file>`** <br> => **`-n <num>`** <br> => **`-n + num` :** depuis la ligne `num` <br> => **`-f` :** lecture stream jusqu'au `Ctrl+C`|Afficher les 10 dernières lignes d'un fichier|
-|**`sort <file>` <br> => `-r` :** ordre décroissant <br> => **`-n` :** ordre numérique|Trier les lignes d'un fichier texte|
-|**`wc` <br> => `-l`:** ligne <br> => **`-w` :** mot <br> => **`-c` :** caractère|Afficher le nombre d'octets, de mots et de lignes d'un fichier|
-|**`diff <old_file> <new_file>` <br> => `-r`** : comparer des répertoires |Trouver les différences entre des fichiers|
-|**`cut <file>` <br> => `-d';'` :** délimiteur <br> => **`-d';' -f5` :** 5eme champ <br> => **`-d';-f2,10'` :** 2ème et 10ème champ <br> => **`-d';' -f3-` :** 3ème jusqu'à la fin|Supprimer une partie de chaque ligne d'un fichier|
+|**`sort <file>`** <br> => **`-r` :** ordre décroissant <br> => **`-n` :** ordre numérique|Trier les lignes d'un fichier texte|
+|**`wc`**  <br> => **`-l`:** ligne <br> => **`-w` :** mot <br> => **`-c` :** caractère|Afficher le nombre d'octets, de mots et de lignes d'un fichier|
+|**`diff <old_file> <new_file>`** <br> => **`-r`** : comparer des répertoires |Trouver les différences entre des fichiers|
+|**`cut <file>`** <br> => **`-d';'` :** délimiteur <br> => **`-d';' -f5` :** 5eme champ <br> => **`-d';-f2,10'` :** 2ème et 10ème champ <br> => **`-d';' -f3-` :** 3ème jusqu'à la fin|Supprimer une partie de chaque ligne d'un fichier|
 |**`sed`** <br> => **`-i`** : modifier le fichier directement <br> => **`sed 's/^old/new/gi' <filename>`**|Filtrer et transformer du texte|
 |**`awk '{print $1}' <filename>`**|Appliquer un certain nombre d'actions sur un fichier|
-|**`ls | xargs rm`** <br> **`ls | xargs -I{} rm -rf '{}'`**(`-I{}`  = remplacer par '{}' <br> **`-t` :** afficher avant d'exécuter|La sortie d'une commande est transmise en tant qu'argument d'entrée à une autre commande|
+|**<code>ls &#124; xargs rm</code>** <br> **<code>ls &#124; xargs -I{} rm -rf '{}'</code>** <br> **`-I{}` :**  remplacer '{}' par le input <br> **`-t` :** afficher avant d'exécuter|La sortie d'une commande est transmise en tant qu'argument d'entrée à une autre commande|
 
 ## Compression et décompression 
 
@@ -53,7 +53,7 @@
 
 |NOM|DESCRIPTION|
 |:--|:--|
-|**`tar [options] name.tar[.gz or .bz2] [chemin]`** <br> => **`c` :** créer <br> => **`x` :** extraire <br> => **`f` :** nom de l'archive  <br> => **`t` :** contenu de l'archive <br> => **`v` :** verbose <br> => **`z` :** gzip <br> => **`j` :** Bzip2 | Utilitaire GNU de gestion d'archives TAR|
+|**<code>tar [options] name.tar[.gz&#124;.bz2] [chemin]</code>** <br> => **`c` :** créer <br> => **`x` :** extraire <br> => **`f` :** nom de l'archive  <br> => **`t` :** contenu de l'archive <br> => **`v` :** verbose <br> => **`z` :** gzip <br> => **`j` :** Bzip2 | Utilitaire GNU de gestion d'archives TAR|
 |**`zip [options] name.zip [chemin]`** <br> => **`-r`** : répertoire |Créer et compresser des archives ZIP|
 |**`unzip`**|Lister, tester et extraire des fichiers compressés dans une archive ZIP|
 
@@ -108,7 +108,7 @@
 |**`host <ip or domain>`**|Chercher des noms de machine à l'aide d'un serveur de domaine|
 |**`dig <domain>`**|Obtenir des informations DNS sur une nom de domaine|
 |**`hostname`** : afficher le nom d'hôte de la machine<br> => **`-i` :** afficher l'IP de l'hôte <br> => **`-I` :** afficher les IPs de l'hôte <br> => **`--fqdn`** <br> => **`hostname <new_hostname>` :** Changer le hostname |afficher ou modifier des infos sur le nom d'hôte du système|
-|**`ip`** <br> => **`a` :** afficher l'IPv4 et 6 d'une interface <br> => **`a show <interface>` :** filtrer une interface  <br> => **`link ls up` :** afficher que les interfaces "up"  <br> => **`a [add|del] IP/24 dev <interface>` :** Dé/Assigner une adresse IP à une interface  <br> => **`link set dev  <interface> [up|down]` :** Dé/Assigner une adresse IP à une interface |Afficher/manipuler le routage, les périphériques réseau, les interfaces et les tunnels|
+|**`ip`** <br> => **`a` :** afficher l'IPv4 et 6 d'une interface <br> => **`a show <interface>` :** filtrer une interface  <br> => **`link ls up` :** afficher que les interfaces "up"  <br> => **<code>a [add &#124;del] IP/24 dev <interface></code> :** Dé/Assigner une adresse IP à une interface  <br> => **<code>link set dev  <interface> [up&#124;down]</code> :** Dé/Assigner une adresse IP à une interface |Afficher/manipuler le routage, les périphériques réseau, les interfaces et les tunnels|
 |**`iptables`**|Filtrer les paquets IP et NAT (pare-feu)|
 |**`traceroute <ip or domain>`**|Afficher la trace des paquets routés vers l'hôte réseau|
 |**`whois <ip or domain>`**|Afficher les informations d'un domaine|
