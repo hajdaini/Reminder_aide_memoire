@@ -70,7 +70,7 @@
 |**`usermod`** <br> => **`-G`** : modifier le groupe <br> => **`-G -a`** : ajouter à un groupe <br> => **`-l`** : modifier le nom|Modifier les informations d'un utilisateur|
 |**`groups <username>`**|Afficher les groupes d'un utilisateur|
 |**`id <username>`**|Afficher les UIDs et GIDs d'un utilisateur|
-|**`w`**|`Afficher les utilisateurs connectés et leur activité|
+|**`w`**|Afficher les utilisateurs connectés et leur activité|
 |**`whoami`**|Afficher l'utilisateur à qui vous êtes connecté|
 |**`passwd`**|Modifier le mot de passe d'un utilisateur|
 |**`last [username|shutdown|reboot]`** <br> => **`-n <nbr>`**|Afficher les dernières connexions sur le système|
@@ -98,7 +98,7 @@
 |**`locate <filename>`**|Rechercher des fichiers depuis une bdd interne (maj toute les 24h)|
 |**`updatedb`**|Mise à jour de la bdd interne de la commande `locate`|
 |**`find <path> -name <pattern>`** <br> => **`-iname`** : ignorer la casse <br> => **`-type [-d -f]`** : recherche  par fichiers ou que répertoires <br> => **`-size <+5M>`** : recherche par taille <br> => **`-perm <777>`** : recherche par droit <br> => **`-delete`**  |Rechercher des fichiers dans une hiérarchie de répertoires|
-|**`grep <word> <path>`** <br> => **`-r`** : récursive <br> => **`-i`** : ignorer la casse <br> => **`-E ^regex$`** : expression régulière <br> => **`-A` <num>** : afficher les `num` prochaines lignes|Afficher les lignes correspondant à un motif donné|
+|**`grep <word> <path>`** <br> => **`-r`** : récursive <br> => **`-i`** : ignorer la casse <br> => **`-E ^regex$`** : expression régulière <br> => **`-A` <num>** : afficher les `num` prochaines lignes <br> => **`-B` <num>** : afficher les `num` dernières lignes |Afficher les lignes correspondant à un motif donné|
 |**whereis**|Rechercher les fichiers exécutables, les sources et les pages de manuel d'une commande|
 
 ## Réseaux
