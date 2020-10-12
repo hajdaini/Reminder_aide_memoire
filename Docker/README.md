@@ -160,7 +160,11 @@ WORKDIR  ${DOCUMENTROOT}
 ENTRYPOINT service mysql start && mysql < /articles.sql && apache2ctl -D FOREGROUND
 ```
 
+Créer une image depuis le Dockerfile
 
+```docker
+docker build -t <IMAGE_NAME> .
+```
 
 ---
 
