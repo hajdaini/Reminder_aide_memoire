@@ -40,7 +40,7 @@ CASE_SENSITIVE="true"
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
-# Uncomment the following line if pasting URLs and other text is messed up.
+# Uncomment the following line if pasting URLs and other text install.shis messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
@@ -121,8 +121,17 @@ alias grep='grep --color=auto'
 
 # Exports
 export GREP_COLOR=31
-export HISTTIMEFORMAT="%d/%m/%y %T "
-# export GOPATH="/home/hatim/Documents/projects/go"	
+# export GOPATH="/home/hatim/Documents/projects/go"
+# History: https://linux.die.net/man/1/zshoptions
+export HISTSIZE=5000                     #How many lines of history to keep in memory
+export HISTFILE="~/.zsh_history"         #Where to save history to disk
+export HISTFILESIZE=100000               #How many lines of history to keep in file 
+export EXTENDED_HISTORY="ON"             #Timestamp activation
+export HISTTIMEFORMAT="[%d/%m/%y %T] "   #Timestamp to show in history
+export HIST_FORMAT="[%d/%m/%y %T] "      #Timestamp to show in history
+setopt SHARE_HISTORY                     #Share history across terminals
+setopt INC_APPEND_HISTORY                #Immediately append to the history file, not just when a term is killed
+
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
