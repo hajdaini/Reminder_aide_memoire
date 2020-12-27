@@ -1,96 +1,26 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/hatim/.oh-my-zsh"
-export GOPATH="/home/hatim/Documents/projects/go"
-
-# uncomment only if zsh-autosuggestions is installed
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# enable colors for PS1 (ex: red)
-autoload colors; colors
-
-
-function git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-
-  # Checks if working tree is dirty
-  local STATUS=''
-  local FLAGS
-  FLAGS=('--porcelain')
-  if [[ "$(command git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then
-    if [[ $POST_1_7_2_GIT -gt 0 ]]; then
-      FLAGS+='--ignore-submodules=dirty'
-    fi
-    if [[ "$DISABLE_UNTRACKED_FILES_DIRTY" == "true" ]]; then
-      FLAGS+='--untracked-files=no'
-    fi
-    STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
-  fi
-
-  if [[ -n $STATUS ]]; then
-    GIT_PROMPT_COLOR="$ZSH_THEME_GIT_PROMPT_DIRTY"
-    GIT_DIRTY_STAR="*"
-  else
-    GIT_PROMPT_COLOR="$ZSH_THEME_GIT_PROMPT_CLEAN"
-    unset GIT_DIRTY_STAR
-  fi
-
-  echo "$GIT_PROMPT_COLOR$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$GIT_DIRTY_STAR$ZSH_THEME_GIT_PROMPT_SUFFIX"
-}
-
-NEWLINE=$'\n'
-
-
-export PS1="%B%F{214}%n%f%b@%B%F{41}%m%f%b%B:%b%B%F{39}%d%f%b %F{13}$(git_prompt_info)%f ${NEWLINE}%(?.$fg[green].$fg[red])%? $reset_color%}→ " 
-
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="agnoster"
-# ZSH_THEME="lukerandall"
-
-#key binds :
-bindkey \^U backward-kill-line
-
-# des couleurs pour la complétion
-# faites un kill -9 <tab><tab> pour voir :)
-zmodload zsh/complist
-setopt extendedglob
-zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) 
-#([0-9]#)*=36=31"
-
-# Les alias marchent comme sous bash
-alias ls='ls --color=auto'
-alias ll='ls --color=auto -lh'
-alias lll='ls --color=auto -lh | less'
-# marre de se faire corriger par zsh ;)
-alias xs='cd'
-alias sl='ls'
-# Alias df -h
-alias df='df -h'
-# Un grep avec des couleurs :
-export GREP_COLOR=31
-alias grep='grep --color=auto'
-
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
-bindkey -s '^o' 'lfcd\n'
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -104,8 +34,14 @@ CASE_SENSITIVE="true"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -136,18 +72,17 @@ CASE_SENSITIVE="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 plugins=(
-  git
-  golang
-  docker
-  composer
-  docker-compose
   symfony
+  docker
   emoji
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -160,11 +95,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='vi'
-else
-	export EDITOR='vi'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -174,6 +109,22 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+
+# Aliases
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -lh'
+alias lll='ls --color=auto -lh | less'
+alias xs='cd'
+alias sl='ls'
+alias df='df -h'
+alias grep='grep --color=auto'
+
+# Exports
+export GREP_COLOR=31
+export HISTTIMEFORMAT="%d/%m/%y %T "
+# export GOPATH="/home/hatim/Documents/projects/go"	
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
