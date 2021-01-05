@@ -17,3 +17,4 @@
 - [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)
 - [vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
 - [relative number for vim](https://marketplace.visualstudio.com/items?itemName=extr0py.vscode-relative-line-numbers)
+- [Material icone theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
