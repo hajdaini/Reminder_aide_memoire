@@ -1,5 +1,6 @@
 {
     "workbench.colorTheme": "One Monokai",
+    "workbench.iconTheme": "material-icon-theme",
     "markdown-pdf.headerTemplate": "<div><span></span></div>",
     "markdown-pdf.footerTemplate": "<div style=\"font-size: 9px; margin: 0 auto;\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
     "markdown-pdf.margin.bottom": "2cm",
@@ -10,7 +11,10 @@
     "emmet.includeLanguages": {
         "twig": "html"
     },
-    
+    "files.associations": {
+        "articleTest*.html.twig": "html"
+    },
+    "editor.tabSize": 4,
     "terminal.integrated.fontSize": 14,
     "window.zoomLevel": 0,
     "git.enableSmartCommit": true,
