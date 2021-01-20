@@ -1008,6 +1008,10 @@ D'abord un upgrade du master puis un upgrade des workers un par un
   ```shell
   kubectl cluster-info | grep -E 'Kubernetes master|Kubernetes control plane' | awk '/http/ {print $NF}'
   ```
+- Récupérer le certificat nécessaire pour s'authentifier auprès du cluster:
+  ```shell
+  kubectl get secret <secret name> -o jsonpath="{['data']['ca\.crt']}" | base64 --decode'
+  ```
 
 ## Conseils
 
