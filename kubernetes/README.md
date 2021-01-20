@@ -47,6 +47,7 @@
     - [Ingress (loadbalancer par path)](#ingress-loadbalancer-par-path)
 - [Json](#json)
 - [Infos certification](#infos-certification)
+    - [Commandes supplementaires](#commandes-supplementaires)
     - [Conseils](#conseils)
     - [Preparation](#preparation)
     - [CODE PROMO](#code-promo)
@@ -1000,6 +1001,13 @@ D'abord un upgrade du master puis un upgrade des workers un par un
 
 
 # Infos certification
+
+## Commandes supplementaires
+
+- Récupérer l'api url :
+  ```shell
+  kubectl cluster-info | grep -E 'Kubernetes master|Kubernetes control plane' | awk '/http/ {print $NF}'
+  ```
 
 ## Conseils
 
