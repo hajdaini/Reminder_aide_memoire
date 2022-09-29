@@ -594,8 +594,9 @@ spec:
        expirationSeconds: 86400  # one day
        usages:
        - client auth
-   EOF
-   ```
+     EOF
+     ```
+  
 3. Approuver l'utilisateur :
 
    ```shell
