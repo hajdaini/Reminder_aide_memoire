@@ -369,7 +369,7 @@ spec:
 
 Le service envoie une requête de health check afin d’effectuer une action spécifique et renvoyer un résultat permettant d’identifier si le pod est fonctionnel
 
-### Liveness
+### Liveness
 
 Si le pod ne répond pas correctement à la requête envoyée, il est considéré comme corrompu et est instantanément redémarré. 
 
@@ -397,7 +397,7 @@ spec:
       periodSeconds: 3
 ```
 
-### Readiness
+### Readiness
 
 Si le pod répond mal, il est alors détaché temporairement du service jusqu’à ce que celui-ci soit de nouveau opérationnel. Cela permet d’éviter que le pod soit redémarré et qu’il perde ainsi les traitements en cours d’exécution.
 
