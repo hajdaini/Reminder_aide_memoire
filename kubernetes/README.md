@@ -45,6 +45,9 @@
 - [Réseau](#réseau)
     - [Fichiers de conf](#fichiers-de-conf)
     - [Ingress (loadbalancer par path)](#ingress-loadbalancer-par-path)
+    - [Probes](#probes)
+        - [Readiness](#readiness)
+        - [Liveness](#liveness)
 - [Json](#json)
 - [Infos certification](#infos-certification)
     - [Commandes supplementaires](#commandes-supplementaires)
@@ -361,6 +364,62 @@ spec:
 ```
 
 > CNI => flannel ne supporte pas les NetworkPolicies
+
+## Probes
+
+Le service envoie une requête de health check afin d’effectuer une action spécifique et renvoyer un résultat permettant d’identifier si le pod est fonctionnel
+
+### Liveness
+
+Si le pod ne répond pas correctement à la requête envoyée, il est considéré comme corrompu et est instantanément redémarré. 
+
+Interroge toutes les 3 secondes une URL (ici /healthz) sur le port 8080 et s’assure qu’elle retourne le code HTTP 200:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-http
+spec:
+  containers:
+  - name: liveness
+    image: registry.k8s.io/liveness
+    args:
+    - /server
+    livenessProbe:
+      httpGet:
+        path: /healthz
+        port: 8080
+        httpHeaders:
+        - name: Custom-Header
+          value: Awesome
+      initialDelaySeconds: 3
+      periodSeconds: 3
+```
+
+### Readiness
+
+Si le pod répond mal, il est alors détaché temporairement du service jusqu’à ce que celui-ci soit de nouveau opérationnel. Cela permet d’éviter que le pod soit redémarré et qu’il perde ainsi les traitements en cours d’exécution.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: goproxy
+  labels:
+    app: goproxy
+spec:
+  containers:
+  - name: goproxy
+    image: registry.k8s.io/goproxy:0.1
+    ports:
+    - containerPort: 8080
+    readinessProbe:
+      tcpSocket:
+        port: 8080
+      initialDelaySeconds: 5
+      periodSeconds: 10
+```
 
 # Scheduler
 
