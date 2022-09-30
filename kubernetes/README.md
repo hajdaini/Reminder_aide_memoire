@@ -755,7 +755,7 @@ kubectl create clusterrole pod-reader --verb=get,list,watch --resource=pods
 ```
 
 ```shell
-kubectl create rolebinding user-read-binding --clusterrole=pod-reader --user=user-read --namespace=tata
+kubectl create clusterrolebinding user-read-binding --clusterrole=pod-reader --user=user-read --namespace=tata
 ```
 
 ### Tester les droits
