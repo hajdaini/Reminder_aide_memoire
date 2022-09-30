@@ -757,6 +757,18 @@ kubectl create role pod-reader --verb=get,list,watch --resource=pods
 kubectl create rolebinding user-read-binding --role=pod-reader --serviceaccount=user-read:<YOUR_NAMESPACE>
 ```
 
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginxpod
+spec:
+  containers:
+  - image: nginx
+    name: nginxpod
+  serviceAccountName: user-read
+```
+
 ### ClusterRole 
 
 Peut aussi accorder des accès aux ressources non namespacées (peut être utilisé pour tous les namespaces)
