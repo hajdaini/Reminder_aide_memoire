@@ -32,6 +32,7 @@
     - [KubeConfig](#kubeconfig)
     - [RBAC](#rbac)
         - [Role and RoleBinding](#role-and-rolebinding)
+        - [ServiceAccount](#serviceaccount)
         - [ClusterRole](#clusterrole)
         - [Tester les droits](#tester-les-droits)
     - [TLS bootstrapping](#tls-bootstrapping)
@@ -736,14 +737,24 @@ Les autres types sont des ressources qui sont ne pas associées à un namespace 
 
 Ne peut accorder l'accès aux ressources namespacées (donc accorde les permissions sur 1 seul namespace max)
 
-**Pas d'options pour --namespace pour les roles**
-
 ```shell
+# Pour tous les namespaces
 kubectl create role pod-reader --verb=get,list,watch --resource=pods 
+
+# Pour un namspace particulier
+kubectl create rolebinding user-read-binding --role=pod-reader --user=user-read --namespace=tata
 ```
 
+### ServiceAccount
+
+- **User Account:** utilisé par les humains authentifié par le serveur d'API afin d'accéder aux ressources au niveau du cluster.
+
+- **Service account:** utilisé par le pod pour accéder aux ressources du cluster en s'authentifiant auprès du serveur d'API
+
 ```shell
-kubectl create rolebinding user-read-binding --role=pod-reader --user=user-read --namespace=tata
+kubectl create serviceaccount user-read
+kubectl create role pod-reader --verb=get,list,watch --resource=pods
+kubectl create rolebinding user-read-binding --role=pod-reader --serviceaccount=user-read:<YOUR_NAMESPACE>
 ```
 
 ### ClusterRole 
