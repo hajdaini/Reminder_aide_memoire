@@ -42,7 +42,7 @@ L'apprentissage non supervisé est basé seulement sur des features et il n'y a 
 **Exemple**: Imaginons un ensemble de données sur des clients d'un site de commerce électronique avec des caractéristiques telles que les habitudes d'achat, la fréquence d'achat, etc. Dans ce cas, l'apprentissage non supervisé pourrait être utilisé pour découvrir des segments de clients similaires sans avoir de labels prédéfinis.
 
 > [!NOTE]
-> Qu'il s'agisse de l'apprentissage supervisé ou non supervisé, l'évaluation du modèle nécessite de fournir au préalable des exemples étiquetés pour déterminer la validité de ses prédictions. La différence entre les deux approches réside principalement dans la manière dont le modèle utilise ces exemples : soit en apprenant directement les caractéristiques, soit en se basant sur des caractéristiques prédéfinies.
+> Qu'il s'agisse de l'apprentissage supervisé ou non supervisé, l'évaluation du modèle nécessite de fournir au préalable des exemples étiquetés (nommé "dataset") pour déterminer la validité de ses prédictions. La différence entre les deux approches réside principalement dans la manière dont le modèle utilise ces exemples : soit en apprenant directement les caractéristiques, soit en se basant sur des caractéristiques prédéfinies.
 
 ### Apprentissage par Renforcement
 
@@ -88,17 +88,17 @@ Un neurone est une entité fondamentale en deep learning. Sa constitution est il
 
 5. **Sortie (Output):** La sortie du neurone est le résultat final après l'application de la fonction d'activation. Dans le cas de la prédiction du prix d'une maison, la sortie pourrait représenter la valeur estimée de la maison.
 
-<h5 id="poids-et-biais">
+<h4 id="poids-et-biais">
   Poids et biais
-</h5>
+</h4>
 
 **Poids (Weight):** Les poids dans un réseau de neurones sont comme des ajustements pour dire à chaque connexion entre les neurones à quel point elle est importante. Lorsque le réseau apprend, il ajuste ces poids pour obtenir les bonnes réponses pour différentes entrées, ce qui se traduit par des sorties souhaitées. L'objectif est de minimiser les erreurs grâce à une fonction de coût.
 
 **Biais (Bias):** Le biais, d'autre part, est un paramètre supplémentaire associé à chaque neurone dans un réseau de neurones. Il est ajouté à la somme pondérée des entrées d'un neurone avant l'application de la fonction d'activation. Le biais offre au réseau une certaine flexibilité pour mieux s'adapter aux données en introduisant un décalage ou un terme constant. En d'autres termes, le biais permet au réseau de produire des sorties même lorsque toutes les entrées sont nulles.
 
-<h5 id="fonction-activations">
+<h4 id="fonction-activations">
   Exemples fonctions d'activations
-</h5>
+</h4>
 
 - **Sigmoïde :** Produit une courbe en forme de S, utilisée couramment dans la couche de sortie pour la classification binaire. Elle transforme les valeurs en un intervalle entre 0 et 1.
 - **Fonctions de tangente hyperbolique (tanh) :** Similaire à la sigmoïde mais avec une plage entre -1 et 1, ce qui peut aider à gérer les problèmes de symétrie dans le modèle.
@@ -112,7 +112,7 @@ Un neurone est une entité fondamentale en deep learning. Sa constitution est il
 
 Le biais est initialement fixé à une valeur constante. Pendant l'entraînement, il est ajusté itérativement avec les poids pour minimiser une fonction de coût, permettant au modèle de s'adapter aux données. La valeur initiale du biais peut dépendre du problème, parfois initialisée à zéro ou de manière aléatoire. La descente de gradient ou un autre algorithme d'optimisation est utilisé pour ajuster les poids et le biais en fonction de l'erreur entre les prédictions du modèle et les vraies valeurs.
 
-> Une fonction de coût, ou fonction d'erreur, mesure la différence entre les prédictions d'un modèle et les vraies 
+> Une fonction de coût, ou fonction d'erreur, mesure la différence entre les prédictions d'un modèle et les vraies (fonction dispo [ici](#fonction-erreur))
 
 En résumé, le biais est une composante apprise du modèle, ajustée au cours de l'entraînement avec les poids pour permettre au réseau de s'adapter aux données.
 
@@ -126,6 +126,60 @@ La principale différence réside dans leur rôle dans le calcul des sorties d'u
 - *Poids:* Ajuste l'importance des entrées.
 - *Biais:* Introduit un décalage ou un terme constant.
 
+#### Rétropropagation du Gradient
+
+Les dérivées partielles et le calcul du gradient sont cruciaux dans l'entraînement des réseaux de neurones. L'optimisation des poids du réseau de neurones est souvent réalisée à l'aide d'algorithmes d'optimisation, tels que la descente de gradient. Voici comment cela fonctionne dans un contexte de réseau de neurones :
+
+1. **Fonction de perte (Loss Function) :** Cette fonction mesure à quel point les prédictions du réseau de neurones diffèrent des valeurs réelles (les étiquettes attendues). Elle est généralement définie en fonction des poids du réseau.
+
+2. **Calcul du Gradient :** Les dérivées partielles de la fonction de perte par rapport à chaque poids du réseau sont calculées à l'aide de la rétropropagation (backpropagation). Cela implique d'appliquer la règle de la chaîne pour obtenir la contribution de chaque poids à l'erreur.
+
+3. **Mise à Jour des Poids :** Les poids du réseau sont mis à jour en utilisant l'algorithme d'optimisation, souvent la descente de gradient. La mise à jour est effectuée en déplaçant les poids dans la direction opposée du gradient, multipliée par un taux d'apprentissage. Cette étape est répétée de manière itérative.
+
+
+L'ensemble du processus vise à améliorer la capacité du réseau à faire des prédictions précises en ajustant ses poids en fonction des erreurs passées.
+
+<h4 id="fonction-erreur">
+  Fonction de coût/d'erreur/perte
+</h4>
+
+`E = 1/2 (y - t)²`
+
+Cette expression représente la fonction de perte (ou coût) pour un problème de régression, où :
+
+- E est la fonction de perte,
+- y est la sortie de le fonction d'activation du modèle,
+- t est la vraie valeur cible associée à l'exemple donné.
+
+L'idée fondamentale est de minimiser la fonction de perte en ajustant les poids du réseau. Le gradient indique la direction dans laquelle la fonction de perte augmente le plus rapidement, et la descente de gradient l'utilise pour ajuster les poids afin de minimiser la perte.
+
+En résumé, les dérivées et le calcul du gradient sont utilisés dans le processus d'apprentissage pour guider l'ajustement des paramètres du réseau de neurones, améliorant ainsi ses performances sur une tâche spécifique. Cela permet au réseau de s'adapter aux données d'entraînement et de généraliser à de nouvelles données.
+
+#### Descente de gradient
+
+[<img src="images/derivee-partielle.jpg" height="350"/>](images/derivee-partielle.jpg)
+
+La dérivée partielle par rapport à `x` de la fonction f(x, y) = 3x^2 + xy + 5y^2 est calculée en prenant la dérivée de chaque terme par rapport à `x` et en les additionnant :
+
+1. Pour 3x^2, la dérivée par rapport à `x` est 6x (règle de puissance : n * x^(n-1)). Par exemple, si nous avons 2 * 3x, cela donne 6x.
+2. Pour xy, la dérivée par rapport à `x` est y (car la dérivée de `x` par rapport à `x` est 1, et `y` est traité comme une constante dans ce cas). Par exemple, si nous avons 4xy, la dérivée par rapport à `x` serait 4y.
+3. Pour 5y^2, la dérivée par rapport à `x` est 0 (car y^2 est constant par rapport à `x`). 
+
+En combinant ces termes, nous obtenons la dérivée partielle par rapport à `x` de la fonction f(x, y) :
+
+`∂f/∂x = 6x + y`
+
+> `∂f/∂x` veut dire dérivée partielle de x
+
+Cela représente la manière dont f(x, y) change lorsque `x` change, en gardant `y` constant.
+
+Dans le contexte d'un réseau de neurones, cette dérivée partielle serait utilisée dans le processus de rétropropagation (backpropagation) pour ajuster les poids du réseau, permettant au modèle d'apprendre à partir des données d'entraînement. Cette adaptation des poids vise à minimiser la fonction de perte du modèle, améliorant ainsi ses performances sur la tâche spécifique pour laquelle il est entraîné.
+
+voir [demo_gradient_descent.py](demo_gradient_descent.py)
+
+Dérivés partielle de l'erreur:
+
+[<img src="images/derives-partielle-erreur.png" height="350"/>](images/derives-partielle-erreur.png)
 
 #### Types de neurones:
 
