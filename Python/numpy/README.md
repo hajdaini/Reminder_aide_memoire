@@ -1,6 +1,21 @@
 # Documentation Numpy
 
-Plus rapide et consomme moins de mémoire qu'une liste python
+## Qu'est-ce que NumPy?
+
+NumPy est l'abréviation de "Numeric Python". C'est une bibliothèque numérique open source utilisée pour travailler avec des fonctions mathématiques, des tableaux multidimensionnels et des structures de données matricielles. Elle est largement utilisée en science des données et en apprentissage machine.
+
+## Pourquoi Utiliser NumPy?
+
+Bien que Python dispose d'une structure de liste intégrée, NumPy offre des avantages significatifs :
+
+- Utilisation plus efficace de la mémoire.
+- Lecture plus rapide des informations.
+- Opérations pratiques de diffusion à travers les dimensions du tableau.
+
+Apprendre NumPy sera essentiel pour exploiter les capacités avancées de bibliothèques telles que TensorFlow, que nous aborderons plus tard dans le cours.
+
+Dans les prochaines vidéos, nous explorerons concrètement l'utilisation de tableaux et matrices avec NumPy. Préparez-vous pour une plongée approfondie!
+
 
 
 ## Génération d'Array avec NumPy

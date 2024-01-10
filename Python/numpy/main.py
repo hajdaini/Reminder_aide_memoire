@@ -11,7 +11,6 @@ print(f"Génération d'array de zero: \n{np.ones((3, 4))}")
 
 # start (inclus), stop (non inclus), num voulu (incluant la valeur stop)
 print(f"Génération d'array par valeur fixe: \n{np.linspace(0, 10, 4)}")
-print(f"Génération de valeurs diagonals: \n{np.eye(5)}")
 
 # rows, columns
 print(f"Génération d'array random: \n{np.random.rand(2)}")
