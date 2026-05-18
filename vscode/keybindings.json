@@ -1,141 +1,148 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
     {
         "key": "ctrl+[Quote]",
         "command": "workbench.action.terminal.toggleTerminal"
-    },
+    }, // Terminal : Affiche ou masque le panneau du terminal intégré
 
     {
         "key": "ctrl+[Backquote]",
         "command": "workbench.action.positionPanelRight",
         "when": "panelPosition == 'bottom'"
-    },
+    }, // Interface : Déplace le panneau (terminal/console) sur le côté droit s'il est en bas
     {
         "key": "ctrl+[Backquote]",
         "command": "workbench.action.positionPanelBottom",
         "when": "panelPosition == 'right'"
-    },
+    }, // Interface : Déplace le panneau (terminal/console) vers le bas s'il est sur le côté droit
     {
         "key": "ctrl+[Backslash]",
         "command": "workbench.action.terminal.focus"
-    },
+    }, // Navigation : Donne le focus au terminal (place le curseur dans le terminal)
     {
         "key": "ctrl+[Backslash]",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminalFocus"
-    },
+    }, // Navigation : Redonne le focus à l'éditeur de code quand le curseur était dans le terminal
     {
         "key": "ctrl+shift+[Quote]",
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus"
-    },
+    }, // Terminal : Divise (split) le terminal horizontalement/verticalement lorsque le curseur y est déjà
     {
         "key": "ctrl+shift+[Quote]",
         "command": "workbench.action.splitEditorRight",
         "when": "editorTextFocus"
-    },
+    }, // Éditeur : Divise l'écran de l'éditeur vers la droite pour afficher deux fichiers côte à côte
     {
         "key": "alt+right",
         "command": "workbench.action.nextEditor"
-    },
+    }, // Onglets : Allez à l'onglet/fichier suivant ouvert dans l'éditeur (conflit potentiel avec focusNextPane résolu par le "when")
     {
         "key": "alt+left",
         "command": "workbench.action.previousEditor"
-    },
+    }, // Onglets : Allez à l'onglet/fichier précédent ouvert dans l'éditeur
     {
         "key": "ctrl+x",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
-    },
+    }, // Terminal : Ferme et détruit l'instance du terminal courant lorsque le curseur y est positionné
     {
         "key": "ctrl+shift+left",
         "command": "workbench.action.terminal.resizePaneLeft",
         "when": "terminalFocus"
-    },
+    }, // Interface : Redimensionne et agrandit le panneau du terminal vers la gauche
     {
         "key": "ctrl+shift+right",
         "command": "workbench.action.terminal.resizePaneRight",
         "when": "terminalFocus"
-    },
+    }, // Interface : Redimensionne et agrandit le panneau du terminal vers la droite
     {
         "key": "ctrl+shift+Up",
         "command": "workbench.action.terminal.resizePaneUp",
         "when": "terminalFocus"
-    },
+    }, // Interface : Redimensionne et agrandit le panneau du terminal vers le haut
     {
         "key": "ctrl+shift+Down",
         "command": "workbench.action.terminal.resizePaneDown",
         "when": "terminalFocus"
-    },
+    }, // Interface : Redimensionne et agrandit le panneau du terminal vers le bas
     {
         "key": "alt+left",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
-    },
+    }, // Terminal : Bascule le curseur sur le terminal divisé (split) précédent
     {
         "key": "alt+right",
         "command": "workbench.action.terminal.focusNextPane",
         "when": "terminalFocus"
-    },
-
-
-    
+    }, // Terminal : Bascule le curseur sur le terminal divisé (split) suivant
 
     // ------------------SELECTIONS------------------
     // PLEASE INSTALL THE "Quick and Simple Text Selection" BEFORE
     {
         "key": "ctrl+shift+a",
         "command": "editor.emmet.action.balanceOut"
-    },
+    }, // Emmet : Sélectionne la balise HTML courante, puis s'étend aux balises parentes à chaque appui
     {
         "key": "ctrl+shift+=",
-        "command": "extension.selectCurlyBrackets",
-    },
+        "command": "extension.selectCurlyBrackets"
+    }, // Sélectionne tout le contenu situé à l'intérieur des accolades { }
     {
         "key": "ctrl+shift+3",
-        "command": "extension.selectDoubleQuote",
-    },
+        "command": "extension.selectDoubleQuote"
+    }, // Sélectionne tout le contenu situé à l'intérieur des guillemets doubles " "
     {
         "key": "ctrl+shift+4",
-        "command": "extension.selectSingleQuote",
-    },
+        "command": "extension.selectSingleQuote"
+    }, // Sélectionne tout le contenu situé à l'intérieur des guillemets simples ' '
     {
         "key": "ctrl+shift+7",
-        "command": "extension.selectEitherQuote",
-    },
+        "command": "extension.selectEitherQuote"
+    }, // Sélectionne le contenu à l'intérieur des guillemets (simples ou doubles) selon le plus proche
     {
         "key": "ctrl+shift+8",
-        "command": "extension.selectSquareBrackets",
-    },
+        "command": "extension.selectSquareBrackets"
+    }, // Sélectionne tout le contenu situé à l'intérieur des crochets [ ]
     {
         "key": "ctrl+shift+9",
-        "command": "extension.selectParenthesis",
-    },
+        "command": "extension.selectParenthesis"
+    }, // Sélectionne tout le contenu situé à l'intérieur des parenthèses ( )
     {
         "key": "ctrl+shift+[Minus]",
-        "command": "extension.selectSquareBrackets",
-    },
+        "command": "extension.selectSquareBrackets"
+    }, // Raccourci alternatif (touche moins) pour sélectionner le contenu à l'intérieur des crochets [ ]
+    {
+        "key": "ctrl+shift+0",
+        "command": "extension.selectAngleBrackets"
+    }, // Sélectionne tout le contenu situé à l'intérieur des chevrons < >
+    {
+        "key": "ctrl+shift+i",
+        "command": "extension.selectTag"
+    }, // Sélectionne l'intégralité d'une balise HTML/XML (balises d'ouverture et de fermeture incluses)
+    {
+        "key": "ctrl+shift+k",
+        "command": "extension.selectTagContent"
+    }, // Sélectionne uniquement le texte ou le code à l'intérieur d'une balise HTML, sans toucher aux balises
+    {
+        "key": "ctrl+shift+backspace",
+        "command": "extension.selectBackTicks"
+    }, // Sélectionne tout le contenu situé à l'intérieur des accents graves ` ` (template strings)
     {
         "key": "ctrl+shift+r",
         "command": "workbench.action.reloadWindow",
         "when": "isDevelopment"
-    },
+    }, // Dev : Recharge complètement la fenêtre de VS Code (utile lors du développement d'extensions)
     {
         "key": "ctrl+r",
         "command": "-workbench.action.reloadWindow",
         "when": "isDevelopment"
-    },
+    }, // Système : Désactive (le moins "-" devant) le raccourci natif Ctrl+R pour recharger la fenêtre en mode dev
     {
         "key": "ctrl+shift+r",
         "command": "workbench.action.openRecent"
-    },
+    }, // Fichiers : Ouvre la liste et l'historique des dossiers et projets récemment ouverts
     {
         "key": "ctrl+r",
         "command": "-workbench.action.openRecent"
-    },
-    {
-        "key": "ctrl+r",
-        "command": "extension.vim_ctrl+r",
-        "when": "textInputFocus && vim.mode != 'Insert'"
-    },
+    } // Système : Désactive (le moins "-" devant) le raccourci natif Ctrl+R pour l'ouverture des projets récents
 ]
