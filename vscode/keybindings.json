@@ -1,3 +1,4 @@
+// Place your key bindings in this file to override the defaultsauto[]
 [
     {
         "key": "ctrl+[Quote]",
@@ -144,5 +145,10 @@
     {
         "key": "ctrl+r",
         "command": "-workbench.action.openRecent"
-    } // Système : Désactive (le moins "-" devant) le raccourci natif Ctrl+R pour l'ouverture des projets récents
+    }, // Système : Désactive (le moins "-" devant) le raccourci natif Ctrl+R pour l'ouverture des projets récents
+    {
+        "key": "ctrl+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    } // Copilot : Force VS Code à afficher la boîte d'autocomplétion
 ]
