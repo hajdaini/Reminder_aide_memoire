@@ -1,38 +1,20 @@
 {
-    "workbench.colorTheme": "One Monokai",
-    "workbench.iconTheme": "material-icon-theme",
-    "markdown-pdf.headerTemplate": "<div><span></span></div>",
-    "markdown-pdf.footerTemplate": "<div style=\"font-size: 9px; margin: 0 auto;\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
-    "markdown-pdf.margin.bottom": "2cm",
-    "markdown-pdf.scale": 0.9,
-    "markdown-pdf.breaks": true,
-    "markdown-pdf.highlightStyle": "darcula.css",
-    
-    "emmet.includeLanguages": {
-        "twig": "html"
-    },
-    "files.associations": {
-        "articleTest*.html.twig": "html"
-    },
-    "editor.tabSize": 4,
-    "terminal.integrated.fontSize": 14,
-    "window.zoomLevel": 0,
-    "git.enableSmartCommit": true,
-    "cSpell.language": "fr,en",
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+    "terminal.integrated.fontFamily": "Cascadia Code",
+    "editor.semanticHighlighting.enabled": true,
+    "terminal.integrated.fontSize": 11,
     "editor.multiCursorModifier": "ctrlCmd",
     "explorer.confirmDelete": false,
     "editor.minimap.enabled": false,
     "explorer.confirmDragAndDrop": false,
-    "logFileHighlighter.customPatterns": [],
-    "logFileHighlighter.customPatterns": [
-       
-        {
-            "pattern": "\\w+\\.(ERROR|CRITICAL)",
-            "foreground": "#ee4242",
-        },
-       
-    ],
-    "vim.startInInsertMode": true,
-    "vim.useCtrlKeys": false, 
-    "vim.overrideCopy" :false,
+    "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+    "terminal.integrated.profiles.windows": {
+        "Ubuntu (WSL)": {
+            "path": "C:\\Windows\\System32\\wsl.exe",
+            "args": ["-d", "Ubuntu"],
+            "icon": "terminal-linux"
+        }
+    }
 }
