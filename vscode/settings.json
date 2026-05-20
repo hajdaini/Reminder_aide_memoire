@@ -2,19 +2,12 @@
     "security.allowedUNCHosts": [
         "wsl.localhost"
     ],
+    "git.enableSmartCommit": true,
     "terminal.integrated.fontFamily": "Cascadia Code",
     "editor.semanticHighlighting.enabled": true,
-    "terminal.integrated.fontSize": 11,
-    "editor.multiCursorModifier": "ctrlCmd",
+    "terminal.integrated.fontSize": 13,
     "explorer.confirmDelete": false,
     "editor.minimap.enabled": false,
     "explorer.confirmDragAndDrop": false,
-    "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
-    "terminal.integrated.profiles.windows": {
-        "Ubuntu (WSL)": {
-            "path": "C:\\Windows\\System32\\wsl.exe",
-            "args": ["-d", "Ubuntu"],
-            "icon": "terminal-linux"
-        }
-    }
+    "git.suggestSmartCommit": false,
 }
