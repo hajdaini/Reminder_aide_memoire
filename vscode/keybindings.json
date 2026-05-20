@@ -1,4 +1,4 @@
-// Place your key bindings in this file to override the defaultsauto[]
+// Place your key bindings in this file to override the defaults
 [
     {
         "key": "ctrl+[Quote]",
@@ -146,9 +146,23 @@
         "key": "ctrl+r",
         "command": "-workbench.action.openRecent"
     }, // Système : Désactive (le moins "-" devant) le raccourci natif Ctrl+R pour l'ouverture des projets récents
+    
+    // ------------------INTELLISENSE / SUGGESTIONS------------------
     {
         "key": "ctrl+space",
         "command": "editor.action.triggerSuggest",
-        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-    } // Copilot : Force VS Code à afficher la boîte d'autocomplétion
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    }, // Code : Déclenche et affiche la boîte de suggestions d'auto-complétion (IntelliSense) si elle est masquée
+    {
+        "key": "ctrl+space",
+        "command": "selectEditorSuggestion",
+        "when": "suggestWidgetVisible"
+    }, // Code : Sélectionne/Valide la suggestion courante si la boîte d'auto-complétion est déjà visible à l'écran
+
+    // ------------------OS/FILES INTEGRATION------------------
+    {
+        "key": "alt+e",
+        "command": "revealFileInOS",
+        "when": "filesExplorerFocus || editorTextFocus"
+    } // Système : Ouvre l'explorateur Windows directement sur le fichier courant (depuis l'éditeur ou l'arborescence)
 ]
